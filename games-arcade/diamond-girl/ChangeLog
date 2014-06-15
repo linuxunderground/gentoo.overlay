@@ -1,0 +1,15 @@
+# ChangeLog for games-arcade/diamond_girl
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*diamond-girl-9999 (04 Oct 2013)
+
+  04 oct 2013; Vincent Hardy <vincent.hardy.be@gmail.com>
+  Diamond-girl goes to http://code.google.com/p/diamond-girl/
+
+*diamond-girl-1.5 (19 Sep 2011)
+
+  19 Sep 2011; Vincent Hardy <vincent.hardy.be@gmail.com>
+  +files/desktop_entry.patch, +metadata.xml:
+  Initial import of diamond_girl.
+

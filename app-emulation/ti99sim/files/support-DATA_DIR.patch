@@ -1,0 +1,11 @@
+--- src/core/support_ori.cpp	2012-07-14 02:09:41.000000000 +0200
++++ src/core/support.cpp	2013-09-17 17:37:43.000000000 +0200
+@@ -47,7 +47,7 @@
+ #if defined ( OS_LINUX ) || defined ( OS_MACOSX )
+     #define MKDIR(x,y) mkdir ( x, y )
+     const char FILE_SEPERATOR = '/';
+-    const char *COMMON_PATH = "/opt/ti99sim";
++    const char *COMMON_PATH = TI_DATA_DIR;
+ #elif defined ( OS_OS2 ) || defined ( OS_WINDOWS )
+     #include <direct.h>
+     #define MKDIR(x,y) mkdir ( x )

@@ -1,0 +1,31 @@
+--- Makefile.linux-ori	2012-07-14 02:00:09.000000000 +0200
++++ Makefile.linux	2013-09-16 09:03:07.000000000 +0200
+@@ -6,17 +6,17 @@
+ INSTALL   = /usr/bin/install
+ 
+ TARGETS   = \
+-	src/sdl/ti99sim-sdl \
+-	src/util/convert-ctg \
+-	src/util/decode \
+-	src/util/disk \
+-	src/util/dumpcpu \
+-	src/util/dumpgrom \
+-	src/util/dumpspch \
+-	src/util/list \
+-	src/util/mkspch \
+-	src/util/say \
+-	src/console/ti99sim-console
++	src/sdl/$(CFG)/ti99sim-sdl \
++	src/util/$(CFG)/convert-ctg \
++	src/util/$(CFG)/decode \
++	src/util/$(CFG)/disk \
++	src/util/$(CFG)/dumpcpu \
++	src/util/$(CFG)/dumpgrom \
++	src/util/$(CFG)/dumpspch \
++	src/util/$(CFG)/list \
++	src/util/$(CFG)/mkspch \
++	src/util/$(CFG)/say \
++	src/console/$(CFG)/ti99sim-console
+ 
+ SRC_DIRS = \
+ 	src/core \

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>proxy-maintainers</herd>
+  <maintainer>
+    <email>vincent.hardy.be@gmail.com</email>
+  </maintainer>
+  <longdescription>
+Double Dash is a split-screen multiplayer remake of
+the classic game Boulder Dash (aka. Emerald Mine)
+You have to avoid falling boulders, collect diamonds
+and exit the cave before your opponents. 
+The graphics was taken from gnome-stones,
+font is from Rocks'n'Diamonds.
+Two levels come from the original Atari game.
+  </longdescription>
+</pkgmetadata>
