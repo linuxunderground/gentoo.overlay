@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,7 +25,7 @@ DESCRIPTION="Clone of Boulderdash (a.k.a Emerald Mine on the Amiga)"
 
 HOMEPAGE="http://epiphany.sourceforge.net/site/"
 
-RDEPEND="media-libs/libsdl[audio,video]
+RDEPEND="media-libs/libsdl[sound,video]
 	media-libs/sdl-mixer"
 DEPEND="${RDEPEND}"
 

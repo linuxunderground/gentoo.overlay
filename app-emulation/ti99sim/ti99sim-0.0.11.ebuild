@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,10 +15,11 @@ SRC_URI="http://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.gz
 	roms? ( http://www.harmlesslion.com/zips/classic99.zip )"
 
 HOMEPAGE="http://www.mrousseau.org/programs/ti99sim/"
+# Classic99 http://www.harmlesslion.com/cgi-bin/showprog.cgi?search=Classic99 v373
 
 IUSE="+roms"
 
-RDEPEND="media-libs/libsdl[audio,video]"
+RDEPEND="media-libs/libsdl[sound,video]"
 
 DEPEND="${RDEPEND}"
 
