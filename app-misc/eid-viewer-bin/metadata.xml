@@ -15,12 +15,4 @@ With your eID, you can:
 
 These three functions form the basis of the countless applications for your eID. Go to http://welcome-to-e-belgium.be/en/ and check out what can you do with it? and discover all the things you can use the eID for.
 </longdescription>
-<use>
-  <flag name="gtk">
-    Enable the dialog pages, by using <pkg>x11-libs/gtk+:2</pkg>
-  </flag>
-  <flag name="xpi">
-    Build and install an extension for Mozilla browsers.
-  </flag>
-</use>
 </pkgmetadata>
