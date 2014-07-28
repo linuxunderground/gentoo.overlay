@@ -1,0 +1,10 @@
+# ChangeLog for games-arcade/breaker
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*breaker-2.1 (27 Jul 2014)
+
+  27 Jul 2014; Vincent Hardy <vincent.hardy.be@gmail.com>
+  +files/install.patch, +metadata.xml:
+  Initial import of breaker.
+
