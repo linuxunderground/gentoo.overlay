@@ -12,6 +12,9 @@ for exit to next level open.
 A level editor is included.
   </longdescription>
   <use>
+    <flag name="mixer">
+Enable media-libs/sdl-mixer support
+    </flag>
     <flag name="compressed-data">
 Use ogg files instead of wav + optimize size of png files
     </flag>

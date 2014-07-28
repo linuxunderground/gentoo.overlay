@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,9 +21,9 @@ DESCRIPTION="Clone of Boulderdash (a.k.a Emerald Mine on the Amiga)"
 
 HOMEPAGE="http://www.netikka.net/joyr/diamond_girl/index.html"
 
-IUSE="+mhash compressed-data"
+IUSE="+mhash +mixer compressed-data"
 
-RDEPEND="media-libs/sdl-mixer
+RDEPEND="mixer? ( media-libs/sdl-mixer )
 	media-libs/sdl-gfx
 	media-libs/sdl-image[png]
 	media-libs/lib3ds
@@ -44,9 +44,6 @@ src_prepare() {
 	if [[ ${PV} == "9999" ]]; then
 		sed -i -e '/autoreconf/d' autogen.sh
 		./autogen.sh
-		eautoreconf
-	else
-		epatch "${FILESDIR}"/remove_convert.patch
 		eautoreconf
 	fi
 	sed -i -e 's:\${BINDIR}/::;s:\${PIXMAPSDIR}:/usr/share/pixmaps:;s:Game;:Game;ArcadeGame;:;$d' diamond_girl.desktop.template
