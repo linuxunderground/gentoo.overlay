@@ -25,7 +25,8 @@ S=${WORKDIR}/breaker3264
 # http://codes-sources.commentcamarche.net/source/50067-breaker-arkanoid-like-c-sdl
 
 src_prepare() {
-	epatch "${FILESDIR}/install.patch"
+	epatch "${FILESDIR}/0001-install.patch"
+	epatch "${FILESDIR}/0002-dot_breaker_dir.patch"
 	export PREFIX="/usr"
 	export BINDIR="${GAMES_BINDIR}"
 	export DATADIR="${GAMES_DATADIR}/breaker"
