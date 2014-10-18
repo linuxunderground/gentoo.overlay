@@ -12,10 +12,13 @@ KEYWORDS="~amd64 ~x86"
 DESCRIPTION="Texas Instruments Home Computer Emulator"
 
 SRC_URI="http://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.gz
-	roms? ( http://www.harmlesslion.com/zips/classic99.zip )"
+	roms? ( http://www.linuxunderground.be/download/classic99.zip )"
+
+# Roms are no longer available in current classic99 releases (v374,...)
+#	roms? ( http://www.harmlesslion.com/zips/classic99.zip )"
 
 HOMEPAGE="http://www.mrousseau.org/programs/ti99sim/"
-# Classic99 http://www.harmlesslion.com/cgi-bin/showprog.cgi?search=Classic99 v373
+# Classic99 http://www.harmlesslion.com/cgi-bin/showprog.cgi?search=Classic99 v374
 
 IUSE="+roms"
 
@@ -47,7 +50,7 @@ src_install() {
 		ewarn "Classic99 is a Windows freeware. System ROMs and many cartridges"
 		ewarn "are INCLUDED in Classic99 under license from Texas Instruments."
 
-		cd "${S}"/../classic99/src/roms
+		cd "${S}"/../classic99/roms
 		# must be lowercase
 		mv 994AGROM.BIN 994agrom.bin
 		mv 994AROM.BIN 994arom.bin
