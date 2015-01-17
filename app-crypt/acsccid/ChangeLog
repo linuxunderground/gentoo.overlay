@@ -2,10 +2,11 @@
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*acsccid-1.1.0 (15 Jan 2015)
+*acsccid-1.1.0 (17 Jan 2015)
 
-  15 Jan 2015; Vincent Hardy <vincent.hardy.be@gmail.com>
+  17 Jan 2015; Vincent Hardy <vincent.hardy.be@gmail.com>
   +acsccid-1.1.0.ebuild +92-pcsc-acsccid.rules:
+  dev-libs/libusb-compat is not required anymore
   Version bump
 
 *acsccid-1.0.8 (10 Oct 2014)
@@ -21,7 +22,7 @@
   +acsccid-1.0.6.ebuild:
   Version bump
 
-**acsccid-1.0.5 (24 Nov 2013)
+*acsccid-1.0.5 (24 Nov 2013)
 
   24 Nov 2013; Vincent Hardy <vincent.hardy.be@gmail.com>
   +acsccid-1.0.5.ebuild:
