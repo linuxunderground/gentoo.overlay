@@ -1,8 +1,11 @@
 # ChangeLog for games-arcade/gdash
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*gdash-20130427 (26 feb 2014)
+*gdash-20130427 (20 mar 2015)
+
+  20 mar 2015; Vincent Hardy <vincent.hardy.be@gmail.com> :
+  Use bitbucket as SRC_URI and add ~arm keyword
 
   26 feb 2014; Vincent Hardy <vincent.hardy.be@gmail.com>
 

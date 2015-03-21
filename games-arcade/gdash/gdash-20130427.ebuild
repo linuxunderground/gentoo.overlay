@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,11 +10,11 @@ MY_P="${P}unstable"
 
 SLOT="0"
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 DESCRIPTION="Clone of Boulderdash (a.k.a Emerald Mine on the Amiga)"
 
-SRC_URI="http://gdash.googlecode.com/files/${MY_P}.tar.gz"
-HOMEPAGE="http://code.google.com/p/gdash/"
+SRC_URI="https://bitbucket.org/czirkoszoltan/${PN}/downloads/${MY_P}.tar.gz"
+HOMEPAGE="https://bitbucket.org/czirkoszoltan/gdash/"
 
 IUSE=""
 
