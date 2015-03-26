@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,13 +8,11 @@ inherit eutils
 
 SLOT="0"
 LICENSE="HPND"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 DESCRIPTION="Console SID file player. Very small and light."
 
-SRC_URI="http://www.rsinsch.de/data/files/ce4f22308f/tinysid-linux.tar.gzip ->
-tinysid-linux.tar.gz"
-HOMEPAGE="http://www.rsinsch.de/?id=7298b"
-
+SRC_URI="http://www-stud.rbi.informatik.uni-frankfurt.de/~sinsch/new/tinysid-Dateien/downloads/tinysid-linux.tar.gzip -> tinysid-linux.tar.gz"
+HOMEPAGE="http://www-stud.rbi.informatik.uni-frankfurt.de/~sinsch/new/tinysid.htm"
 IUSE="alsa"
 
 RDEPEND="alsa? ( media-libs/alsa-oss )"
