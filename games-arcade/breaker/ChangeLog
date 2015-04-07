@@ -1,6 +1,11 @@
 # ChangeLog for games-arcade/breaker
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*breaker-2.16 (06 Apr 2015)
+
+  06 Aug 2015; Vincent Hardy <vincent.hardy.be@gmail.com>:
+  Version Bump.
 
 *breaker-2.1 (26 Aug 2014)
 
