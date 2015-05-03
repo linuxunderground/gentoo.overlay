@@ -1,0 +1,11 @@
+--- rules.mak.ori	2015-04-22 08:28:59.000000000 +0200
++++ rules.mak	2015-05-02 17:45:20.279863689 +0200
+@@ -37,6 +37,8 @@
+ CFLAGS   += -g3 -O3 -fomit-frame-pointer
+ endif
+ 
++CFLAGS   += -DTI_DATA_DIR=\"$(DATA_DIR)\"
++
+ ifdef LOGGER
+ CFLAGS   += -D_REENTRANT -DLOGGER
+ LIBS	 += -lrt
