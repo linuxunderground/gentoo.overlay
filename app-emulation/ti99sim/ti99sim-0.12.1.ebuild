@@ -8,7 +8,7 @@ inherit eutils flag-o-matic
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 DESCRIPTION="Texas Instruments Home Computer Emulator"
 
 SRC_URI="http://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.gz
