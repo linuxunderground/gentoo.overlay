@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,11 +17,11 @@ fi
 
 SLOT="0"
 LICENSE="GPL-2"
-DESCRIPTION="Clone of Boulderdash (a.k.a Emerald Mine on the Amiga)"
+DESCRIPTION="Single player puzzle game with a time constraint"
 
 HOMEPAGE="http://www.netikka.net/joyr/diamond_girl/index.html"
 
-IUSE="+mhash +mixer compressed-data"
+IUSE="+mixer compressed-data"
 
 RDEPEND="mixer? ( media-libs/sdl-mixer[vorbis] )
 	media-libs/libsndfile
@@ -29,8 +29,7 @@ RDEPEND="mixer? ( media-libs/sdl-mixer[vorbis] )
 	media-libs/sdl-image[png]
 	media-libs/lib3ds
 	>=media-libs/glew-1.6.0-r1
-	media-libs/openal
-	mhash? ( app-crypt/mhash )"
+	media-libs/openal"
 
 DEPEND="${RDEPEND}
 	>=dev-libs/json-c-0.11
@@ -46,7 +45,7 @@ src_prepare() {
 		./autogen.sh
 		eautoreconf
 	fi
-	sed -i -e 's:\${BINDIR}/::;s:\${PIXMAPSDIR}:/usr/share/pixmaps:;s:Game;:Game;ArcadeGame;:;$d' diamond_girl.desktop.template
+	sed -i -e 's:\${BINDIR}/::;s:\${PIXMAPSDIR}:/usr/share/pixmaps:;s:Game;:Game;ArcadeGame;:;$d' diamond-girl.desktop.template
 }
 
 src_configure() {
@@ -58,16 +57,16 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	domenu diamond_girl.desktop
-	doicon themes/default/gfx/diamond_girl.png
+	domenu diamond-girl.desktop
+	doicon themes/default/gfx/diamond-girl.png
 
 	dodoc CREDITS
 	dodoc Changelog
-	dodoc README.settings
-	dodoc README.sfx
 	dodoc README
+	dodoc README.sfx
+	dodoc README.translations
 
-	dosym diamond_girl "${GAMES_BINDIR}"/diamond-girl
+	#dosym diamond_girl "${GAMES_BINDIR}"/diamond-girl
 
 	# CREDITS and Welcome.txt files are necessary in
 	# /usr/share/games/diamond_girl

@@ -1,10 +1,18 @@
-# ChangeLog for games-arcade/diamond_girl
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# ChangeLog for games-arcade/diamond-girl
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*diamond-girl-9999 (04 Oct 2013)
+*diamond-girl-1.25.1 (12 Jun 2015)
 
-  04 oct 2013; Vincent Hardy <vincent.hardy.be@gmail.com>
+  12 Jun 2015; Vincent Hardy <vincent.hardy.be@gmail.com> :
+  Version bump.
+
+*diamond-girl-9999 (12 Jun 2015)
+
+  12 Jun 2015; Vincent Hardy <vincent.hardy.be@gmail.com> :
+  Remove live ebuild : project Hosting on Google Code will close on January 25th, 2016
+
+  04 oct 2013; Vincent Hardy <vincent.hardy.be@gmail.com> :
   Diamond-girl goes to http://code.google.com/p/diamond-girl/
 
 *diamond-girl-1.5 (19 Sep 2011)
