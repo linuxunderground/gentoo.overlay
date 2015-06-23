@@ -11,7 +11,7 @@ if [[ ${PV} == "9999" ]]; then
 	inherit subversion
 	SRC_URI=""
 else
-	SRC_URI="http://www.netikka.net/joyr/diamond_girl/${P}.tar.bz2"
+	SRC_URI="http://www.netikka.net/joyr/diamond_girl/${P}.tar.xz"
 	KEYWORDS="~amd64 ~x86"
 fi
 
@@ -45,13 +45,13 @@ src_prepare() {
 		./autogen.sh
 		eautoreconf
 	fi
-	sed -i -e 's:\${BINDIR}/::;s:\${PIXMAPSDIR}:/usr/share/pixmaps:;s:Game;:Game;ArcadeGame;:;$d' diamond-girl.desktop.template
+	sed -i -e 's:Icon=:Icon=/usr/share/pixmaps/:' diamond-girl.desktop
 }
 
 src_configure() {
 	append-cflags "-DNDEBUG"
 	append-cxxflags "-DNDEBUG"
-	egamesconf $(use_enable compressed-data) --without-lua
+	egamesconf --without-lua
 }
 
 src_install() {
