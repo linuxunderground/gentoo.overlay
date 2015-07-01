@@ -1,0 +1,89 @@
+diff -ur eid-mw-4.1.3-v4.1.0.560.g32b77ce-a/cardcomm/pkcs11/src/Makefile.am eid-mw-4.1.3-v4.1.0.560.g32b77ce-b/cardcomm/pkcs11/src/Makefile.am
+--- eid-mw-4.1.3-v4.1.0.560.g32b77ce-a/cardcomm/pkcs11/src/Makefile.am	2015-06-30 10:47:13.818234886 +0200
++++ eid-mw-4.1.3-v4.1.0.560.g32b77ce-b/cardcomm/pkcs11/src/Makefile.am	2015-07-01 19:49:29.280220370 +0200
+@@ -156,39 +156,7 @@
+ 	dialogs/dialogsgtk/single_dialog.h \
+ 	dialogs/dialogsgtk/parent.h \
+ 	dialogs/dialogsgtk/gtk_dialog_names.h
+-if NO_DIALOGS
+-libbeidpkcs11_la_CXXFLAGS += -DNO_DIALOGS
+-else
+-libbeidpkcs11_la_CXXFLAGS += -I$(srcdir)/dialogs
+-libbeidpkcs11_la_SOURCES += \
+-	dialogs/dialogsgtk/dlgs_gtk.cpp \
+-	dialogs/dialogsgtk/single_dialog.c
+-endif
+-
+-libexec_PROGRAMS = beid-askpin beid-changepin beid-badpin beid-askaccess beid-spr-askpin beid-spr-changepin
+-
+-beid_askpin_SOURCES = dialogs/dialogsgtk/parent.c dialogs/dialogsgtk/beid-askpin.c
+-beid_askpin_CPPFLAGS = -I$(srcdir)/dialogsgtk -I$(srcdir)/../common/src -I$(srcdir)/src @GTK_CFLAGS@
+-beid_askpin_LDADD = @GTK_LIBS@
+-
+-beid_changepin_SOURCES = dialogs/dialogsgtk/parent.c dialogs/dialogsgtk/beid-changepin.c
+-beid_changepin_CPPFLAGS = -I$(dialogsdir)/dialogsgtk -I$(dialogsdir)/../common/dialogs -I$(dialogsdir)/dialogs @GTK_CFLAGS@
+-beid_changepin_LDADD = @GTK_LIBS@
+ 
+-beid_badpin_SOURCES = dialogs/dialogsgtk/parent.c dialogs/dialogsgtk/beid-badpin.c
+-beid_badpin_CPPFLAGS = -I$(dialogsdir)/dialogsgtk -I$(dialogsdir)/../common/dialogs -I$(dialogsdir)/dialogs @GTK_CFLAGS@
+-beid_badpin_LDADD = @GTK_LIBS@
+-
+-beid_askaccess_SOURCES = dialogs/dialogsgtk/parent.c dialogs/dialogsgtk/beid-askaccess.c
+-beid_askaccess_CPPFLAGS = -I$(dialogsdir)/dialogsgtk -I$(dialogsdir)/../common/dialogs -I$(dialogsdir)/dialogs @GTK_CFLAGS@
+-beid_askaccess_LDADD = @GTK_LIBS@
+-
+-beid_spr_askpin_SOURCES = dialogs/dialogsgtk/parent.c dialogs/dialogsgtk/beid-spr-askpin.c
+-beid_spr_askpin_CPPFLAGS = -I$(dialogsdir)/dialogsgtk -I$(dialogsdir)/../common/dialogs -I$(dialogsdir)/dialogs @GTK_CFLAGS@
+-beid_spr_askpin_LDADD = @GTK_LIBS@
+-
+-beid_spr_changepin_SOURCES = dialogs/dialogsgtk/parent.c dialogs/dialogsgtk/beid-spr-changepin.c
+-beid_spr_changepin_CPPFLAGS = -I$(dialogsdir)/dialogsgtk -I$(dialogsdir)/../common/dialogs -I$(dialogsdir)/dialogs @GTK_CFLAGS@
+-beid_spr_changepin_LDADD = @GTK_LIBS@
++libbeidpkcs11_la_CXXFLAGS += -DNO_DIALOGS
+ 
+ pkgconfig_DATA=libbeidpkcs11.pc
+diff -ur eid-mw-4.1.3-v4.1.0.560.g32b77ce-a/configure.ac eid-mw-4.1.3-v4.1.0.560.g32b77ce-b/configure.ac
+--- eid-mw-4.1.3-v4.1.0.560.g32b77ce-a/configure.ac	2015-06-30 10:52:04.719799954 +0200
++++ eid-mw-4.1.3-v4.1.0.560.g32b77ce-b/configure.ac	2015-07-01 19:53:26.167242297 +0200
+@@ -59,10 +59,10 @@
+ 
+ AC_DEFINE_UNQUOTED([HAVE_GTK], [$have_gtk], [Set to major version of libgtk])
+ 
+-if test "$have_gtk" = "no"
+-then
+-	AC_MSG_ERROR([At least one version of GTK is required.])
+-fi
++#if test "$have_gtk" = "no"
++#then
++#	AC_MSG_ERROR([At least one version of GTK is required.])
++#fi
+ 
+ PKG_CHECK_MODULES([XML2], [libxml-2.0])
+ 
+@@ -121,13 +121,7 @@
+ 		 cardcomm/pkcs11/src/Makefile
+ 		 cardcomm/pkcs11/src/libbeidpkcs11.pc
+ 		 doc/sdk/include/rsaref220/Makefile
+-		 tests/unit/Makefile
+-		 plugins_tools/aboutmw/gtk/Makefile
+-		 plugins_tools/aboutmw/gtk/about-eid-mw.desktop.sh
+-		 plugins_tools/aboutmw/gtk/po/Makefile.in
+-		 plugins_tools/eid-viewer/Makefile
+-		 plugins_tools/eid-viewer/test/Makefile
+-		 plugins_tools/eid-viewer/gtk/po/Makefile.in])
++		 tests/unit/Makefile])
+ 
+ AC_CONFIG_SUBDIRS([plugins_tools/xpi])
+ 
+diff -ur eid-mw-4.1.3-v4.1.0.560.g32b77ce-a/Makefile.am eid-mw-4.1.3-v4.1.0.560.g32b77ce-b/Makefile.am
+--- eid-mw-4.1.3-v4.1.0.560.g32b77ce-a/Makefile.am	2015-06-30 10:52:04.719799954 +0200
++++ eid-mw-4.1.3-v4.1.0.560.g32b77ce-b/Makefile.am	2015-07-01 19:43:00.665105924 +0200
+@@ -1,7 +1,7 @@
+ ACLOCAL_AMFLAGS = -I scripts/m4
+ EXTRA_DIST = scripts/build-aux/config.rpath  debian build-debian.sh rpm doc
+ 
+-SUBDIRS=cardcomm/pkcs11/src doc/sdk/include/rsaref220 tests/unit plugins_tools/xpi plugins_tools/aboutmw/gtk plugins_tools/eid-viewer
++SUBDIRS=cardcomm/pkcs11/src doc/sdk/include/rsaref220 tests/unit plugins_tools/xpi
+ 
+ xpipackage:
+ 	$(MAKE) -C plugins_tools/xpi xpipackage
