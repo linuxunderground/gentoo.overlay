@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
@@ -33,7 +33,7 @@ RDEPEND="mixer? ( media-libs/sdl-mixer[vorbis] )
 
 DEPEND="${RDEPEND}
 	media-libs/assimp
-	media-gfx/blender	
+	media-gfx/blender
 	>=dev-libs/json-c-0.11
 	media-libs/libmikmod
 	media-gfx/xcftools
