@@ -11,7 +11,7 @@ LICENSE="LGPL-2.1"
 KEYWORDS="~amd64 ~x86 ~arm"
 DESCRIPTION="Generic driver for ACS (CCID and non-CCID) Smart Card Reader."
 
-SRC_URI="mirror://sourceforge/${PN}/${PV}/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 HOMEPAGE="http://acsccid.sourceforge.net/"
 
 RDEPEND=">=sys-apps/pcsc-lite-1.8.3
