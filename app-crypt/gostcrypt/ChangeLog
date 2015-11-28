@@ -1,0 +1,9 @@
+# ChangeLog for app-crypt/gostcrypt
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Id$
+
+*gostcrypt-1.0 (15 nov 2015)
+
+  15 Nov 2015; Vincent Hardy <vincent.hardy.be@gmail.com>
+  +gostcrypt-1.0.ebuild, +metadata.xml, +files/gostcrypt-stop.sh, +gostcrypt.init:
+  New ebuild
