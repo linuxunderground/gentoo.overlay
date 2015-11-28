@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="git://github.com/linuxunderground/${PN}.git
@@ -16,7 +16,7 @@ fi
 
 SLOT="0"
 LICENSE="LGPL-3"
-DESCRIPTION="Simple GNU package which aims to show how to use the autotools with Fedict C examples"
+DESCRIPTION="Simple GNU package which aims to show how to use the autotools with eid-mw sdk"
 
 HOMEPAGE="https://github.com/linuxunderground/eid-mw-sdk-c"
 
@@ -27,6 +27,7 @@ RDEPEND=">=app-crypt/eid-mw-4.1.4"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
+	default
 	if [[ ${PV} == "9999" ]]; then
 		eautoreconf
 	fi

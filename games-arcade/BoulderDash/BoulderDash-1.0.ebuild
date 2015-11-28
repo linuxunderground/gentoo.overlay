@@ -9,7 +9,7 @@ inherit eutils games
 SLOT="0"
 LICENSE="HPND"
 KEYWORDS="~x86"
-DESCRIPTION="BoulderDash SVGAlib/X11 game with original ZX Spectrum/Commodore 64 graphics and levels"
+DESCRIPTION="BoulderDash game with original ZX Spectrum/Commodore 64 graphics and levels"
 
 SRC_URI="http://www.ibiblio.org/pub/Linux/X11/games/${P}-b5.tar.gz"
 HOMEPAGE="http://www.ibiblio.org/pub/Linux/X11/games/"

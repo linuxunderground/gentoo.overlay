@@ -9,8 +9,7 @@ inherit eutils games
 SLOT="0"
 LICENSE="LGPL-2.1"
 KEYWORDS="~amd64 ~x86 ~arm"
-DESCRIPTION="A split-screen multiplayer remake of the classic game Boulder Dash
-(aka. Emerald Mine on the Amiga)"
+DESCRIPTION="A split-screen multiplayer remake of BoulderDash game"
 
 SRC_URI="http://www.karlin.mff.cuni.cz/~benes/doubledash/${P}.tar.gz"
 HOMEPAGE="http://www.karlin.mff.cuni.cz/~benes/doubledash/"
