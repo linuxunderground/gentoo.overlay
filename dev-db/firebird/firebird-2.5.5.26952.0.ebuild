@@ -1,10 +1,10 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=5
 
-inherit autotools eutils flag-o-matic multilib readme.gentoo user versionator
+inherit autotools eutils flag-o-matic multilib user versionator
 
 MY_P=${PN/f/F}-$(replace_version_separator 4 -)
 #MY_P=${PN/f/F}-${PV/_rc/-ReleaseCandidate}
