@@ -1,8 +1,8 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit multilib eutils udev
 
@@ -20,6 +20,7 @@ RDEPEND=">=sys-apps/pcsc-lite-1.8.3
 	!app-crypt/acr38u"
 DEPEND="${RDEPEND}
 	kernel_linux? ( virtual/pkgconfig )
+	dev-lang/perl
 	sys-devel/flex"
 
 IUSE=""
