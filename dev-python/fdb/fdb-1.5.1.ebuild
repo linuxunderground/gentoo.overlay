@@ -21,8 +21,3 @@ RDEPEND="dev-db/firebird"
 DEPEND="${RDEPEND}
 	${PYTHON_DEPS}
 	dev-python/setuptools"
-
-src_prepare() {
-	eapply "${FILESDIR}"/fix_syntax.patch
-	eapply_user
-}
