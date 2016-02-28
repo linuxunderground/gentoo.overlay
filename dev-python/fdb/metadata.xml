@@ -3,6 +3,7 @@
 <pkgmetadata>
   <maintainer>
     <email>vincent.hardy.be@gmail.com</email>
+    <name>Vincent Hardy</name>
   </maintainer>
   <longdescription>
 FDB is a Python library package that implements Python Database

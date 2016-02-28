@@ -3,6 +3,7 @@
 <pkgmetadata>
 <maintainer>
   <email>vincent.hardy.be@gmail.com</email>
+  <name>Vincent Hardy</name>
 </maintainer>
 <longdescription>
 Console SID file player. Because this program is very small and light, it makes a very good choice for older hardware.
