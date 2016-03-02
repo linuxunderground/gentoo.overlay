@@ -19,7 +19,7 @@ LICENSE="IDPL Interbase-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="debug doc client examples superserver xinetd"
+IUSE="debug doc client superserver xinetd"
 REQUIRED_USE="^^ ( client superserver xinetd )"
 
 CDEPEND="
@@ -86,7 +86,8 @@ src_prepare() {
 }
 
 src_configure() {
-	filter-flags -fprefetch-loop-arrays
+	filter-flags -fprefetch-loop-arrays -fomit-frame-pointer
+	append-flags -fno-omit-frame-pointer
 	filter-mfpmath sse
 
 	econf \
@@ -170,10 +171,6 @@ src_install() {
 		dosym /usr/$(get_libdir)/libib_util.so /usr/$(get_libdir)/${PN}/lib/libib_util.so
 	fi
 
-	exeinto /usr/bin/${PN}
-	exeopts -m0755
-	doexe bin/{changeRunUser,restoreRootRunUser,changeDBAPassword}.sh
-
 	insinto /usr/$(get_libdir)/${PN}/help
 	doins help/help.fdb
 
@@ -189,95 +186,23 @@ src_install() {
 	exeinto /usr/$(get_libdir)/${PN}/UDF
 	doexe UDF/*.so
 
-	insinto /usr/share/${PN}/upgrade
-	doins -r "${S}"/src/misc/upgrade/v2/*
+	insinto /etc/logrotate.d
+	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
 	insinto /etc/${PN}
-	insopts -m0644 -o firebird -g firebird
 	doins ../install/misc/*.conf
 	insopts -m0660 -o firebird -g firebird
 	doins security2.fdb
-
 	if use xinetd ; then
 		insinto /etc/xinetd.d
 		newins "${FILESDIR}/${PN}.xinetd" ${PN}
 	else
-		newinitd "${FILESDIR}/${PN}.init.d.2.5" ${PN}
-		newconfd "${FILESDIR}/${PN}.conf.d.2.5" ${PN}
-		fperms 640 /etc/conf.d/${PN}
+		newinitd "${FILESDIR}/${PN}.init.d" ${PN}
 	fi
-
-	insinto /etc/logrotate.d
-	newins "${FILESDIR}/${PN}.logrotate" ${PN}
-	fperms 0644 /etc/logrotate.d/${PN}
-
-	diropts -m 755 -o firebird -g firebird
-	dodir /var/log/${PN}
-	dodir /var/run/${PN}
-	keepdir /var/log/${PN}
-	keepdir /var/run/${PN}
-
-	use examples && docinto examples
-}
-
-pkg_postinst() {
-	use client && return
-
-	# Hack to fix ownership/perms
-	chown -fR firebird:firebird "${ROOT}/etc/${PN}" "${ROOT}/usr/$(get_libdir)/${PN}"
-	chmod 750 "${ROOT}/etc/${PN}"
 }
 
 pkg_config() {
 	use client && return
-
-	# if found /etc/security.gdb from previous install, backup, and restore as
-	# /etc/security2.fdb
-	if [[ -f "${ROOT}/etc/firebird/security.gdb" ]] ; then
-		# if we have scurity2.fdb already, back it 1st
-		if [[ -f "${ROOT}/etc/firebird/security2.fdb" ]] ; then
-			cp "${ROOT}/etc/firebird/security2.fdb" "${ROOT}/etc/firebird/security2.fdb.old" || die
-		fi
-		gbak -B "${ROOT}/etc/firebird/security.gdb" "${ROOT}/etc/firebird/security.gbk" || die
-		gbak -R "${ROOT}/etc/firebird/security.gbk" "${ROOT}/etc/firebird/security2.fdb" || die
-		mv "${ROOT}/etc/firebird/security.gdb" "${ROOT}/etc/firebird/security.gdb.old" || die
-		rm "${ROOT}/etc/firebird/security.gbk" || die
-
-		# make sure they are readable only to firebird
-		chown firebird:firebird "${ROOT}/etc/firebird/{security.*,security2.*}" || die
-		chmod 660 "${ROOT}/etc/firebird/{security.*,security2.*}" || die
-
-		echo
-		einfo "Converted old security.gdb to security2.fdb, security.gdb has been "
-		einfo "renamed to security.gdb.old. if you had previous security2.fdb, "
-		einfo "it's backed to security2.fdb.old (all under ${ROOT}/etc/firebird)."
-		echo
-	fi
-
-	# we need to enable local access to the server
-	if [[ ! -f "${ROOT}/etc/hosts.equiv" ]] ; then
-		touch "${ROOT}/etc/hosts.equiv" || die
-		chown root:0 "${ROOT}/etc/hosts.equiv" || die
-		chmod u=rw,go=r "${ROOT}/etc/hosts.equiv" || die
-	fi
-
-	# add 'localhost.localdomain' to the hosts.equiv file...
-	if grep -q 'localhost.localdomain$' "${ROOT}/etc/hosts.equiv" ; then
-		echo "localhost.localdomain" >> "${ROOT}/etc/hosts.equiv" || die
-		einfo "Added localhost.localdomain to ${ROOT}/etc/hosts.equiv"
-	fi
-
-	# add 'localhost' to the hosts.equiv file...
-	if grep -q 'localhost$' "${ROOT}/etc/hosts.equiv" ; then
-		echo "localhost" >> "${ROOT}/etc/hosts.equiv" || die
-		einfo "Added localhost to ${ROOT}/etc/hosts.equiv"
-	fi
-
-	HS_NAME=`hostname`
-	if grep -q ${HS_NAME} "${ROOT}/etc/hosts.equiv" ; then
-		echo "${HS_NAME}" >> "${ROOT}/etc/hosts.equiv" || die
-		einfo "Added ${HS_NAME} to ${ROOT}/etc/hosts.equiv"
-	fi
 
 	einfo "If you're using UDFs, please remember to move them"
 	einfo "to /usr/lib/firebird/UDF"
