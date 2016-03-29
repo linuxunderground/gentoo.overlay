@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit autotools eutils flag-o-matic multilib user versionator
 
@@ -11,15 +11,13 @@ MY_P=${PN/f/F}-$(replace_version_separator 4 -)
 
 DESCRIPTION="A relational database offering many ANSI SQL:2003 and some SQL:2008 features"
 HOMEPAGE="http://www.firebirdsql.org/"
-SRC_URI="
-	mirror://sourceforge/firebird/${MY_P}.tar.bz2
-	doc? (	ftp://ftpc.inprise.com/pub/interbase/techpubs/ib_b60_doc.zip )"
+SRC_URI="mirror://sourceforge/firebird/${MY_P}.tar.bz2"
 
 LICENSE="IDPL Interbase-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="debug doc client superserver xinetd"
+IUSE="debug doc client examples superserver xinetd"
 REQUIRED_USE="^^ ( client superserver xinetd )"
 
 CDEPEND="
@@ -50,23 +48,15 @@ check_sed() {
 	[[ $1 -ge $2 ]] || die "${MSG}"
 }
 
-src_unpack() {
-	unpack "${MY_P}.tar.bz2"
-	if use doc; then
-		# Unpack docs
-		mkdir "manuals" || die
-		cd "manuals" || die
-		unpack ib_b60_doc.zip
-	fi
-}
-
 src_prepare() {
 	# This patch might be portable, and not need to be duplicated per version
 	# also might no longer be necessary to patch deps or libs, just flags
-	epatch "${FILESDIR}"/${PN}-2.5.3.26780.0-deps-flags.patch
+	eapply "${FILESDIR}"/${PN}-2.5.3.26780.0-deps-flags.patch
+	eapply "${FILESDIR}"/${P}-CVE-2016-1569.patch
 
-	use client && epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-client.patch
-	use superserver || epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-superclassic.patch
+	use client && eapply "${FILESDIR}"/${PN}-2.5.1.26351.0-client.patch
+	use superserver || eapply "${FILESDIR}"/${PN}-2.5.1.26351.0-superclassic.patch
+	eapply_user
 
 	# Rename references to isql to fbsql
 	# sed vs patch for portability and addtional location changes
@@ -79,15 +69,13 @@ src_prepare() {
 		-e 's:ISQL :FBSQL :w /dev/stdout' \
 		src/msgs/messages2.sql | wc -l)" "6" "src/msgs/messages2.sql" # 6 lines
 
-	find "${S}" -name \*.sh -exec chmod +x {} + || die
 	rm -r "${S}"/extern/{btyacc,editline,icu} || die
 
 	eautoreconf
 }
 
 src_configure() {
-	filter-flags -fprefetch-loop-arrays -fomit-frame-pointer
-	append-flags -fno-omit-frame-pointer
+	filter-flags -fprefetch-loop-arrays
 	filter-mfpmath sse
 
 	econf \
@@ -106,7 +94,7 @@ src_configure() {
 		--with-fbudf=/usr/$(get_libdir)/${PN}/UDF \
 		--with-fbsample=/usr/share/doc/${P}/examples \
 		--with-fbsample-db=/usr/share/doc/${P}/examples/db \
-		--with-fbhelp=/usr/$(get_libdir)/${PN}/help \
+		--with-fbhelp=/usr/share/${PN}/help \
 		--with-fbintl=/usr/$(get_libdir)/${PN}/intl \
 		--with-fbmisc=/usr/share/${PN} \
 		--with-fbsecure-db=/etc/${PN} \
@@ -119,26 +107,22 @@ src_configure() {
 }
 
 src_compile() {
-	MAKEOPTS="${MAKEOPTS/-j*/-j1} ${MAKEOPTS/-j/CPU=}"
-	emake
+	emake -j1
 }
 
 src_install() {
-	cd "gen/${PN}" || die
+	use doc && dodoc -r doc
 
-	if use doc; then
-		dodoc "${S}"/doc/*.pdf
-		find "${WORKDIR}"/manuals -type f -iname "*.pdf" -exec dodoc '{}' + || die
-	fi
+	cd "gen/${PN}" || die
 
 	doheader include/*
 
 	rm lib/libfbstatic.a || die "failed to remove libfbstatic.a"
 
-	insinto /usr/$(get_libdir)
 	dolib.so lib/*.so*
 
 	# links for backwards compatibility
+	insinto /usr/$(get_libdir)
 	dosym libfbclient.so /usr/$(get_libdir)/libgds.so
 	dosym libfbclient.so /usr/$(get_libdir)/libgds.so.0
 	dosym libfbclient.so /usr/$(get_libdir)/libfbclient.so.1
@@ -171,10 +155,10 @@ src_install() {
 		dosym /usr/$(get_libdir)/libib_util.so /usr/$(get_libdir)/${PN}/lib/libib_util.so
 	fi
 
-	insinto /usr/$(get_libdir)/${PN}/help
+	insinto /usr/share/${PN}/help
 	doins help/help.fdb
 
-	exeinto /usr/$(get_libdir)/firebird/intl
+????????	exeinto /usr/$(get_libdir)/${PN}/intl
 	dolib.so intl/libfbintl.so
 	dosym /usr/$(get_libdir)/libfbintl.so /usr/$(get_libdir)/${PN}/intl/fbintl
 	dosym /etc/firebird/fbintl.conf /usr/$(get_libdir)/${PN}/intl/fbintl.conf
@@ -199,10 +183,23 @@ src_install() {
 	else
 		newinitd "${FILESDIR}/${PN}.init.d" ${PN}
 	fi
-}
 
-pkg_config() {
-	use client && return
+	if use examples; then
+		cd examples
+		insinto /usr/share/${PN}/examples
+		insopts -m0644 -o root -g root
+		# si pas -r faire insinto à tous les coups
+		doins -r api
+		doins -r dyn
+		doins -r include
+		doins -r stat
+		doins -r udf
+		doins functions.c
+		doins README
+		insinto /usr/share/${PN}/examples/empbuild
+		insopts -m0660 -o firebird -g firebird
+		doins empbuild/employee.fdb
+	fi
 
 	einfo "If you're using UDFs, please remember to move them"
 	einfo "to /usr/lib/firebird/UDF"

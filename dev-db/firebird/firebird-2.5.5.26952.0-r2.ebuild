@@ -18,7 +18,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 IUSE="debug doc client examples superserver xinetd"
-REQUIRED_USE="^^ ( client superserver xinetd )"
 
 CDEPEND="
 	dev-libs/libedit
@@ -79,7 +78,7 @@ src_configure() {
 	filter-mfpmath sse
 
 	econf \
-		--prefix=/usr/$(get_libdir)/firebird \
+		--prefix=/usr/$(get_libdir)/${PN} \
 		$(use_enable superserver) \
 		$(use_enable debug) \
 		--with-editline \
@@ -92,18 +91,17 @@ src_configure() {
 		--with-fbinclude=/usr/include \
 		--with-fbdoc=/usr/share/doc/${P} \
 		--with-fbudf=/usr/$(get_libdir)/${PN}/UDF \
-		--with-fbsample=/usr/share/doc/${P}/examples \
-		--with-fbsample-db=/usr/share/doc/${P}/examples/db \
+		--with-fbsample=/usr/share/${PN}/examples \
+		--with-fbsample-db=/usr/share/${PN}/examples/empbuild \
 		--with-fbhelp=/usr/share/${PN}/help \
 		--with-fbintl=/usr/$(get_libdir)/${PN}/intl \
-		--with-fbmisc=/usr/share/${PN} \
+		--with-fbmisc=/usr/share/${PN}/misc \
 		--with-fbsecure-db=/etc/${PN} \
-		--with-fbmsg=/usr/$(get_libdir)/${PN} \
+		--with-fbmsg=/usr/share/${PN}/msg \
 		--with-fblog=/var/log/${PN}/ \
 		--with-fbglock=/var/run/${PN} \
 		--with-fbplugins=/usr/$(get_libdir)/${PN}/plugins \
-		--with-gnu-ld \
-		${myconf}
+		--with-gnu-ld
 }
 
 src_compile() {
@@ -127,7 +125,7 @@ src_install() {
 	dosym libfbclient.so /usr/$(get_libdir)/libgds.so.0
 	dosym libfbclient.so /usr/$(get_libdir)/libfbclient.so.1
 
-	insinto /usr/$(get_libdir)/${PN}
+	insinto /usr/share/${PN}/msg
 	doins *.msg
 
 	use client && return
@@ -150,22 +148,18 @@ src_install() {
 	# SuperClassic
 	else
 		dosbin bin/{fbguard,fb_smp_server}
-
-		#Temp should not be necessary, need to patch/fix
-		dosym /usr/$(get_libdir)/libib_util.so /usr/$(get_libdir)/${PN}/lib/libib_util.so
 	fi
 
 	insinto /usr/share/${PN}/help
 	doins help/help.fdb
 
-	exeinto /usr/$(get_libdir)/firebird/intl
-	dolib.so intl/libfbintl.so
-	dosym /usr/$(get_libdir)/libfbintl.so /usr/$(get_libdir)/${PN}/intl/fbintl
+	exeinto /usr/$(get_libdir)/${PN}/intl
+	doexe intl/libfbintl.so
+	dosym /usr/$(get_libdir)/${PN}/intl/libfbintl.so /usr/$(get_libdir)/${PN}/intl/fbintl.so
 	dosym /etc/firebird/fbintl.conf /usr/$(get_libdir)/${PN}/intl/fbintl.conf
 
 	exeinto /usr/$(get_libdir)/${PN}/plugins
-	dolib.so plugins/libfbtrace.so
-	dosym /usr/$(get_libdir)/libfbtrace.so /usr/$(get_libdir)/${PN}/plugins/libfbtrace.so
+	doexe plugins/libfbtrace.so
 
 	exeinto /usr/$(get_libdir)/${PN}/UDF
 	doexe UDF/*.so
