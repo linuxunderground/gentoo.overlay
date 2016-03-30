@@ -139,10 +139,12 @@ src_install() {
 	insopts -m0660 -o firebird -g firebird
 	doins help/help.fdb
 
-	exeinto /usr/$(get_libdir)/firebird/intl
+	exeinto /usr/$(get_libdir)/${PN}/intl
 	doexe intl/libfbintl.so
 	dosym /usr/$(get_libdir)/${PN}/intl/libfbintl.so /usr/$(get_libdir)/${PN}/intl/fbintl.so
-	dosym /etc/firebird/fbintl.conf /usr/$(get_libdir)/${PN}/intl/fbintl.conf
+	insinto /usr/$(get_libdir)/${PN}/intl
+	insopts -m0644 -o root -g root
+	doins intl/fbintl.conf
 
 	# install plugins
 	exeinto /usr/$(get_libdir)/${PN}/plugins
@@ -161,7 +163,7 @@ src_install() {
 	doins plugins/udr_engine.conf
 
 	insinto /etc/${PN}
-	doins *.conf
+	doins {databases,fbtrace,firebird,plugins}.conf
 
 	#install secutity3.fdb
 	insopts -m0660 -o firebird -g firebird

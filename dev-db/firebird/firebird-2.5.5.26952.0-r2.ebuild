@@ -156,7 +156,8 @@ src_install() {
 	exeinto /usr/$(get_libdir)/${PN}/intl
 	doexe intl/libfbintl.so
 	dosym /usr/$(get_libdir)/${PN}/intl/libfbintl.so /usr/$(get_libdir)/${PN}/intl/fbintl.so
-	dosym /etc/firebird/fbintl.conf /usr/$(get_libdir)/${PN}/intl/fbintl.conf
+	insinto /usr/$(get_libdir)/${PN}/intl
+	doins ../install/misc/fbintl.conf
 
 	exeinto /usr/$(get_libdir)/${PN}/plugins
 	doexe plugins/libfbtrace.so
@@ -168,7 +169,7 @@ src_install() {
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
 	insinto /etc/${PN}
-	doins ../install/misc/*.conf
+	doins ../install/misc/{aliases,fbtrace,firebird}.conf
 	insopts -m0660 -o firebird -g firebird
 	doins security2.fdb
 	if use xinetd ; then
