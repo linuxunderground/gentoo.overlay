@@ -1,8 +1,8 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit eutils flag-o-matic
 
@@ -12,13 +12,9 @@ KEYWORDS="~amd64 ~x86"
 DESCRIPTION="Texas Instruments Home Computer Emulator"
 
 SRC_URI="http://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.gz
-	roms? ( http://www.linuxunderground.be/download/classic99.zip )"
-
-# Roms are no longer available in current classic99 releases (v374,...)
-#	roms? ( http://www.harmlesslion.com/zips/classic99.zip )"
+	roms? ( https://computerarchive.org/files/comp/files/Texas%20instruments%20ti-99/TIMRaD2.zip )"
 
 HOMEPAGE="http://www.mrousseau.org/programs/ti99sim/"
-# Classic99 http://www.harmlesslion.com/cgi-bin/showprog.cgi?search=Classic99 v374
 
 IUSE="+roms"
 
@@ -27,17 +23,16 @@ RDEPEND="media-libs/libsdl[sound,video]"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/rules_CFLAGS.patch
-	epatch "${FILESDIR}"/support-DATA_DIR.patch
-	epatch "${FILESDIR}"/ti99-install1.patch
-	epatch "${FILESDIR}"/ti99-install2.patch
-	epatch "${FILESDIR}"/ti99-install3.patch
+	eapply -p0 "${FILESDIR}"/rules_CFLAGS.patch
+	eapply -p0 "${FILESDIR}"/support-DATA_DIR.patch
+	eapply -p0 "${FILESDIR}"/ti99-install1.patch
+	eapply -p0 "${FILESDIR}"/ti99-install2.patch
+	eapply -p0 "${FILESDIR}"/ti99-install3.patch
 	sed -i -e 's:CFLAGS   \:= -g -O3:CFLAGS += -g:;s:ARCH:RESERVED:;s:Release:.:' rules.mak
+	eapply_user
 }
 
 src_configure() {
-#	append-cflags "-fsigned-char"
-#	append-cxxflags "-fsigned-char"
 	export DATA_DIR=/usr/share/ti99sim
 }
 
@@ -47,30 +42,32 @@ src_install() {
 	export DATA_DIR=${D}/usr/share/ti99sim
 
 	if use roms; then
-		ewarn "Classic99 is a Windows freeware. System ROMs and many cartridges"
-		ewarn "are INCLUDED in Classic99 under license from Texas Instruments."
+		einfo "System ROMs and cartridges come from TIMRaD2.zip,"
+		einfo "'the' TI-99/4A Modules, ROMs and Disks 'Zip' file."
 
-		cd "${S}"/../classic99/roms
-		# must be lowercase
-		mv 994AGROM.BIN 994agrom.bin
-		mv 994AROM.BIN 994arom.bin
-		mv SPCHROM.BIN spchrom.bin
-		mv DISK.BIN ti-disk.bin
-		#
+		mv ../ROMs/994AGROM.Bin 994agrom.bin
+		mv ../ROMs/994aROM.Bin 994arom.bin
+		mv ../ROMs/Disk.Bin ti-disk.bin
+		mv ../ROMs/SpchROM.Bin spchrom.bin
+		mv ../MODULES/CarWarsG.Bin .
+		mv ../MODULES/ParsecC.Bin .
+		mv ../MODULES/ParsecG.Bin .
+		mv ../MODULES/TI-InvaC.Bin .
+		mv ../MODULES/TI-InvaG.Bin .
+		mv ../MODULES/V-ChessC.Bin .
+		mv ../MODULES/V-ChessG.Bin .
+
 		"${S}"/src/util/convert-ctg 994a.bin
 		"${S}"/src/util/convert-ctg --cru=1100 ti-disk.bin
-		"${S}"/src/util/convert-ctg V-CHESSG.BIN
+		"${S}"/src/util/convert-ctg V-ChessG.Bin
 		"${S}"/src/util/convert-ctg CarWarsG.Bin
-		"${S}"/src/util/convert-ctg PARSECG.BIN
+		"${S}"/src/util/convert-ctg TI-InvaG.Bin
+		"${S}"/src/util/convert-ctg ParsecG.Bin
 		insinto /usr/share/ti99sim/roms/
-		doins TI-994A.ctg
-		doins ti-disk.ctg
+		doins {TI-994A,ti-disk}.ctg
 		doins spchrom.bin
 		insinto /usr/share/ti99sim/cartridges/
-		doins V-CHESSG.ctg
-		doins CarWarsG.ctg
-		doins PARSECG.ctg
-		cd "${S}"
+		doins {CarWarsG,ParsecG,TI-InvaG,V-ChessG}.ctg
 	else
 		ewarn "In order to run the emulator, you need to create a cartridge"
 		ewarn "that contains the console ROM & GROMs from the TI-99/4A."

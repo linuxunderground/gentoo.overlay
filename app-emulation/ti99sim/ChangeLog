@@ -2,13 +2,19 @@
 # Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # $Id$
 
-*ti99sim-0.13.0 (10 Mar 2016)
+*ti99sim-0.13.0 (03 Apr 2016)
+
+  03 Apr 2016; Vincent Hardy <vincent.hardy.be@gmail.com>:
+  Using TIMRaD2.zip for system ROMs and cartridges
 
   10 Mar 2016; Vincent Hardy <vincent.hardy.be@gmail.com>:
   EAPI=6
   Version bump
 
-*ti99sim-0.12.1 (05 May 2015)
+*ti99sim-0.12.1 (03 Apr 2016)
+
+  03 Apr 2016; Vincent Hardy <vincent.hardy.be@gmail.com>:
+  Using TIMRaD2.zip for system ROMs and cartridges
 
   05 May 2015; Vincent Hardy <vincent.hardy.be@gmail.com>:
   Tested on BeagleBone Black and add ~arm KEYWORDS.
@@ -16,7 +22,10 @@
   02 May 2015; Vincent Hardy <vincent.hardy.be@gmail.com>:
   Version bump
 
-*ti99sim-0.0.11 (21 Sep 2013)
+*ti99sim-0.0.11 (03 apr 2016)
+
+  03 Apr 2016; Vincent Hardy <vincent.hardy.be@gmail.com>:
+  Using TIMRaD2.zip for system ROMs and cartridges
 
   21 Sep 2013; Vincent Hardy <vincent.hardy.be@gmail.com>:
   Initial import of ti99sim.
