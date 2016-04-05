@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=BoulderDash
-Comment=game with ZX Spectrum/Commodore 64 graphics and levels
-Exec=BoulderDash -c
-Icon=/usr/share/pixmaps/bd_icon.xpm
-Terminal=false
-Type=Application
-Categories=Game;ArcadeGame;
