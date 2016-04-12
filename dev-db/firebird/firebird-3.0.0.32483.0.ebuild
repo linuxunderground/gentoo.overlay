@@ -6,8 +6,8 @@ EAPI=6
 
 inherit autotools eutils flag-o-matic multilib user versionator
 
-#MY_P=${PN/f/F}-$(replace_version_separator 4 -)
-MY_P=${PN/f/F}-${PV/_rc/-ReleaseCandidate}
+MY_P=${PN/f/F}-$(replace_version_separator 4 -)
+#MY_P=${PN/f/F}-${PV/_rc/-ReleaseCandidate}
 
 DESCRIPTION="A relational database offering many ANSI SQL:2003 and some SQL:2008 features"
 HOMEPAGE="http://www.firebirdsql.org/"
@@ -17,7 +17,7 @@ LICENSE="IDPL Interbase-1.0"
 SLOT="0"
 
 #Very experimental - work in progress
-#KEYWORDS=""
+#KEYWORDS="~x86"
 
 IUSE="client doc examples xinetd"
 
@@ -66,7 +66,7 @@ src_prepare() {
 
 	sed -i -e 's|-ggdb ||g' \
 			-e 's|-pipe ||g' \
-			-e 's|$(COMMON_FLAGS) $(OPTIMIZE_FLAGS)|$(COMMON_FLAGS) -fno-omit-frame-pointer|g' \
+			-e 's|$(COMMON_FLAGS) $(OPTIMIZE_FLAGS)|$(COMMON_FLAGS)|g' \
 			builds/posix/prefix.linux* || die
 
 	sed -i -e "s|\$(this)|/usr/$(get_libdir)/firebird/intl|g" \
@@ -80,7 +80,7 @@ src_prepare() {
 }
 
 src_configure() {
-	filter-flags -fomit-frame-pointer -fprefetch-loop-arrays
+	filter-flags -fprefetch-loop-arrays
 
 	econf \
 		--prefix=/usr/$(get_libdir)/firebird \
@@ -196,8 +196,8 @@ src_install() {
 		doins empbuild/employee.fdb
 	fi
 
-	ewarn "Starting with version 3, server mode is set in firebird.conf"
-	ewarn "Currently set to default : superserver"
+	einfo "Starting with version 3, server mode is set in firebird.conf"
+	einfo "Currently set to default : superserver"
 	einfo "If you're using UDFs, please remember to move them"
 	einfo "to /usr/lib/firebird/UDF"
 }
