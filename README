@@ -8,5 +8,8 @@ Ebuilds with ~arm KEYWORDS have been compiled and tested on a BeagleBone Black.
 
 If you have any comments, please let me know.
 
+app-emulation/ti99sim :
+http://www.linuxunderground.be/en/ti99-dev-notes.html
+
 See also :
 http://www.linuxunderground.be/en/linuxunderground-overlay.html
