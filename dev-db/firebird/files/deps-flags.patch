@@ -1,6 +1,6 @@
-diff -Naur Firebird-3.0.0.31896-Beta2_orig/builds/posix/make.defaults Firebird-3.0.0.31896-Beta2/builds/posix/make.defaults
---- Firebird-3.0.0.31896-Beta2_orig/builds/posix/make.defaults	2015-08-03 13:39:45.859127731 -0400
-+++ Firebird-3.0.0.31896-Beta2/builds/posix/make.defaults	2015-08-03 13:45:55.260709815 -0400
+diff -ur Firebird-3.0.0.32483-0-a/builds/posix/make.defaults Firebird-3.0.0.32483-0-b/builds/posix/make.defaults
+--- Firebird-3.0.0.32483-0-a/builds/posix/make.defaults	2016-04-14 16:07:29.000000000 +0200
++++ Firebird-3.0.0.32483-0-b/builds/posix/make.defaults	2016-04-21 17:49:17.504723178 +0200
 @@ -154,7 +154,7 @@
  AR=			ar @AR_OPTIONS@
  LN=			@LN_S@
@@ -10,10 +10,10 @@ diff -Naur Firebird-3.0.0.31896-Beta2_orig/builds/posix/make.defaults Firebird-3
  CLOOP=$(GEN_ROOT)/$(TARGET)/cloop/release/bin/cloop
  
  CC =	@CC@
-diff -Naur Firebird-3.0.0.31896-Beta2_orig/builds/posix/Makefile.in Firebird-3.0.0.31896-Beta2/builds/posix/Makefile.in
---- Firebird-3.0.0.31896-Beta2_orig/builds/posix/Makefile.in	2015-08-03 13:39:45.859127731 -0400
-+++ Firebird-3.0.0.31896-Beta2/builds/posix/Makefile.in	2015-08-03 14:05:26.442316118 -0400
-@@ -99,9 +99,7 @@
+diff -ur Firebird-3.0.0.32483-0-a/builds/posix/Makefile.in Firebird-3.0.0.32483-0-b/builds/posix/Makefile.in
+--- Firebird-3.0.0.32483-0-a/builds/posix/Makefile.in	2016-04-14 16:07:29.000000000 +0200
++++ Firebird-3.0.0.32483-0-b/builds/posix/Makefile.in	2016-04-21 17:50:08.468844658 +0200
+@@ -122,9 +122,7 @@
  # build external software
  #
  

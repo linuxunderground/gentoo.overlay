@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit autotools eutils flag-o-matic multilib user versionator
+inherit eutils flag-o-matic multilib user versionator
 
 MY_P=${PN/f/F}-$(replace_version_separator 4 -)
 #MY_P=${PN/f/F}-${PV/_rc/-ReleaseCandidate}
@@ -17,7 +17,7 @@ LICENSE="IDPL Interbase-1.0"
 SLOT="0"
 
 #Very experimental - work in progress
-#KEYWORDS="~x86"
+KEYWORDS="~x86"
 
 IUSE="client doc examples xinetd"
 
@@ -26,8 +26,7 @@ CDEPEND="
 	dev-libs/libedit
 	dev-libs/icu:="
 
-DEPEND="${CDEPEND}
-	>=dev-util/btyacc-3.0-r2"
+DEPEND="${CDEPEND}"
 
 RDEPEND="${CDEPEND}
 	xinetd? ( virtual/inetd )
@@ -49,7 +48,14 @@ check_sed() {
 }
 
 src_prepare() {
-	eapply "${FILESDIR}"/deps-flags.patch
+	if [[ -e /var/run/${PN}/${PN}.pid ]] ; then
+		ewarn
+		ewarn "The presence of server connections may prevent isql or gsec"
+		ewarn "from establishing an embedded connection. Accordingly,"
+		ewarn "creating employee.fdb or security3.fdb could fail."
+		ewarn "It is more secure to stop firebird daemon before running emerge."
+		ewarn
+	fi
 
 	eapply_user
 
@@ -74,35 +80,37 @@ src_prepare() {
 	sed -i -e "s|\$(this)|/usr/$(get_libdir)/firebird/plugins|g" \
 			src/plugins/udr_engine/udr_engine.conf
 
-	rm -rf "${S}"/extern || die
-
-	eautoreconf
+	# Building and using embedded btyacc avoids running eautoreconf
+	# eapply "${FILESDIR}"/deps-flags.patch
+	# rm -rf "${S}"/extern || die
+	# eautoreconf
 }
 
 src_configure() {
 	filter-flags -fprefetch-loop-arrays
 
+	# Do not use $(get_libdir) in econf
 	econf \
-		--prefix=/usr/$(get_libdir)/firebird \
+		--prefix=/usr/lib/${PN} \
 		--with-editline \
 		--with-system-editline \
 		--with-fbbin=/usr/bin \
 		--with-fbsbin=/usr/sbin \
 		--with-fbconf=/etc/${PN} \
-		--with-fblib=/usr/$(get_libdir) \
+		--with-fblib=/usr/lib \
 		--with-fbinclude=/usr/include \
 		--with-fbdoc=/usr/share/doc/${P} \
-		--with-fbudf=/usr/$(get_libdir)/${PN}/UDF \
+		--with-fbudf=/usr/lib/${PN}/UDF \
 		--with-fbsample=/usr/share/${PN}/examples \
 		--with-fbsample-db=/usr/share/${PN}/examples/empbuild \
 		--with-fbhelp=/usr/share/${PN}/help \
-		--with-fbintl=/usr/$(get_libdir)/${PN}/intl \
+		--with-fbintl=/usr/lib/${PN}/intl \
 		--with-fbmisc=/usr/share/${PN}/misc \
 		--with-fbsecure-db=/etc/${PN} \
 		--with-fbmsg=/usr/share/${PN}/msg \
 		--with-fblog=/var/log/${PN} \
 		--with-fbglock=/var/run/${PN} \
-		--with-fbplugins=/usr/$(get_libdir)/${PN}/plugins \
+		--with-fbplugins=/usr/lib/${PN}/plugins \
 		--with-gnu-ld
 }
 
@@ -165,7 +173,7 @@ src_install() {
 	insinto /etc/${PN}
 	doins {databases,fbtrace,firebird,plugins}.conf
 
-	#install secutity3.fdb
+	# install secutity3.fdb
 	insopts -m0660 -o firebird -g firebird
 	doins security3.fdb
 
