@@ -1,15 +1,15 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
-inherit eutils games flag-o-matic
+inherit eutils flag-o-matic
 
 if [[ ${PV} == "9999" ]]; then
 	EGIT_REPO_URI="git://github.com/Peanhua/${PN}.git
 		https://github.com/Peanhua/${PN}.git"
-	inherit git-2 autotools
+	inherit git-r3 autotools
 	SRC_URI=""
 else
 	SRC_URI="http://www.netikka.net/joyr/diamond_girl/${P}.tar.xz"
@@ -40,6 +40,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_prepare() {
+	eapply_user
 	if [[ ${PV} == "9999" ]]; then
 		eautoreconf
 	fi
@@ -49,7 +50,7 @@ src_prepare() {
 src_configure() {
 	append-cflags "-DNDEBUG"
 	append-cxxflags "-DNDEBUG"
-	egamesconf --without-lua
+	econf --without-lua
 }
 
 src_install() {
@@ -66,11 +67,11 @@ src_install() {
 
 	# CREDITS and Welcome.txt files are necessary in
 	# /usr/share/games/diamond_girl
-	rm "${D}${GAMES_DATADIR}"/diamond-girl/Changelog
-	rm "${D}${GAMES_DATADIR}"/diamond-girl/LIC*
-	rm "${D}${GAMES_DATADIR}"/diamond-girl/READM*
-	rm -r "${D}${GAMES_DATADIR}"/pixmaps
-	rm -r "${D}${GAMES_DATADIR}"/applications
+	rm "${D}${DATADIR}"/diamond-girl/Changelog
+	rm "${D}${DATADIR}"/diamond-girl/LIC*
+	rm "${D}${DATADIR}"/diamond-girl/READM*
+	rm -r "${D}${DATADIR}"/pixmaps
+	rm -r "${D}${DATADIR}"/applications
 
 	prepgamesdirs
 }

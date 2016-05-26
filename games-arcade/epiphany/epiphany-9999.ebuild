@@ -1,12 +1,12 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 WANT_AUTOMAKE="1.10"
 
-inherit autotools eutils games
+inherit autotools eutils
 
 if [[ ${PV} == "9999" ]]; then
 	inherit cvs
@@ -33,11 +33,12 @@ IUSE=""
 
 src_prepare() {
 	if [[ ${PV} == "9999" ]]; then
-		epatch "${FILESDIR}"/gcc-optimization-"${PV}".patch
+		eapply "${FILESDIR}"/gcc-optimization-"${PV}".patch
 		eautoreconf
 	else
-		epatch "${FILESDIR}"/gcc-optimization.patch
+		eapply "${FILESDIR}"/gcc-optimization.patch
 	fi
+	eapply_user
 }
 
 src_install() {
