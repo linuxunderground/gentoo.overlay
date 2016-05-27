@@ -56,9 +56,6 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	domenu diamond-girl.desktop
-	doicon themes/default/gfx/diamond-girl.png
-
 	dodoc CREDITS
 	dodoc Changelog
 	dodoc README
@@ -66,12 +63,9 @@ src_install() {
 	dodoc README.translations
 
 	# CREDITS and Welcome.txt files are necessary in
-	# /usr/share/games/diamond_girl
-	rm "${D}${DATADIR}"/diamond-girl/Changelog
-	rm "${D}${DATADIR}"/diamond-girl/LIC*
-	rm "${D}${DATADIR}"/diamond-girl/READM*
-	rm -r "${D}${DATADIR}"/pixmaps
-	rm -r "${D}${DATADIR}"/applications
-
-	prepgamesdirs
+	# /usr/share/diamond_girl
+	local datadir=/usr/share/${PN}
+	rm "${D}${datadir}"/Changelog
+	rm "${D}${datadir}"/LIC*
+	rm "${D}${datadir}"/READM*
 }
