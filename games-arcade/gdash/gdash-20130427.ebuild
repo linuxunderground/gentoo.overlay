@@ -35,6 +35,4 @@ src_install() {
 
 	rm -r "${D}${GAMES_DATADIR}"/pixmaps
 	rm -r "${D}${GAMES_DATADIR}"/applications
-
-	prepgamesdirs
 }

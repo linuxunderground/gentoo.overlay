@@ -32,13 +32,13 @@ DEPEND="${RDEPEND}"
 IUSE=""
 
 src_prepare() {
+	eapply_user
 	if [[ ${PV} == "9999" ]]; then
 		eapply "${FILESDIR}"/gcc-optimization-"${PV}".patch
 		eautoreconf
 	else
 		eapply "${FILESDIR}"/gcc-optimization.patch
 	fi
-	eapply_user
 }
 
 src_install() {
@@ -52,6 +52,4 @@ src_install() {
 	dodoc Tech
 	dodoc TODO
 	dodoc README
-
-	prepgamesdirs
 }
