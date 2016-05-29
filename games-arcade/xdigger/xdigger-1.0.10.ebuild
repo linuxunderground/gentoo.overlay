@@ -1,10 +1,10 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
-inherit eutils games
+inherit eutils
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -22,27 +22,28 @@ DEPEND="${RDEPEND}
 IUSE=""
 
 src_prepare() {
+	eapply_user
 	# http://patch-tracker.debian.org/patch/series/dl/xdigger/1.0.10-13+lenny1/buffers
-	epatch "${FILESDIR}"/buffers
+	eapply "${FILESDIR}"/buffers
 	# http://patch-tracker.debian.org/patch/series/dl/xdigger/1.0.10-13+lenny1/start-level-on-move
-	epatch "${FILESDIR}"/start-level-on-move
+	eapply "${FILESDIR}"/start-level-on-move
 	#
-	epatch "${FILESDIR}"/QA-Notice
+	eapply "${FILESDIR}"/QA-Notice
 }
 
 src_configure() {
 	# must be hardcoded 
 	sed -i \
-			-e '/XDIGGER_LIB_DIR/s:/usr/lib/X11:/usr/share/games:' \
+			-e '/XDIGGER_LIB_DIR/s:/usr/lib/X11:/usr/share:' \
 			-e '/XDIGGER_HISCORE_DIR/s:/var/X11R6:/var/games:' \
 			configure.h
 	sed -i \
-			-e 's:/usr/lib/X11:/usr/share/games:' \
+			-e 's:/usr/lib/X11:/usr/share:' \
 			-e 's:/var/X11R6:/var/games:' \
 			xdigger.man
 	#
 	sed -i \
-			-e "/BINDIR/s:/usr/bin/X11:${GAMES_BINDIR}:" \
+			-e "/BINDIR/s:/usr/bin/X11:/usr/bin:" \
 			-e '/ICONDIR/s:/usr/include/X11:/usr/share:' \
 			-e 's:XDIGGER_HISCORE_DIR:${D}XDIGGER_HISCORE_DIR:' \
 			Imakefile
@@ -55,6 +56,4 @@ src_install() {
 
 	dodoc README
 	domenu "${FILESDIR}"/${PN}.desktop
-
-	prepgamesdirs
 }
