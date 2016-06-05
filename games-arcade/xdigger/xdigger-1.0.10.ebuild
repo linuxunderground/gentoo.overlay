@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit eutils
+inherit eutils user
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -21,6 +21,10 @@ DEPEND="${RDEPEND}
 
 IUSE=""
 
+pkg_setup() {
+	enewgroup gamestat 36
+}
+
 src_prepare() {
 	eapply_user
 	# http://patch-tracker.debian.org/patch/series/dl/xdigger/1.0.10-13+lenny1/buffers
@@ -34,18 +38,18 @@ src_prepare() {
 src_configure() {
 	# must be hardcoded 
 	sed -i \
-			-e '/XDIGGER_LIB_DIR/s:/usr/lib/X11:/usr/share:' \
-			-e '/XDIGGER_HISCORE_DIR/s:/var/X11R6:/var/games:' \
+			-e '/XDIGGER_LIB_DIR/s:lib/X11:share:' \
+			-e '/XDIGGER_HISCORE_DIR/s:X11R6/scores:games:' \
 			configure.h
 	sed -i \
-			-e 's:/usr/lib/X11:/usr/share:' \
-			-e 's:/var/X11R6:/var/games:' \
+			-e 's:lib/X11:share:' \
+			-e 's:X11R6/scores:games:' \
 			xdigger.man
 	#
 	sed -i \
-			-e "/BINDIR/s:/usr/bin/X11:/usr/bin:" \
-			-e '/ICONDIR/s:/usr/include/X11:/usr/share:' \
-			-e 's:XDIGGER_HISCORE_DIR:${D}XDIGGER_HISCORE_DIR:' \
+			-e "/BINDIR/s:bin/X11:bin:" \
+			-e '/ICONDIR/s:include/X11:share:' \
+			-e 's:XDIGGER_HISCORE_DIR:${D}&:' \
 			Imakefile
 	xmkmf
 }
@@ -53,6 +57,10 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	emake DESTDIR="${D}" install.man || die "emake install.man failed"
+
+	fowners root:gamestat /var/games/xdigger.hiscore /usr/bin/xdigger
+	fperms 660 /var/games/xdigger.hiscore
+	fperms 2755 /usr/bin/xdigger
 
 	dodoc README
 	domenu "${FILESDIR}"/${PN}.desktop
