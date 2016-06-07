@@ -16,8 +16,7 @@ SRC_URI="mirror://sourceforge/firebird/${MY_P}.tar.bz2"
 LICENSE="IDPL Interbase-1.0"
 SLOT="0"
 
-#Very experimental - work in progress
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 
 IUSE="client doc examples xinetd"
 
