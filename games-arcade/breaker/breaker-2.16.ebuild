@@ -1,10 +1,10 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
-inherit eutils games
+inherit eutils
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -22,17 +22,18 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}/breaker3264
 
 src_prepare() {
-	epatch "${FILESDIR}/${PV}/0001-install.patch"
-	epatch "${FILESDIR}/${PV}/0002-dot_breaker_dir.patch"
+	eapply_user
+	eapply "${FILESDIR}/${PV}/0001-install.patch"
+	eapply "${FILESDIR}/${PV}/0002-dot_breaker_dir.patch"
 	export PREFIX="/usr"
-	export BINDIR="${GAMES_BINDIR}"
-	export DATADIR="${GAMES_DATADIR}/breaker"
+	export BINDIR="/usr/bin"
+	export DATADIR="/usr/share/breaker"
 }
 
 src_install() {
 	export PREFIX="${D}/usr"
-	export BINDIR="${D}${GAMES_BINDIR}"
-	export DATADIR="${D}${GAMES_DATADIR}/breaker"
+	export BINDIR="${D}$/usr/bin"
+	export DATADIR="${D}/usr/share/breaker"
 
 	emake DESTDIR="${D}" install || die "emake install failed"
 
@@ -40,6 +41,4 @@ src_install() {
 	if has ${LINGUAS} fr fr_FR; then
 		newdoc _LISEZMOI.txt LISEZMOI.TXT
 	fi
-
-	prepgamesdirs
 }
