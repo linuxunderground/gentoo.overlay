@@ -13,7 +13,7 @@ if [[ ${PV} == "9999" ]]; then
 	SRC_URI=""
 else
 	SRC_URI="http://www.netikka.net/joyr/diamond_girl/${P}.tar.xz"
-	KEYWORDS="~amd64 ~x86 ~arm"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 SLOT="0"
