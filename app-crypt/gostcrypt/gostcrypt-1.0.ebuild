@@ -12,7 +12,7 @@ DESCRIPTION="Free open-source disk encryption software"
 HOMEPAGE="http://www.gostcrypt.org"
 SRC_URI="http://www.gostcrypt.org/download/${PV}/linux/${MY_P}.tar.gz"
 
-LICENSE="truecrypt-3.0"
+LICENSE="HPND"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="X"

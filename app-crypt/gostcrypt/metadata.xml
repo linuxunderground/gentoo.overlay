@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
+	<maintainer type="person">
 		<email>vincent.hardy.be@gmail.com</email>
 		<name>Vincent Hardy</name>
 	</maintainer>
 	<longdescription>
-		Free open-source disk encryption software forked
-		from <pkg>app-crypt/truecrypt</pkg>
+		Free open-source disk encryption software
 	</longdescription>
 </pkgmetadata>
