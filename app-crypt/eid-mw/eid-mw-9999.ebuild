@@ -72,6 +72,7 @@ src_prepare() {
 src_configure() {
 	econf \
 		$(use_enable dialogs) \
+		$(use_enable p11-kit) \
 		--with-gnu-ld \
 		--disable-static \
 		--disable-signed
@@ -96,5 +97,5 @@ src_install() {
 
 pkg_postinst()
 {
-	glib-compile-schemas /usr/share/glib-2.0/schemas/
+	use gtk && glib-compile-schemas /usr/share/glib-2.0/schemas/
 }
