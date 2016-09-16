@@ -72,7 +72,7 @@ src_prepare() {
 src_configure() {
 	econf \
 		$(use_enable dialogs) \
-		$(use_enable p11-kit) \
+		$(use_enable p11-kit p11kit) \
 		--with-gnu-ld \
 		--disable-static \
 		--disable-signed
