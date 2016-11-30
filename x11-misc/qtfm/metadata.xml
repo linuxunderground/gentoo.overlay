@@ -9,4 +9,8 @@
 	<email>desktop-misc@gentoo.org</email>
 	<name>Gentoo Desktop Miscellaneous Project</name>
 </maintainer>
+<maintainer type="person">
+	<email>vincent.hardy.be@gmail.com</email>
+	<name>Vincent Hardy</name>
+</maintainer>
 </pkgmetadata>

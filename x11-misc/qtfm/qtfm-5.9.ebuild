@@ -15,6 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+LANGS="da de es fr it pl ru sr sv zh zh_TW"
+for l in ${LANGS}; do
+	IUSE="${IUSE} linguas_${l}"
+done
+
 # file is for LIBS += -lmagic
 RDEPEND="sys-apps/file
 	dev-qt/qtcore:5
@@ -29,13 +34,25 @@ src_prepare() {
 	sed -i \
 		-e "/^docs.path/s:qtfm:${PF}:" \
 		-e '/^docs.files/s: COPYING::' \
-		${PN}.desktop || die
+		-e '/^trans.path/s:$:/translations:'\
+		${PN}.pro || die
 	sed -i \
 		-e '/MimeType=/s|$|;|' \
 		-e '/Categories=/s|$|;System;FileTools;|' \
 		${PN}.desktop || die
+	sed -i \
+		-e 's:/usr/share/qtfm/qtfm_:/usr/share/qtfm/translations/qtfm_:' \
+		src/main.cpp || die
 
-	default
+	# Drop langs only if LINGUAS is not empty
+	if [[ -n ${LINGUAS} ]]; then
+		for l in ${LANGS}; do
+			use linguas_${l} && \
+				( $(qt5_get_bindir)/lrelease translations/qtfm_${l}.ts || die )
+		done
+	fi
+
+	eapply_user
 }
 
 src_configure() {
