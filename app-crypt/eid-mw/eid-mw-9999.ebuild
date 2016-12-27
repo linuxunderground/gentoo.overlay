@@ -85,11 +85,11 @@ src_install() {
 		declare MOZILLA_FIVE_HOME
 		if has_version '>=www-client/firefox-3.6.20'; then
 			MOZILLA_FIVE_HOME="/usr/$(get_libdir)/firefox"
-			xpi_install "${D}/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/belgiumeid@eid.belgium.be"
+			xpi_install "${D}/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/belgiumeid@eid.belgium.be"
 		fi
 		if has_version '>=www-client/firefox-bin-3.6.24'; then
 			MOZILLA_FIVE_HOME="/opt/firefox"
-			xpi_install "${D}/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/belgiumeid@eid.belgium.be"
+			xpi_install "${D}/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/belgiumeid@eid.belgium.be"
 		fi
 	fi
 	rm -r "${D}/usr/share/mozilla" "${D}"/usr/$(get_libdir)/*.la || die
