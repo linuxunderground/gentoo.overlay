@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,7 +22,7 @@ RDEPEND="mixer? ( media-libs/sdl-mixer[vorbis] )
 	media-libs/sdl-gfx
 	media-libs/sdl-image[png]
 	media-libs/lib3ds
-	>=media-libs/glew-1.6.0-r1
+	>=media-libs/glew-1.6.0-r1:=
 	media-libs/openal"
 
 DEPEND="${RDEPEND}
