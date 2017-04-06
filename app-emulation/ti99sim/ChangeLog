@@ -1,6 +1,11 @@
 # ChangeLog for app-emulation/ti99sim
-# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
-# $Id$
+# Copyright 1999-2017 Gentoo Foundation; Distributed under the GPL v2
+
+*ti99sim-0.15.0 (06 apr 2017)
+
+  06 Apr 2017; Vincent Hardy <vincent.hardy.be@gmail.com>:
+  Version bump
+  Do not install cf7+ (does not work properly)
 
 *ti99sim-0.14.0 (09 jul 2016)
 
