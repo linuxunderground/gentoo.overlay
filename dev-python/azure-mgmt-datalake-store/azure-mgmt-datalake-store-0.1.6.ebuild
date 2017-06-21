@@ -7,9 +7,9 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
 inherit distutils-r1
 
-DESCRIPTION="Microsoft Azure Data Lake Analytics Management Client Library for Python"
-HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-datalake-analytics"
-SRC_URI="mirror://pypi/a/azure-mgmt-datalake-analytics/${P}.zip"
+DESCRIPTION="Microsoft Azure Data Lake Store Management Client Library for Python"
+HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-datalake-store"
+SRC_URI="mirror://pypi/a/azure-mgmt-datalake-store/${P}.zip"
 
 KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
