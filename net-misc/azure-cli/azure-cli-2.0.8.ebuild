@@ -15,8 +15,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-# azure-cli-nspkg includes the following dependencies :
-
+# https://pypi.python.org/pypi/azure
 AZUREDEPEND="dev-python/azure-storage[${PYTHON_USEDEP}]
 	dev-python/azure-servicemanagement-legacy[${PYTHON_USEDEP}]
 	dev-python/azure-servicefabric[${PYTHON_USEDEP}]
@@ -26,43 +25,31 @@ AZUREDEPEND="dev-python/azure-storage[${PYTHON_USEDEP}]
 	dev-python/azure-datalake-store[${PYTHON_USEDEP}]
 	dev-python/azure-batch[${PYTHON_USEDEP}]"
 
+# https://pypi.python.org/pypi/azure-mgmt
 AZUREMGMTDEPEND="dev-python/azure-mgmt-web[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-trafficmanager[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-storage[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-sql[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-scheduler[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-resource[${PYTHON_USEDEP}]
-
+	dev-python/azure-mgmt-redis[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-rdbms[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-network[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-monitor[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-logic[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-keyvault[${PYTHON_USEDEP}]
-
+	dev-python/azure-mgmt-iothub[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-documentdb[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-dns[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-devtestlabs[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-datalake-store[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-datalake-analytics[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-containerregistry[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-compute[${PYTHON_USEDEP}]
-"
-# TODO
-#azure-mgmt-web
-#azure-mgmt-trafficmanager
-#azure-mgmt-storage
-#azure-mgmt-sql
-#azure-mgmt-scheduler
-#azure-mgmt-resource
-#azure-mgmt-redis
-#azure-mgmt-rdbms
-#azure-mgmt-network
-#azure-mgmt-monitor
-#azure-mgmt-logic
-#azure-mgmt-keyvault
-#azure-mgmt-iothub
-#azure-mgmt-documentdb
-#azure-mgmt-dns
-#azure-mgmt-devtestlabs
-#azure-mgmt-datalake-store
-#azure-mgmt-datalake-analytics
-#azure-mgmt-containerregistry
-#azure-mgmt-compute
-#azure-mgmt-cognitiveservices
-#azure-mgmt-cdn
-#azure-mgmt-batch
-#azure-mgmt-authorization
+	dev-python/azure-mgmt-cognitiveservices[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-cdn[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-batch[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-authorization[${PYTHON_USEDEP}]"
 
 RDEPEND="${AZUREDEPEND}
 	${AZUREMGMTDEPEND}
