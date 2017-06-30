@@ -54,6 +54,8 @@ AZUREMGMTDEPEND="dev-python/azure-mgmt-web[${PYTHON_USEDEP}]
 RDEPEND="${AZUREDEPEND}
 	${AZUREMGMTDEPEND}
 	dev-python/azure-cli-vm[${PYTHON_USEDEP}]
+	dev-python/azure-cli-storage[${PYTHON_USEDEP}]
+	dev-python/azure-cli-sql[${PYTHON_USEDEP}]
 	dev-python/azure-cli-profile[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	dev-python/azure-cli-configure[${PYTHON_USEDEP}]
