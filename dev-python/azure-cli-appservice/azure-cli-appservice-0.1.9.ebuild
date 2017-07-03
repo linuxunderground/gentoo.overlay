@@ -33,7 +33,7 @@ python_install() {
 
 	# The proper __init__.py is provided by net-misc/azure-cli
 	rm "${D%/}${PYTHON_SITEDIR}/azure/__init__.py" || die
-	# The proper __init__.py is provided by dev-python/azure-cli-nspkg.txt
+	# The proper __init__.py is provided by dev-python/azure-cli-nspkg
 	rm "${D%/}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
 	# The proper __init__.py is provided by dev-python/azure-cli-command-modules-nspkg
 	rm "${D%/}${PYTHON_SITEDIR}/azure/cli/command_modules/__init__.py" || die
