@@ -20,7 +20,8 @@ RDEPEND="dev-python/xmltodict[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.18[${PYTHON_USEDEP}]
 	dev-python/pyopenssl[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-web[${PYTHON_USEDEP}]
-	dev-python/azure-cli-core[${PYTHON_USEDEP}]"
+	dev-python/azure-cli-core[${PYTHON_USEDEP}]
+	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
@@ -28,10 +29,12 @@ DEPEND="${RDEPEND}
 python_install() {
 	distutils-r1_python_install
 
-	# avoiding file collision with net-misc/azure-cli
-
 	python_export PYTHON_SITEDIR
+
+	# The proper __init__.py is provided by net-misc/azure-cli
 	rm "${D%/}${PYTHON_SITEDIR}/azure/__init__.py" || die
+	# The proper __init__.py is provided by dev-python/azure-cli-nspkg.txt
 	rm "${D%/}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
+	# The proper __init__.py is provided by dev-python/azure-cli-command-modules-nspkg
 	rm "${D%/}${PYTHON_SITEDIR}/azure/cli/command_modules/__init__.py" || die
 }
