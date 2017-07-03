@@ -26,6 +26,7 @@ RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
 	dev-python/humanfriendly[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
+	dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
 	>=dev-python/argcomplete-1.8.0[${PYTHON_USEDEP}]
 	dev-python/applicationinsights[${PYTHON_USEDEP}]
 	dev-python/adal[${PYTHON_USEDEP}]"
@@ -36,9 +37,10 @@ DEPEND="${RDEPEND}
 python_install() {
 	distutils-r1_python_install
 
-	# avoiding file collision with net-misc/azure-cli and
-
 	python_export PYTHON_SITEDIR
+
+	# The proper __init__.py is provided by net-misc/azure-cli
 	rm "${D%/}${PYTHON_SITEDIR}/azure/__init__.py" || die
+	# The proper __init__.py is provided by dev-python/azure-cli-nspkg
 	rm "${D%/}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
 }
