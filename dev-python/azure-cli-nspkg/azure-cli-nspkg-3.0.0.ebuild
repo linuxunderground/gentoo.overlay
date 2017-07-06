@@ -48,6 +48,7 @@ AZUREMGMTDEPEND="dev-python/azure-mgmt-web[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-compute[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-cognitiveservices[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-cdn[${PYTHON_USEDEP}]
+	dev-python/azure-mgmt-billing[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-batch[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-authorization[${PYTHON_USEDEP}]"
 
