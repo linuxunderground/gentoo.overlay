@@ -18,14 +18,21 @@ SLOT="0"
 RDEPEND="dev-python/azure-cli-vm[${PYTHON_USEDEP}]
 	dev-python/azure-cli-storage[${PYTHON_USEDEP}]
 	dev-python/azure-cli-sql[${PYTHON_USEDEP}]
+	dev-python/azure-cli-role[${PYTHON_USEDEP}]
+	dev-python/azure-cli-resource[${PYTHON_USEDEP}]
 	dev-python/azure-cli-profile[${PYTHON_USEDEP}]
 	dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
 	dev-python/azure-cli-network[${PYTHON_USEDEP}]
+	dev-python/azure-cli-keyvault[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	dev-python/azure-cli-configure[${PYTHON_USEDEP}]
 	dev-python/azure-cli-component[${PYTHON_USEDEP}]
 	dev-python/azure-cli-cloud[${PYTHON_USEDEP}]
-	dev-python/azure-cli-appservice[${PYTHON_USEDEP}]"
+	dev-python/azure-cli-billing[${PYTHON_USEDEP}]
+	dev-python/azure-cli-batch[${PYTHON_USEDEP}]
+	dev-python/azure-cli-appservice[${PYTHON_USEDEP}]
+	dev-python/azure-cli-acs[${PYTHON_USEDEP}]
+	dev-python/azure-cli-acr[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
