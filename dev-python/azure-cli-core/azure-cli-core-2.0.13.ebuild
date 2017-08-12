@@ -17,23 +17,24 @@ SLOT="0"
 
 IUSE="vanilla"
 
-# https://github.com/Azure/azure-cli/blob/master/requirements.txt
-RDEPEND=">=dev-python/vcrpy-1.10.3[${PYTHON_USEDEP}]
-	dev-python/tabulate[${PYTHON_USEDEP}]
-	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.9.1[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-3.11[${PYTHON_USEDEP}]
+RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-16.2[${PYTHON_USEDEP}]
-	>=dev-python/pylint-1.7.1[${PYTHON_USEDEP}]
-	>=dev-python/pygments-2.1.3[${PYTHON_USEDEP}]
-	>=dev-python/paramiko-2.0.2[${PYTHON_USEDEP}]
+	dev-python/pyjwt[${PYTHON_USEDEP}]
+	dev-python/pygments[${PYTHON_USEDEP}]
+	dev-python/paramiko[${PYTHON_USEDEP}]
+	>=dev-python/msrestazure-0.4.7[${PYTHON_USEDEP}]
+	>=dev-python/msrest-0.4.4[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
-	>=dev-python/humanfriendly-2.4[${PYTHON_USEDEP}]
-	>=dev-python/colorama-0.3.7[${PYTHON_USEDEP}]
+	dev-python/humanfriendly[${PYTHON_USEDEP}]
+	dev-python/colorama[${PYTHON_USEDEP}]
+	dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
 	>=dev-python/argcomplete-1.8.0[${PYTHON_USEDEP}]
 	dev-python/applicationinsights[${PYTHON_USEDEP}]
 	dev-python/adal[${PYTHON_USEDEP}]
-	vanilla? ( >=dev-python/pip-9.0.1[${PYTHON_USEDEP}] )
+	vanilla? ( dev-python/pip[${PYTHON_USEDEP}] )
 	!vanilla? ( app-portage/gentoolkit[${PYTHON_USEDEP}] )"
 
 DEPEND="${RDEPEND}
