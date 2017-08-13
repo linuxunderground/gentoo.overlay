@@ -16,8 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 # https://pypi.python.org/pypi/azure
-AZUREDEPEND="dev-python/azure-storage[${PYTHON_USEDEP}]
-	dev-python/azure-servicemanagement-legacy[${PYTHON_USEDEP}]
+AZUREDEPEND="dev-python/azure-servicemanagement-legacy[${PYTHON_USEDEP}]
 	dev-python/azure-servicefabric[${PYTHON_USEDEP}]
 	dev-python/azure-servicebus[${PYTHON_USEDEP}]
 	dev-python/azure-keyvault[${PYTHON_USEDEP}]
@@ -27,7 +26,6 @@ AZUREDEPEND="dev-python/azure-storage[${PYTHON_USEDEP}]
 
 # https://pypi.python.org/pypi/azure-mgmt
 AZUREMGMTDEPEND="dev-python/azure-mgmt-web[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-storage[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-sql[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-scheduler[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-redis[${PYTHON_USEDEP}]
