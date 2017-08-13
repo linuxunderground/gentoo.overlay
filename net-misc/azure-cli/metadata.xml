@@ -5,4 +5,8 @@
     <email>vincent.hardy.be@gmail.com</email>
     <name>Vincent Hardy</name>
   </maintainer>
+  <use>
+    <flag name="network">Install the network module. i.e. 'az network'</flag>
+    <flag name="storage">Install the storage module. i.e. 'az storage'</flag>
+  </use>
 </pkgmetadata>
