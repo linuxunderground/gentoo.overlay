@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-IUSE="+network +sql +storage"
+IUSE="component +network +sql +storage"
 
 RDEPEND="dev-python/azure-cli-vm[${PYTHON_USEDEP}]
 	sql? ( dev-python/azure-cli-sql[${PYTHON_USEDEP}] )
@@ -41,7 +41,9 @@ RDEPEND="dev-python/azure-cli-vm[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	dev-python/azure-cli-consumption[${PYTHON_USEDEP}]
 	dev-python/azure-cli-configure[${PYTHON_USEDEP}]
-	dev-python/azure-cli-component[${PYTHON_USEDEP}]
+	component? (
+		dev-python/azure-cli-component[${PYTHON_USEDEP}]
+		dev-python/pip[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-cognitiveservices[${PYTHON_USEDEP}]
 	dev-python/azure-cli-cloud[${PYTHON_USEDEP}]
 	dev-python/azure-cli-cdn[${PYTHON_USEDEP}]

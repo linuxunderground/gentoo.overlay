@@ -6,6 +6,7 @@
     <name>Vincent Hardy</name>
   </maintainer>
   <use>
+    <flag name="component">Install the component module. i.e. 'az component' (highly deprecated)</flag>
     <flag name="network">Install the network module. i.e. 'az network'</flag>
     <flag name="sql">Install the sql module. i.e. 'az sql'</flag>
     <flag name="storage">Install the storage module. i.e. 'az storage'</flag>
