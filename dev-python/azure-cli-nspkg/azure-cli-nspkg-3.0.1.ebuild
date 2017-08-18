@@ -17,33 +17,12 @@ SLOT="0"
 
 # https://pypi.python.org/pypi/azure
 AZUREDEPEND="dev-python/azure-servicemanagement-legacy[${PYTHON_USEDEP}]
-	dev-python/azure-servicefabric[${PYTHON_USEDEP}]
-	dev-python/azure-servicebus[${PYTHON_USEDEP}]
-	dev-python/azure-keyvault[${PYTHON_USEDEP}]
-	dev-python/azure-graphrbac[${PYTHON_USEDEP}]
-	dev-python/azure-datalake-store[${PYTHON_USEDEP}]
-	dev-python/azure-batch[${PYTHON_USEDEP}]"
+	dev-python/azure-servicebus[${PYTHON_USEDEP}]"
 
 # https://pypi.python.org/pypi/azure-mgmt
-AZUREMGMTDEPEND="dev-python/azure-mgmt-web[${PYTHON_USEDEP}]
+AZUREMGMTDEPEND="
 	dev-python/azure-mgmt-scheduler[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-redis[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-rdbms[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-monitor[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-logic[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-keyvault[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-iothub[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-documentdb[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-devtestlabs[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-datalake-store[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-datalake-analytics[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-containerregistry[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-compute[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-cognitiveservices[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-cdn[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-billing[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-batch[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-authorization[${PYTHON_USEDEP}]"
+	dev-python/azure-mgmt-logic[${PYTHON_USEDEP}]"
 
 RDEPEND="${AZUREDEPEND}
 	${AZUREMGMTDEPEND}"
