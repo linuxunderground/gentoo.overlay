@@ -15,9 +15,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-# 13/08/2017 : dev-python/azure-multiapi-storage[${PYTHON_USEDEP}] 
-# no source release at python.org, nor github update : shame on Microsoft!
-RDEPEND="dev-python/azure-storage[${PYTHON_USEDEP}]
+RDEPEND="dev-python/azure-multiapi-storage[${PYTHON_USEDEP}]
 	dev-python/azure-mgmt-storage[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]"
