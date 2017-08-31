@@ -1,6 +1,6 @@
---- azure-cli-core-2.0.11/azure/cli/core/util.py.a	2017-07-26 16:58:16.492338883 +0200
-+++ azure-cli-core-2.0.11/azure/cli/core/util.py	2017-07-26 17:08:39.908646514 +0200
-@@ -61,33 +61,8 @@
+--- azure-cli-core-2.0.14/azure/cli/core/util.py.a	2017-08-28 22:11:38.000000000 +0200
++++ azure-cli-core-2.0.14/azure/cli/core/util.py	2017-08-31 17:49:55.694941257 +0200
+@@ -61,32 +61,8 @@
  
  
  def show_version_info_exit(out_file):
@@ -30,9 +30,8 @@
 -    print('Python ({}) {}'.format(platform.system(), sys.version), file=out_file)
 -    print(file=out_file)
 -    print("Python location '{}'".format(sys.executable), file=out_file)
--    print(file=out_file)
 +    from gentoolkit import equery
-+    equery.main(['equery','l','azure-cli*'])    
-     sys.exit(0)
- 
- 
++    equery.main(['equery','l','azure-cli*'])
+     print(file=out_file)
+     print('Legal docs and information: aka.ms/AzureCliLegal', file=out_file)
+     print(file=out_file)
