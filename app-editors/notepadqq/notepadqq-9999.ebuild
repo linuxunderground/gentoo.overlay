@@ -34,16 +34,20 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	eapply_user
 	sed -i \
-		-e 's:/usr/local:/usr:' \
 		-e 's:/lib/notepadqq/:/bin/:' \
 		src/ui/ui.pro || die
 	sed -i -e 's:\.\./\.\.:\.\.:' src/ui/notepadqq.cpp || die
 }
 
 src_configure() {
-	eqmake5
+	eqmake5 PREFIX="${EPREFIX}/usr" ${PN}.pro
 }
 
 src_install() {
 	emake INSTALL_ROOT="${D}" install
+
+	# This should break nothing under Gentoo.
+	# If not, I will think about what to do...
+	rm "${D}usr/bin/notepadqq" || die
+	mv "${D}usr/bin/notepadqq-bin" "${D}usr/bin/notepadqq" || die
 }
