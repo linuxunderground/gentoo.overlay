@@ -14,6 +14,17 @@ SRC_URI="https://codeload.github.com/LudovicRousseau/${PN}/tar.gz/${PV} -> ${P}.
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="examples"
 
 DEPEND="dev-lang/swig"
+
+DOCS=( README.md )
+
+python_install_all() {
+	if use examples; then
+		insinto "/usr/share/doc/${PF}/"
+		doins -r samples
+	fi
+
+	distutils-r1_python_install_all
+}
