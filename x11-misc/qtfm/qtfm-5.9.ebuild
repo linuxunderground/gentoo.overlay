@@ -1,9 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit fdo-mime qmake-utils
+inherit qmake-utils xdg-utils
 
 DESCRIPTION="A small, lightweight file manager for desktops based on pure Qt"
 HOMEPAGE="https://www.linux-apps.com"
@@ -62,5 +62,12 @@ src_install() {
 	emake INSTALL_ROOT="${D}" install
 }
 
-pkg_postinst() { fdo-mime_desktop_database_update; }
-pkg_postrm() { fdo-mime_desktop_database_update; }
+pkg_postinst()
+{
+	xdg_desktop_database_update
+}
+
+pkg_postrm()
+{
+	xdg_desktop_database_update
+}
