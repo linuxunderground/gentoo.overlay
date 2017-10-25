@@ -17,7 +17,7 @@ SLOT="0"
 
 RDEPEND="dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]
-	dev-python/adal[${PYTHON_USEDEP}]"
+	>=dev-python/adal-0.4.7[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
