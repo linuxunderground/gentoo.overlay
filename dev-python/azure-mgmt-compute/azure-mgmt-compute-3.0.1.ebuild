@@ -7,15 +7,15 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
 inherit distutils-r1
 
-DESCRIPTION="Microsoft Azure Container Registry Client Library for Python"
-HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-containerregistry"
-SRC_URI="mirror://pypi/a/azure-mgmt-containerregistry/${P}.zip"
+DESCRIPTION="Microsoft Azure Compute Resource Management Client Library for Python"
+HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-compute"
+SRC_URI="mirror://pypi/a/azure-mgmt-compute/${P}.zip"
 
 KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/msrestazure-0.4.8[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/msrestazure-0.4.11[${PYTHON_USEDEP}]
 	>=dev-python/azure-common-1.1.6[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
