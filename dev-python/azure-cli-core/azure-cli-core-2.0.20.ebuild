@@ -22,7 +22,9 @@ RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-16.2[${PYTHON_USEDEP}]
+	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
+	dev-python/paramiko[${PYTHON_USEDEP}]
 	>=dev-python/msrestazure-0.4.7[${PYTHON_USEDEP}]
 	>=dev-python/msrest-0.4.4[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
@@ -31,7 +33,7 @@ RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
 	dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
 	>=dev-python/argcomplete-1.8.0[${PYTHON_USEDEP}]
 	dev-python/applicationinsights[${PYTHON_USEDEP}]
-	dev-python/adal[${PYTHON_USEDEP}]
+	>=dev-python/adal-0.4.7[${PYTHON_USEDEP}]
 	vanilla? ( dev-python/pip[${PYTHON_USEDEP}] )
 	!vanilla? ( app-portage/gentoolkit[${PYTHON_USEDEP}] )"
 
@@ -40,7 +42,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
-	use vanilla || eapply "${FILESDIR}"/gentoolkit.patch
+	use vanilla || eapply "${FILESDIR}"/gentoolkit-2.0.18.patch
 }
 
 python_install() {
