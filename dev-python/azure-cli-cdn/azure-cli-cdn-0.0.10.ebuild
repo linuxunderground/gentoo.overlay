@@ -15,9 +15,9 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="dev-python/azure-mgmt-cdn[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-cdn-0.30.2[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
-	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]"
+	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
