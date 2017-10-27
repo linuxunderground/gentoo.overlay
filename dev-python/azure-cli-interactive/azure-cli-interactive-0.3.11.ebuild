@@ -20,7 +20,7 @@ RDEPEND="dev-python/six[${PYTHON_USEDEP}]
 	dev-python/prompt_toolkit[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
-	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]
+	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]
 	dev-python/applicationinsights[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
