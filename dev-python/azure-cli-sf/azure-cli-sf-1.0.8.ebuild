@@ -16,10 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/mock-2.0.0[${PYTHON_USEDEP}]
-	dev-python/azure-servicefabric[${PYTHON_USEDEP}]
+	>=dev-python/azure-servicefabric-5.6.130[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
-	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]
-	dev-python/adal[${PYTHON_USEDEP}]"
+	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/adal-0.4.3[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
