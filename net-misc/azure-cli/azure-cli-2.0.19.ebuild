@@ -15,8 +15,9 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-IUSE="+acr +acs +appservice +batch +billing +cdn +cloud +cognitiveservices \
-	component +consumption +cosmosdb +dla +dls feedback +iot +keyvault +lab \
+IUSE="+acr +acs +appservice +backup +batch +billing +cdn +cloud \
+	+cognitiveservices +consumption +cosmosdb +dla +dls feedback \
+	+iot +keyvault +lab \
 	+monitor +network +rdbms +redis +resource +role +sql +storage +vm"
 
 RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
@@ -43,14 +44,12 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	consumption? ( dev-python/azure-cli-consumption[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-configure[${PYTHON_USEDEP}]
-	component? (
-		dev-python/azure-cli-component[${PYTHON_USEDEP}]
-		dev-python/pip[${PYTHON_USEDEP}] )
 	cognitiveservices? ( dev-python/azure-cli-cognitiveservices[${PYTHON_USEDEP}] )
 	cloud? ( dev-python/azure-cli-cloud[${PYTHON_USEDEP}] )
 	cdn? ( dev-python/azure-cli-cdn[${PYTHON_USEDEP}] )
 	billing? ( dev-python/azure-cli-billing[${PYTHON_USEDEP}] )
 	batch? ( dev-python/azure-cli-batch[${PYTHON_USEDEP}] )
+	backup? ( dev-python/azure-cli-backup[${PYTHON_USEDEP}] )
 	appservice? ( dev-python/azure-cli-appservice[${PYTHON_USEDEP}] )
 	acs? ( dev-python/azure-cli-acs[${PYTHON_USEDEP}] )
 	acr? ( dev-python/azure-cli-acr[${PYTHON_USEDEP}] )"
