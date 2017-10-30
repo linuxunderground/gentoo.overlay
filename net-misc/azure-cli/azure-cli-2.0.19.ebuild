@@ -16,8 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 
 IUSE="+acr +acs +appservice +backup +batch +billing +cdn +cloud \
-	+cognitiveservices +consumption +cosmosdb +dla +dls feedback \
-	+iot +keyvault +lab \
+	+cognitiveservices +consumption +container +cosmosdb +dla +dls \
+	feedback +iot +keyvault +lab \
 	+monitor +network +rdbms +redis +resource +role +sql +storage +vm"
 
 RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
@@ -42,6 +42,7 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	dla? ( dev-python/azure-cli-dla[${PYTHON_USEDEP}] )
 	cosmosdb? ( dev-python/azure-cli-cosmosdb[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
+	container? ( dev-python/azure-cli-container[${PYTHON_USEDEP}] )
 	consumption? ( dev-python/azure-cli-consumption[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-configure[${PYTHON_USEDEP}]
 	cognitiveservices? ( dev-python/azure-cli-cognitiveservices[${PYTHON_USEDEP}] )

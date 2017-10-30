@@ -16,6 +16,7 @@
     <flag name="cloud">Install the cloud module. i.e. 'az cloud'</flag>
     <flag name="cognitiveservices">Install the cognitive services module. i.e. 'az cognitiveservices'</flag>
     <flag name="consumption">Install the consumption module. i.e. 'az consumption'</flag>
+    <flag name="container">Install the tools container module. i.e. 'az container'</flag>
     <flag name="cosmosdb">Install the cosmosdb module. i.e. 'az cosmosdb'</flag>
     <flag name="dla">Install the dla module. i.e. 'az dla'</flag>
     <flag name="dls">Install the dls module. i.e. 'az dls'</flag>
