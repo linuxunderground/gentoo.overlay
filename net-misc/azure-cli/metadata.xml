@@ -30,6 +30,7 @@
     <flag name="redis">Install the redis module. i.e. 'az redis'</flag>
     <flag name="resource">Install the resource module. i.e. 'az resource'</flag>
     <flag name="role">Install the role module. i.e. 'az role'</flag>
+    <flag name="sf">Install the service fabric module. i.e. 'az sf'</flag>
     <flag name="sql">Install the sql module. i.e. 'az sql'</flag>
     <flag name="storage">Install the storage module. i.e. 'az storage'</flag>
     <flag name="vm">Install the VM module. i.e. 'az vm'</flag>

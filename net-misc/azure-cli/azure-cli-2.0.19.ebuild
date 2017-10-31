@@ -18,12 +18,12 @@ SLOT="0"
 IUSE="+acr +acs +appservice +backup +batch +billing +cdn +cloud \
 	+cognitiveservices +consumption +container +cosmosdb +dla +dls \
 	feedback +iot +keyvault +lab \
-	+monitor +network +rdbms +redis +resource +role +sql +storage +vm"
+	+monitor +network +rdbms +redis +resource +role +sf +sql +storage +vm"
 
 RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	sql? ( dev-python/azure-cli-sql[${PYTHON_USEDEP}] )
 	storage? ( dev-python/azure-cli-storage[${PYTHON_USEDEP}] )
-	dev-python/azure-cli-sf[${PYTHON_USEDEP}]
+	sf? ( dev-python/azure-cli-servicefabric[${PYTHON_USEDEP}] )
 	role? ( dev-python/azure-cli-role[${PYTHON_USEDEP}] )
 	resource? ( dev-python/azure-cli-resource[${PYTHON_USEDEP}] )
 	redis? ( dev-python/azure-cli-redis[${PYTHON_USEDEP}] )
