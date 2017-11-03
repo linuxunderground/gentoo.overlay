@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="AutoRest swagger generator Python client runtime. Azure-specific module"
 HOMEPAGE="https://pypi.python.org/pypi/msrestazure"
-SRC_URI="mirror://pypi/m/msrestazure/${P}.zip"
+SRC_URI="mirror://pypi/m/msrestazure/${P}.tar.gz"
 
 KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
@@ -17,7 +17,7 @@ SLOT="0"
 
 RDEPEND=">=dev-python/adal-0.4.5[${PYTHON_USEDEP}]
 	>=dev-python/keyring-5.6[${PYTHON_USEDEP}]
-	>=dev-python/msrest-0.4.8[${PYTHON_USEDEP}]"
+	>=dev-python/msrest-0.4.17[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
