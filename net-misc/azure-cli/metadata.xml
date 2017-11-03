@@ -11,6 +11,7 @@
     <flag name="appservice">Install the appservice module. i.e. 'az appservice'</flag>
     <flag name="backup">Install the backup module. i.e. 'az backup'</flag>
     <flag name="batch">Install the batch module. i.e. 'az batch'</flag>
+    <flag name="batchai">Install the batch AI module. i.e. 'az batchai'</flag>
     <flag name="billing">Install the billing module. i.e. 'az billing'</flag>
     <flag name="cdn">Install the Content Delivery Network module. i.e. 'az cdn'</flag>
     <flag name="cloud">Install the cloud module. i.e. 'az cloud'</flag>
@@ -20,6 +21,7 @@
     <flag name="cosmosdb">Install the cosmosdb module. i.e. 'az cosmosdb'</flag>
     <flag name="dla">Install the dla module. i.e. 'az dla'</flag>
     <flag name="dls">Install the dls module. i.e. 'az dls'</flag>
+    <flag name="eventgrid">Install the event grid module. i.e. 'az eventgrid'</flag>
     <flag name="feedback">Install the feedback module. i.e. 'az feedback'</flag>
     <flag name="iot">Install the iot module. i.e. 'az iot'</flag>
     <flag name="keyvault">Install the keyvault module. i.e. 'az keyvault'</flag>
