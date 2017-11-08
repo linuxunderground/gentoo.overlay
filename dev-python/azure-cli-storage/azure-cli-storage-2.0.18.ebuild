@@ -15,10 +15,10 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="dev-python/azure-multiapi-storage[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-storage[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-multiapi-storage-0.1.6[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-storage-1.4.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
-	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]"
+	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
