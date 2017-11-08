@@ -15,11 +15,11 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="dev-python/azure-mgmt-keyvault[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-batch[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-keyvault-0.40.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-batch-4.1.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
-	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]
-	dev-python/azure-batch[${PYTHON_USEDEP}]"
+	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-batch-4.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
