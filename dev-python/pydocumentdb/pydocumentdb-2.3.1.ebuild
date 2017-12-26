@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
 inherit distutils-r1
 
-DESCRIPTION="Microsoft Azure Storage Client Library for Python"
+DESCRIPTION="Azure DocumentDB Python SDK"
 HOMEPAGE="https://pypi.python.org/pypi/pydocumentdb"
 SRC_URI="mirror://pypi/p/pydocumentdb/${P}.tar.gz"
 
