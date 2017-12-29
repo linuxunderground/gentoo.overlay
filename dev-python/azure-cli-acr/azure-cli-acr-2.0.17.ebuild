@@ -7,16 +7,17 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
 inherit distutils-r1
 
-DESCRIPTION="Microsoft Azure Command-Line Tools Storage Command Module"
-HOMEPAGE="https://pypi.python.org/pypi/azure-cli-storage"
-SRC_URI="mirror://pypi/a/azure-cli-storage/${P}.tar.gz"
+DESCRIPTION="Microsoft Azure Command-Line Tools ACR Command Module"
+HOMEPAGE="https://pypi.python.org/pypi/azure-cli-acr"
+SRC_URI="mirror://pypi/a/azure-cli-acr/${P}.tar.gz"
 
 KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-multiapi-storage-0.1.6[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-storage-1.4.0[${PYTHON_USEDEP}]
+RDEPEND="=dev-python/azure-mgmt-storage-1.5.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-resource-1.2.1[${PYTHON_USEDEP}]
+	=dev-python/azure-mgmt-containerregistry-1.0.1[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
