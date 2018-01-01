@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -7,16 +7,17 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
 inherit distutils-r1
 
-DESCRIPTION="Microsoft Azure DocumentDB Management Client Library for Python"
-HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-documentdb"
-SRC_URI="mirror://pypi/a/azure-mgmt-documentdb/${P}.zip"
+DESCRIPTION="Microsoft Azure Cosmos DB Management Client Library for Python"
+HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-cosmosdb"
+SRC_URI="mirror://pypi/a/azure-mgmt-cosmosdb/${P}.zip"
 
 KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/msrestazure-0.4.8[${PYTHON_USEDEP}]
-	>=dev-python/azure-common-1.1.6[${PYTHON_USEDEP}]"
+	>=dev-python/azure-common-1.1.6[${PYTHON_USEDEP}]
+	!dev-python/azure-mgmt-documentdb"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
