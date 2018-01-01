@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ RDEPEND="dev-python/xmltodict[${PYTHON_USEDEP}]
 	dev-python/vsts-cd-manager[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.18[${PYTHON_USEDEP}]
 	dev-python/pyopenssl[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-web-0.33.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-web-0.34.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-containerregistry-1.0.1[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
