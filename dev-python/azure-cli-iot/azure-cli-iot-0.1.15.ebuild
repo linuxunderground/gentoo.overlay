@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -16,9 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="dev-python/pyopenssl[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-iothub[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-iothub-0.4.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
-	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]"
+	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
