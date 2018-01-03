@@ -22,6 +22,7 @@
     <flag name="dla">Install the dla module. i.e. 'az dla'</flag>
     <flag name="dls">Install the dls module. i.e. 'az dls'</flag>
     <flag name="eventgrid">Install the event grid module. i.e. 'az eventgrid'</flag>
+    <flag name="extension">Install the extension module. i.e. 'az extension'</flag>
     <flag name="feedback">Install the feedback module. i.e. 'az feedback'</flag>
     <flag name="iot">Install the iot module. i.e. 'az iot'</flag>
     <flag name="keyvault">Install the keyvault module. i.e. 'az keyvault'</flag>
@@ -30,6 +31,7 @@
     <flag name="network">Install the network module. i.e. 'az network'</flag>
     <flag name="rdbms">Install the rdbms module. i.e. 'az mysql' and 'az postgres'</flag>
     <flag name="redis">Install the redis module. i.e. 'az redis'</flag>
+    <flag name="reservations">Install the reservations module. i.e. 'az reservations'</flag>
     <flag name="resource">Install the resource module. i.e. 'az resource'</flag>
     <flag name="role">Install the role module. i.e. 'az role'</flag>
     <flag name="sf">Install the service fabric module. i.e. 'az sf'</flag>

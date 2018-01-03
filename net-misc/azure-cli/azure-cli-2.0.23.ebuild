@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,8 +17,9 @@ SLOT="0"
 
 IUSE="+acr +acs +appservice +backup +batch +batchai +billing +cdn +cloud \
 	+cognitiveservices +consumption +container +cosmosdb +dla +dls \
-	+eventgrid feedback +iot +keyvault +lab \
-	+monitor +network +rdbms +redis +resource +role +sf +sql +storage +vm"
+	+eventgrid extension feedback +iot +keyvault +lab \
+	+monitor +network +rdbms +redis +reservations +resource +role +sf \
+	+sql +storage +vm"
 
 RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	sql? ( dev-python/azure-cli-sql[${PYTHON_USEDEP}] )
@@ -26,6 +27,7 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	sf? ( dev-python/azure-cli-servicefabric[${PYTHON_USEDEP}] )
 	role? ( dev-python/azure-cli-role[${PYTHON_USEDEP}] )
 	resource? ( dev-python/azure-cli-resource[${PYTHON_USEDEP}] )
+	reservations? ( dev-python/azure-cli-reservations[${PYTHON_USEDEP}] )
 	redis? ( dev-python/azure-cli-redis[${PYTHON_USEDEP}] )
 	rdbms? ( dev-python/azure-cli-rdbms[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-profile[${PYTHON_USEDEP}]
@@ -38,6 +40,7 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-find[${PYTHON_USEDEP}]
 	iot? ( dev-python/azure-cli-iot[${PYTHON_USEDEP}] )
 	feedback? ( dev-python/azure-cli-feedback[${PYTHON_USEDEP}] )
+	extension? ( dev-python/azure-cli-extension[${PYTHON_USEDEP}] )
 	eventgrid? ( dev-python/azure-cli-eventgrid[${PYTHON_USEDEP}] )
 	dls? ( dev-python/azure-cli-dls[${PYTHON_USEDEP}] )
 	dla? ( dev-python/azure-cli-dla[${PYTHON_USEDEP}] )
