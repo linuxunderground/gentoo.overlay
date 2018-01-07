@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -10,8 +10,8 @@ LICENSE="LGPL-2.1"
 KEYWORDS="~amd64 ~x86 ~arm"
 DESCRIPTION="A split-screen multiplayer remake of BoulderDash game"
 
-SRC_URI="http://www.karlin.mff.cuni.cz/~benes/doubledash/${P}.tar.gz"
-HOMEPAGE="http://www.karlin.mff.cuni.cz/~benes/doubledash/"
+SRC_URI="http://download.wonderland.cz/${P}.tar.gz"
+HOMEPAGE="http://www.wonderland.cz/software/#doubledash"
 
 RDEPEND="media-libs/sdl-image"
 
