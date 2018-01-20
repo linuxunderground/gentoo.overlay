@@ -38,11 +38,6 @@ RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
-src_prepare() {
-	eapply_user
-	use vanilla || eapply "${FILESDIR}"/gentoolkit-2.0.24.patch
-}
-
 python_install() {
 	distutils-r1_python_install
 
