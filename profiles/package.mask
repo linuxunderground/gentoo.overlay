@@ -1,6 +1,7 @@
 =net-misc/azure-cli-2.0.25
 =dev-python/azure-cli-core-2.0.25
 =dev-python/azure-cli-storage-2.0.23
+=dev-python/azure-cli-rdbms-0.0.11
 =dev-python/azure-cli-vm-2.0.24
 
 =dev-python/azure-mgmt-compute-3.1.0_rc3.ebuild
