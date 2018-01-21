@@ -1,5 +1,6 @@
 =net-misc/azure-cli-2.0.25
 =dev-python/azure-cli-core-2.0.25
+=dev-python/azure-cli-network-2.0.21
 =dev-python/azure-cli-profile-2.0.17
 =dev-python/azure-cli-storage-2.0.23
 =dev-python/azure-cli-rdbms-0.0.11
