@@ -1,5 +1,6 @@
 =net-misc/azure-cli-2.0.25
 =dev-python/azure-cli-backup-1.0.6
+=dev-python/azure-cli-configure-2.0.13
 =dev-python/azure-cli-core-2.0.25
 =dev-python/azure-cli-network-2.0.21
 =dev-python/azure-cli-profile-2.0.17
