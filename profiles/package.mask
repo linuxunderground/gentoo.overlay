@@ -13,4 +13,4 @@
 =dev-python/azure-cli-sql-2.0.19
 =dev-python/azure-cli-vm-2.0.24
 
-=dev-python/azure-mgmt-compute-3.1.0_rc3.ebuild
+=dev-python/azure-mgmt-compute-3.1.0_rc3
