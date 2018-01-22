@@ -10,6 +10,7 @@
 =dev-python/azure-cli-rdbms-0.0.11
 =dev-python/azure-cli-resource-2.0.21
 =dev-python/azure-cli-role-2.0.17
+=dev-python/azure-cli-servicefabric-0.0.9
 =dev-python/azure-cli-sql-2.0.19
 =dev-python/azure-cli-vm-2.0.24
 
