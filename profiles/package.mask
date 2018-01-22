@@ -8,6 +8,7 @@
 =dev-python/azure-cli-profile-2.0.17
 =dev-python/azure-cli-storage-2.0.23
 =dev-python/azure-cli-rdbms-0.0.11
+=dev-python/azure-cli-reservations-0.1.1
 =dev-python/azure-cli-resource-2.0.21
 =dev-python/azure-cli-role-2.0.17
 =dev-python/azure-cli-servicefabric-0.0.9
