@@ -3,6 +3,7 @@
 =dev-python/azure-cli-backup-1.0.6
 =dev-python/azure-cli-billing-0.1.7
 =dev-python/azure-cli-configure-2.0.13
+=dev-python/azure-cli-container-0.1.16
 =dev-python/azure-cli-core-2.0.25
 =dev-python/azure-cli-cosmosdb-0.1.16
 =dev-python/azure-cli-dla-0.0.17
