@@ -5,6 +5,7 @@
 =dev-python/azure-cli-configure-2.0.13
 =dev-python/azure-cli-core-2.0.25
 =dev-python/azure-cli-cosmosdb-0.1.16
+=dev-python/azure-cli-dls-0.0.19
 =dev-python/azure-cli-eventgrid-0.1.8
 =dev-python/azure-cli-find-0.2.8
 =dev-python/azure-cli-interactive-0.3.13
