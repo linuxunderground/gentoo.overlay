@@ -2,6 +2,7 @@
 =dev-python/azure-cli-appservice-0.1.24
 =dev-python/azure-cli-backup-1.0.6
 =dev-python/azure-cli-billing-0.1.7
+=dev-python/azure-cli-cdn-0.0.11
 =dev-python/azure-cli-cloud-2.0.11
 =dev-python/azure-cli-cognitiveservices-0.1.10
 =dev-python/azure-cli-configure-2.0.13
