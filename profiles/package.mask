@@ -1,4 +1,7 @@
 =net-misc/azure-cli-2.0.25
+
+=dev-python/azure-cli-acr-2.0.19
+=dev-python/azure-cli-acs-2.0.24
 =dev-python/azure-cli-appservice-0.1.24
 =dev-python/azure-cli-backup-1.0.6
 =dev-python/azure-cli-batch-3.1.8
