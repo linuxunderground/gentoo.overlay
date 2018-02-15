@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="=dev-python/azure-multiapi-storage-0.1.7[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-multiapi-storage-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-resource-1.2.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-network-1.7.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-msi-0.1.0[${PYTHON_USEDEP}]
