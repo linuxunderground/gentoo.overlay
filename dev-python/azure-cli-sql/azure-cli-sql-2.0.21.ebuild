@@ -17,7 +17,7 @@ SLOT="0"
 
 RDEPEND="dev-python/six[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-storage-1.5.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-sql-0.8.4[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-sql-0.8.5[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
