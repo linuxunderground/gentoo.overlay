@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/msrestazure-0.4.11[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/msrestazure-0.4.20[${PYTHON_USEDEP}]
 	>=dev-python/azure-common-1.1.6[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
