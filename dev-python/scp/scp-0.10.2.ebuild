@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,7 +11,7 @@ DESCRIPTION="scp module for paramiko"
 HOMEPAGE="https://pypi.python.org/pypi/scp"
 SRC_URI="mirror://pypi/s/scp/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
