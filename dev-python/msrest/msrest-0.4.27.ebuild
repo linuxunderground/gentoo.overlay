@@ -11,7 +11,7 @@ DESCRIPTION="AutoRest swagger generator Python client runtime"
 HOMEPAGE="https://pypi.python.org/pypi/msrest"
 SRC_URI="mirror://pypi/m/msrest/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
