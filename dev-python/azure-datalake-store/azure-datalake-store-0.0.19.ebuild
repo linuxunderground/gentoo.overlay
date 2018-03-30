@@ -11,7 +11,7 @@ DESCRIPTION="Azure Data Lake Store Filesystem Client Library for Python"
 HOMEPAGE="https://pypi.python.org/pypi/azure-datalake-store"
 SRC_URI="mirror://pypi/a/azure-datalake-store/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
