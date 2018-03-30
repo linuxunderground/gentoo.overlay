@@ -11,7 +11,7 @@ DESCRIPTION="ADAL Python library"
 HOMEPAGE="https://pypi.python.org/pypi/adal"
 SRC_URI="mirror://pypi/a/adal/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
