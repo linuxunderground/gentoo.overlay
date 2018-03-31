@@ -9,9 +9,9 @@ inherit distutils-r1
 
 DESCRIPTION="Microsoft Azure Compute Resource Management Client Library for Python"
 HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-compute"
-SRC_URI="mirror://pypi/a/azure-mgmt-compute/${PN}-3.1.0rc3.zip"
+SRC_URI="mirror://pypi/a/azure-mgmt-compute/${PN}-4.0.0rc1.zip"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
@@ -21,7 +21,7 @@ RDEPEND=">=dev-python/msrestazure-0.4.20[${PYTHON_USEDEP}]
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
-S="${WORKDIR}/${PN}-3.1.0rc3"
+S="${WORKDIR}/${PN}-4.0.0rc1"
 
 python_install() {
 	distutils-r1_python_install
