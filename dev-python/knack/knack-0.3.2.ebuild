@@ -11,7 +11,7 @@ DESCRIPTION="A Command-Line Interface framework"
 HOMEPAGE="https://pypi.python.org/pypi/knack"
 SRC_URI="mirror://pypi/k/knack/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
