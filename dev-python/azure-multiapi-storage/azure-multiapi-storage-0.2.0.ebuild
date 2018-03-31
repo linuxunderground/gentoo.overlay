@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Storage Client Library for Python"
 HOMEPAGE="https://pypi.python.org/pypi/azure-multiapi-storage"
 SRC_URI="mirror://pypi/a/azure-multiapi-storage/${P}.tar.gz"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
