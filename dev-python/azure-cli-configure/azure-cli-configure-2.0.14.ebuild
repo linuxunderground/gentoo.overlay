@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Configure Command Module"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-configure"
 SRC_URI="mirror://pypi/a/azure-cli-configure/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
