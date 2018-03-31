@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Core Module"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-core"
 SRC_URI="mirror://pypi/a/azure-cli-core/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
@@ -27,7 +27,7 @@ RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	>=dev-python/msrestazure-0.4.7[${PYTHON_USEDEP}]
 	>=dev-python/msrest-0.4.4[${PYTHON_USEDEP}]
-	>=dev-python/knack-0.3.1[${PYTHON_USEDEP}]
+	>=dev-python/knack-0.3.2[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
 	dev-python/humanfriendly[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
