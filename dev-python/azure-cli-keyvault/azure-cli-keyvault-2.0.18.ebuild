@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Keyvault Command Module"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-keyvault"
 SRC_URI="mirror://pypi/a/azure-cli-keyvault/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure KeyVault Apps Resource Management Client Library fo
 HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-keyvault"
 SRC_URI="mirror://pypi/a/azure-mgmt-keyvault/${P}.zip"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
