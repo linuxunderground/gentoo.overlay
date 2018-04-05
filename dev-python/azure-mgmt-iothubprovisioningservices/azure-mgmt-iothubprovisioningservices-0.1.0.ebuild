@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure IoTHub Provisioning Services Client Library for Pyt
 HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-iothubprovisioningservices"
 SRC_URI="mirror://pypi/a/azure-mgmt-iothubprovisioningservices/${P}.zip"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
