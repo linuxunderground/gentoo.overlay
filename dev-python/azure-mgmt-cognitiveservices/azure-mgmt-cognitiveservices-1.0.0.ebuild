@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,11 +11,11 @@ DESCRIPTION="Microsoft Azure Cognitive Services Management Client Library for Py
 HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-cognitiveservices"
 SRC_URI="mirror://pypi/a/azure-mgmt-cognitiveservices/${P}.zip"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/msrestazure-0.4.8[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/msrestazure-0.4.11[${PYTHON_USEDEP}]
 	>=dev-python/azure-common-1.1.6[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
