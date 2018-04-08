@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Reservations Management Client Library for Python"
 HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-reservations"
 SRC_URI="mirror://pypi/a/azure-mgmt-reservations/${P}.zip"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
