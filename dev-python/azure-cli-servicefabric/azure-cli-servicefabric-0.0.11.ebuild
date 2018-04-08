@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Service Fabric Command-Line Tools"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-servicefabric"
 SRC_URI="mirror://pypi/a/azure-cli-servicefabric/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
