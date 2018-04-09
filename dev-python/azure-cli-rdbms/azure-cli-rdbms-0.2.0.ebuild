@@ -11,14 +11,14 @@ DESCRIPTION="Microsoft Azure Command-Line Tools MySQL and PostgreSQL Command Mod
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-rdbms"
 SRC_URI="mirror://pypi/a/azure-cli-rdbms/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="dev-python/six[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-rdbms[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-rdbms-1.0.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
-	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]"
+	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
