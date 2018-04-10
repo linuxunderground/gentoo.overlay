@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure EventGrid Management Client Library for Python"
 HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-eventgrid"
 SRC_URI="mirror://pypi/a/azure-mgmt-eventgrid/${P}.zip"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
