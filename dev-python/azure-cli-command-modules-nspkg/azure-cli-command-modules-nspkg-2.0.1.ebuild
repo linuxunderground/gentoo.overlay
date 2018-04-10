@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure CLI Command Modules Namespace Package"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-command-modules-nspkg"
 SRC_URI="mirror://pypi/a/azure-cli-command-modules-nspkg/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
