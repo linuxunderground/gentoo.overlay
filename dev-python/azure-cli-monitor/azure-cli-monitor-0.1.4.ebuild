@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Monitor Command Module"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-monitor"
 SRC_URI="mirror://pypi/a/azure-cli-monitor/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
@@ -20,7 +20,7 @@ SLOT="0"
 
 RDEPEND="dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-resource-1.2.1[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-monitor-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-monitor-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
