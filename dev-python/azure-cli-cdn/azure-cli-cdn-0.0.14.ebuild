@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Content Delivery Network (CDN) C
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-cdn"
 SRC_URI="mirror://pypi/a/azure-cli-cdn/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
