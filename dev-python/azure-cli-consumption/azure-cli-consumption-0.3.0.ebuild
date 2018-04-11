@@ -11,11 +11,11 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Consumption Command Module"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-consumption"
 SRC_URI="mirror://pypi/a/azure-cli-consumption/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-mgmt-consumption-1.1.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-consumption-2.0.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	dev-python/azure-cli-command-modules-nspkg[${PYTHON_USEDEP}]"
 
