@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Advisor Client Library for Python"
 HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-advisor"
 SRC_URI="mirror://pypi/a/azure-mgmt-advisor/${P}.zip"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
