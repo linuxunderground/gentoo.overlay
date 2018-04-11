@@ -11,11 +11,11 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Advisor Command Module"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-advisor"
 SRC_URI="mirror://pypi/a/azure-cli-advisor/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-mgmt-advisor-0.1.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-advisor-1.0.1[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
