@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Batch Command Module"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-batch"
 SRC_URI="mirror://pypi/a/azure-cli-batch/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
@@ -19,7 +19,7 @@ RDEPEND=">=dev-python/azure-mgmt-keyvault-0.40.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-batch-4.1.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-batch-4.0.0[${PYTHON_USEDEP}]"
+	>=dev-python/azure-batch-4.1.1[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
