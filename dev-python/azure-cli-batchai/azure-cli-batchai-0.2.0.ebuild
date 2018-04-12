@@ -11,11 +11,11 @@ DESCRIPTION="Microsoft Azure Batch AI Client Command-Line tools"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-batchai"
 SRC_URI="mirror://pypi/a/azure-cli-batchai/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-mgmt-batchai-0.2.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-batchai-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/adal-0.4.3[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
