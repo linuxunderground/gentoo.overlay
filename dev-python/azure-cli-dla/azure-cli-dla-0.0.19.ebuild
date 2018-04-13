@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Data Lake Analytics Command Modu
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-dla"
 SRC_URI="mirror://pypi/a/azure-cli-dla/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
