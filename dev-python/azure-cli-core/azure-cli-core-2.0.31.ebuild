@@ -25,7 +25,7 @@ RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
-	>=dev-python/msrestazure-0.4.7[${PYTHON_USEDEP}]
+	>=dev-python/msrestazure-0.4.25[${PYTHON_USEDEP}]
 	>=dev-python/msrest-0.4.4[${PYTHON_USEDEP}]
 	>=dev-python/knack-0.3.2[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
@@ -33,7 +33,7 @@ RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
 	dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
 	>=dev-python/argcomplete-1.8.0[${PYTHON_USEDEP}]
-	dev-python/applicationinsights[${PYTHON_USEDEP}]
+	>=dev-python/applicationinsights-0.11.1[${PYTHON_USEDEP}]
 	>=dev-python/adal-0.4.7[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
