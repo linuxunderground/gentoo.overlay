@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,13 +21,18 @@ DESCRIPTION="GNU package that show how to use libbeidpkcs11 and the autotools wi
 
 HOMEPAGE="https://github.com/linuxunderground/eid-mw-sdk-c"
 
-IUSE=""
+IUSE="jpeg"
 
-RDEPEND=">=app-crypt/eid-mw-4.1.18"
+RDEPEND=">=app-crypt/eid-mw-4.3.6
+	jpeg? ( virtual/jpeg:0 )"
 
 DEPEND="${RDEPEND}"
 
 src_prepare() {
 	default
 	eautoreconf
+}
+
+src_configure() {
+	econf $(use_enable jpeg)
 }
