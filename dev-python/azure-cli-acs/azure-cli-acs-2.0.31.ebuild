@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools ACS Command Module"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-acs"
 SRC_URI="mirror://pypi/a/azure-cli-acs/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
@@ -21,9 +21,9 @@ RDEPEND="dev-python/sshtunnel[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-containerservice-3.0.1[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-compute-3.1.0_rc3[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-authorization-0.30.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-graphrbac-0.31.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-compute-4.0.0_rc1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-authorization-0.40.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-graphrbac-0.40.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
