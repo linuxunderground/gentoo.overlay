@@ -11,11 +11,11 @@ DESCRIPTION="Microsoft Azure Command-Line Tools ACR Command Module"
 HOMEPAGE="https://pypi.python.org/pypi/azure-cli-acr"
 SRC_URI="mirror://pypi/a/azure-cli-acr/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="=dev-python/azure-mgmt-storage-1.5.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-storage-1.5.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-resource-1.2.1[${PYTHON_USEDEP}]
 	=dev-python/azure-mgmt-containerregistry-1.0.1[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
