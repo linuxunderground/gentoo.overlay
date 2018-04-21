@@ -8,14 +8,15 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 inherit distutils-r1
 
 DESCRIPTION="Microsoft Azure Command-Line Tools container Command Module"
-HOMEPAGE="https://pypi.python.org/pypi/azure-cli-container"
-SRC_URI="mirror://pypi/a/azure-cli-container/${P}.tar.gz"
+HOMEPAGE="https://pypi.org/project/azure-cli-container"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-mgmt-containerinstance-0.3.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-containerinstance-0.4.0[${PYTHON_USEDEP}]
+	dev-python/websocket-client[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
