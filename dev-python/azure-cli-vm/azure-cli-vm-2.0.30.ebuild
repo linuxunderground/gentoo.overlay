@@ -8,20 +8,21 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 inherit distutils-r1
 
 DESCRIPTION="Microsoft Azure Command-Line Tools VM Command Module"
-HOMEPAGE="https://pypi.python.org/pypi/azure-cli-vm"
-SRC_URI="mirror://pypi/a/azure-cli-vm/${P}.tar.gz"
+HOMEPAGE="https://pypi.org/project/azure-cli-vm"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/azure-multiapi-storage-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-resource-1.2.1[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-network-1.7.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-network-2.0.0_rc2[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-msi-0.1.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-marketplaceordering-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-keyvault-0.40.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-compute-3.1.0_rc2[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-authorization-0.30.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-compute-4.0.0_rc1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-authorization-0.40.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-keyvault-0.3.7[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
