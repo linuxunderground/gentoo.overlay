@@ -8,10 +8,10 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 inherit distutils-r1
 
 DESCRIPTION="Microsoft Azure Command-Line Tools Extension Command Module"
-HOMEPAGE="https://pypi.python.org/pypi/azure-cli-extension"
-SRC_URI="mirror://pypi/a/azure-cli-extension/${P}.tar.gz"
+HOMEPAGE="https://pypi.org/project/azure-cli-extension"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
