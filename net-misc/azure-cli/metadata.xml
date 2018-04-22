@@ -22,7 +22,8 @@
     <flag name="cosmosdb">Install the cosmosdb module. i.e. 'az cosmosdb'</flag>
     <flag name="dla">Install the dla module. i.e. 'az dla'</flag>
     <flag name="dls">Install the dls module. i.e. 'az dls'</flag>
-    <flag name="eventgrid">Install the event grid module. i.e. 'az eventgrid'</flag>
+    <flag name="eventgrid">Install the eventgrid module. i.e. 'az eventgrid'</flag>
+    <flag name="eventhubs">Install the eventhubs module. i.e. 'az eventhubs'</flag>
     <flag name="extension">Install the extension module. i.e. 'az extension'</flag>
     <flag name="feedback">Install the feedback module. i.e. 'az feedback'</flag>
     <flag name="iot">Install the iot module. i.e. 'az iot'</flag>
@@ -35,6 +36,7 @@
     <flag name="reservations">Install the reservations module. i.e. 'az reservations'</flag>
     <flag name="resource">Install the resource module. i.e. 'az resource'</flag>
     <flag name="role">Install the role module. i.e. 'az role'</flag>
+    <flag name="servicebus">Install the service bus module. i.e. 'az servicebus'</flag>
     <flag name="sf">Install the service fabric module. i.e. 'az sf'</flag>
     <flag name="sql">Install the sql module. i.e. 'az sql'</flag>
     <flag name="storage">Install the storage module. i.e. 'az storage'</flag>
