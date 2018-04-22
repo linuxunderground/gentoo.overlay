@@ -8,10 +8,10 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 inherit distutils-r1
 
 DESCRIPTION="Microsoft Azure Command-Line Tools Feedback Command Module"
-HOMEPAGE="https://pypi.python.org/pypi/azure-cli-feedback"
-SRC_URI="mirror://pypi/a/azure-cli-feedback/${P}.tar.gz"
+HOMEPAGE="https://pypi.org/project/azure-cli-feedback"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
