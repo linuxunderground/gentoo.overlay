@@ -1,34 +1,35 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit eutils flag-o-matic multilib user versionator
+inherit autotools eutils flag-o-matic multilib user versionator
 
 MY_P=${PN/f/F}-$(replace_version_separator 4 -)
-#MY_P=${PN/f/F}-${PV/_rc/-ReleaseCandidate}
+MY_PV="R$(get_version_component_range 1)_$(get_version_component_range 2)_$(get_version_component_range 3)"
 
-DESCRIPTION="A relational database offering many ANSI SQL:2003 and some SQL:2008 features"
+DESCRIPTION="Relational database offering many ANSI SQL:2003 and some SQL:2008 features"
 HOMEPAGE="http://www.firebirdsql.org/"
-SRC_URI="mirror://sourceforge/firebird/${MY_P}.tar.bz2"
+SRC_URI="https://github.com/FirebirdSQL/${PN}/releases/download/${MY_PV}/${MY_P}.tar.bz2"
 
 LICENSE="IDPL Interbase-1.0"
 SLOT="0"
+KEYWORDS="~amd64 ~x86"
 
-KEYWORDS="~x86 ~amd64"
-
-IUSE="client doc examples xinetd"
+IUSE="debug doc client examples superserver xinetd"
 
 CDEPEND="
-	dev-libs/libtommath
 	dev-libs/libedit
-	dev-libs/icu:="
-
-DEPEND="${CDEPEND}"
-
+	dev-libs/icu:=
+"
+DEPEND="${CDEPEND}
+	>=dev-util/btyacc-3.0-r2
+	doc? ( app-arch/unzip )
+"
 RDEPEND="${CDEPEND}
 	xinetd? ( virtual/inetd )
-	!sys-cluster/ganglia"
+	!sys-cluster/ganglia
+"
 
 RESTRICT="userpriv"
 
@@ -46,15 +47,12 @@ check_sed() {
 }
 
 src_prepare() {
-	if [[ -e /var/run/${PN}/${PN}.pid ]] ; then
-		ewarn
-		ewarn "The presence of server connections may prevent isql or gsec"
-		ewarn "from establishing an embedded connection. Accordingly,"
-		ewarn "creating employee.fdb or security3.fdb could fail."
-		ewarn "It is more secure to stop firebird daemon before running emerge."
-		ewarn
-	fi
+	# This patch might be portable, and not need to be duplicated per version
+	# also might no longer be necessary to patch deps or libs, just flags
+	eapply "${FILESDIR}"/${PN}-2.5.3.26780.0-deps-flags.patch
 
+	use client && eapply "${FILESDIR}"/${PN}-2.5.1.26351.0-client.patch
+	use superserver || eapply "${FILESDIR}"/${PN}-2.5.1.26351.0-superclassic.patch
 	eapply_user
 
 	# Rename references to isql to fbsql
@@ -68,56 +66,55 @@ src_prepare() {
 		-e 's:ISQL :FBSQL :w /dev/stdout' \
 		src/msgs/messages2.sql | wc -l)" "6" "src/msgs/messages2.sql" # 6 lines
 
-	sed -i -e 's|-ggdb ||g' \
-			-e 's|-pipe ||g' \
-			-e 's|$(COMMON_FLAGS) $(OPTIMIZE_FLAGS)|$(COMMON_FLAGS)|g' \
-			builds/posix/prefix.linux* || die
+	rm -r "${S}"/extern/{btyacc,editline,icu} || die
 
-	sed -i -e "s|\$(this)|/usr/$(get_libdir)/firebird/intl|g" \
-			builds/install/misc/fbintl.conf
-	sed -i -e "s|\$(this)|/usr/$(get_libdir)/firebird/plugins|g" \
-			src/plugins/udr_engine/udr_engine.conf
-
-	# Building and using embedded btyacc avoids running eautoreconf
-	# eapply "${FILESDIR}"/deps-flags.patch
-	# rm -rf "${S}"/extern || die
-	# eautoreconf
+	eautoreconf
 }
 
 src_configure() {
 	filter-flags -fprefetch-loop-arrays
+	filter-mfpmath sse
 
-	# Do not use $(get_libdir) in econf
 	econf \
-		--prefix=/usr/lib/${PN} \
+		--prefix=/usr/$(get_libdir)/${PN} \
+		$(use_enable superserver) \
+		$(use_enable debug) \
 		--with-editline \
 		--with-system-editline \
+		--with-system-icu \
 		--with-fbbin=/usr/bin \
 		--with-fbsbin=/usr/sbin \
 		--with-fbconf=/etc/${PN} \
-		--with-fblib=/usr/lib \
+		--with-fblib=/usr/$(get_libdir) \
 		--with-fbinclude=/usr/include \
 		--with-fbdoc=/usr/share/doc/${P} \
-		--with-fbudf=/usr/lib/${PN}/UDF \
+		--with-fbudf=/usr/$(get_libdir)/${PN}/UDF \
 		--with-fbsample=/usr/share/${PN}/examples \
 		--with-fbsample-db=/usr/share/${PN}/examples/empbuild \
 		--with-fbhelp=/usr/share/${PN}/help \
-		--with-fbintl=/usr/lib/${PN}/intl \
+		--with-fbintl=/usr/$(get_libdir)/${PN}/intl \
 		--with-fbmisc=/usr/share/${PN}/misc \
 		--with-fbsecure-db=/etc/${PN} \
 		--with-fbmsg=/usr/share/${PN}/msg \
-		--with-fblog=/var/log/${PN} \
+		--with-fblog=/var/log/${PN}/ \
 		--with-fbglock=/var/run/${PN} \
-		--with-fbplugins=/usr/lib/${PN}/plugins \
+		--with-fbplugins=/usr/$(get_libdir)/${PN}/plugins \
 		--with-gnu-ld
+}
+
+src_compile() {
+	emake -j1
 }
 
 src_install() {
 	use doc && dodoc -r doc
 
-	cd "${S}/gen/Release/${PN}" || die
+	cd "gen/${PN}" || die
 
 	doheader include/*
+
+	rm lib/libfbstatic.a || die "failed to remove libfbstatic.a"
+
 	dolib.so lib/*.so*
 
 	# links for backwards compatibility
@@ -134,29 +131,34 @@ src_install() {
 	einfo "Renaming isql -> fbsql"
 	mv bin/isql bin/fbsql || die "failed to rename isql -> fbsql"
 
-	local bins="fbsql fbsvcmgr fbtracemgr gbak gfix gpre gsec gsplit gstat nbackup qli"
+	local bins="fbsql fbsvcmgr fbtracemgr gbak gdef gfix gpre gsec gstat nbackup qli"
 	for bin in ${bins}; do
 		dobin bin/${bin}
 	done
 
-	dosbin bin/{firebird,fbguard,fb_lock_print}
+	dosbin bin/fb_lock_print
+	# SuperServer
+	if use superserver ; then
+		dosbin bin/{fbguard,fbserver}
+	# ClassicServer
+	elif use xinetd ; then
+		dosbin bin/fb_inet_server
+	# SuperClassic
+	else
+		dosbin bin/{fbguard,fb_smp_server}
+	fi
 
 	insinto /usr/share/${PN}/help
-	insopts -m0660 -o firebird -g firebird
 	doins help/help.fdb
 
 	exeinto /usr/$(get_libdir)/${PN}/intl
 	doexe intl/libfbintl.so
-	dosym /usr/$(get_libdir)/${PN}/intl/libfbintl.so /usr/$(get_libdir)/${PN}/intl/fbintl.so
+	dosym libfbintl.so /usr/$(get_libdir)/${PN}/intl/fbintl.so
 	insinto /usr/$(get_libdir)/${PN}/intl
-	insopts -m0644 -o root -g root
-	doins intl/fbintl.conf
+	doins ../install/misc/fbintl.conf
 
-	# install plugins
 	exeinto /usr/$(get_libdir)/${PN}/plugins
-	doexe plugins/*.so
-	exeinto /usr/$(get_libdir)/${PN}/plugins/udr
-	doexe plugins/udr/*.so
+	doexe plugins/libfbtrace.so
 
 	exeinto /usr/$(get_libdir)/${PN}/UDF
 	doexe UDF/*.so
@@ -164,20 +166,13 @@ src_install() {
 	insinto /etc/logrotate.d
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
-	# install conf files
-	insinto /etc/${PN}/plugins
-	doins plugins/udr_engine.conf
-
 	insinto /etc/${PN}
-	doins {databases,fbtrace,firebird,plugins}.conf
-
-	# install secutity3.fdb
+	doins ../install/misc/{aliases,fbtrace,firebird}.conf
 	insopts -m0660 -o firebird -g firebird
-	doins security3.fdb
-
-	if use xinetd; then
+	doins security2.fdb
+	if use xinetd ; then
 		insinto /etc/xinetd.d
-		newins "${FILESDIR}/${PN}.xinetd.3" ${PN}
+		newins "${FILESDIR}/${PN}.xinetd" ${PN}
 	else
 		newinitd "${FILESDIR}/${PN}.init.d" ${PN}
 	fi
@@ -187,14 +182,10 @@ src_install() {
 		insinto /usr/share/${PN}/examples
 		insopts -m0644 -o root -g root
 		doins -r api
-		doins -r dbcrypt
+		doins -r dyn
 		doins -r include
-		doins -r interfaces
-		doins -r package
 		doins -r stat
 		doins -r udf
-		doins -r udr
-		doins CMakeLists.txt
 		doins functions.c
 		doins README
 		insinto /usr/share/${PN}/examples/empbuild
@@ -202,8 +193,6 @@ src_install() {
 		doins empbuild/employee.fdb
 	fi
 
-	einfo "Starting with version 3, server mode is set in firebird.conf"
-	einfo "Currently set to default : superserver"
 	einfo "If you're using UDFs, please remember to move them"
 	einfo "to /usr/lib/firebird/UDF"
 }
