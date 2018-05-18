@@ -1,2 +1,2 @@
 =dev-python/azure-mgmt-cdn-2.0.0
-
+=dev-python/azure-mgmt-sql-0.9.0
