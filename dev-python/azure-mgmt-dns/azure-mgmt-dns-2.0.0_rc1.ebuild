@@ -1,17 +1,17 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
+PYTHON_COMPAT=( python2_7 python3_{5,6} )
 
 inherit distutils-r1
 
 MY_P="${P/_/}"
 
 DESCRIPTION="Microsoft Azure DNS Management Client Library for Python"
-HOMEPAGE="https://pypi.python.org/pypi/azure-mgmt-dns"
-SRC_URI="mirror://pypi/a/azure-mgmt-dns/${MY_P}.zip"
+HOMEPAGE="https://pypi.org/project/azure-mgmt-dns"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.zip"
 
 KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
@@ -32,6 +32,6 @@ python_install() {
 	# dev-python/azure-mgmt-resource
 
 	python_export PYTHON_SITEDIR
-	rm "${D%/}${PYTHON_SITEDIR}/azure/__init__.py" || die
-	rm "${D%/}${PYTHON_SITEDIR}/azure/mgmt/__init__.py" || die
+	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
+	rm "${ED}${PYTHON_SITEDIR}/azure/mgmt/__init__.py" || die
 }
