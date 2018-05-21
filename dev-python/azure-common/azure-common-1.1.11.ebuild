@@ -1,9 +1,9 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
+PYTHON_COMPAT=( python2_7 python3_{5,6} )
 
 inherit distutils-r1
 
@@ -26,5 +26,5 @@ python_install() {
 
 	# avoiding file collision with net-misc/azure-cli
 	python_export PYTHON_SITEDIR
-	rm "${D%/}${PYTHON_SITEDIR}/azure/__init__.py" || die
+	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
 }
