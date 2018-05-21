@@ -1,9 +1,9 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
+PYTHON_COMPAT=( python2_7 python3_{5,6} )
 
 inherit distutils-r1
 
@@ -17,9 +17,9 @@ SLOT="0"
 
 IUSE="+acr +acs +advisor +appservice +backup +batch +batchai +billing +cdn \
 	+cloud +cognitiveservices +consumption +container +cosmosdb +dla +dls \
-	+eventgrid +eventhubs extension feedback +iot +keyvault +lab +monitor \
-	+network +rdbms +redis +reservations +resource +role +servicebus +sf \
-	+sql +storage +vm"
+	+eventgrid +eventhubs extension feedback find interactive +iot \
+	+keyvault +lab +monitor +network +rdbms +redis +reservations \
+	+resource +role +servicebus +sf +sql +storage +vm"
 
 RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	sql? ( dev-python/azure-cli-sql[${PYTHON_USEDEP}] )
@@ -37,8 +37,8 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	monitor? ( dev-python/azure-cli-monitor[${PYTHON_USEDEP}] )
 	lab? ( dev-python/azure-cli-lab[${PYTHON_USEDEP}] )
 	keyvault? ( dev-python/azure-cli-keyvault[${PYTHON_USEDEP}] )
-	dev-python/azure-cli-interactive[${PYTHON_USEDEP}]
-	dev-python/azure-cli-find[${PYTHON_USEDEP}]
+	interactive? ( dev-python/azure-cli-interactive[${PYTHON_USEDEP}] )
+	find? ( dev-python/azure-cli-find[${PYTHON_USEDEP}] )
 	iot? ( dev-python/azure-cli-iot[${PYTHON_USEDEP}] )
 	feedback? ( dev-python/azure-cli-feedback[${PYTHON_USEDEP}] )
 	extension? ( dev-python/azure-cli-extension[${PYTHON_USEDEP}] )
@@ -78,7 +78,7 @@ python_install() {
 	python_export PYTHON_SITEDIR
 
 	# The proper __init__.py is provided by dev-python/azure-cli-nspkg
-	rm "${D%/}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
+	rm "${ED}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
 }
 
 pkg_postinst() {
