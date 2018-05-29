@@ -15,12 +15,7 @@ KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
-# https://pypi.python.org/pypi/azure-mgmt
-AZUREMGMTDEPEND="
-	dev-python/azure-mgmt-scheduler[${PYTHON_USEDEP}]
-	dev-python/azure-mgmt-logic[${PYTHON_USEDEP}]"
-
-RDEPEND="${AZUREMGMTDEPEND}"
+RDEPEND=""
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
