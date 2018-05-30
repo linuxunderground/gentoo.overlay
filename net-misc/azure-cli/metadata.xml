@@ -9,7 +9,7 @@
     <flag name="acr">Install the Azure Container Registries module. i.e. 'az acr'</flag>
     <flag name="acs">Install the container module. i.e. 'az acs'</flag>
     <flag name="advisor">Install the advisor module. i.e. 'az advisor'</flag>
-    <flag name="appservice">Install the appservice module. i.e. 'az appservice'</flag>
+    <flag name="appservice">Install the appservice module. i.e. 'az appservice', 'az webapp' and 'az functionapp'</flag>
     <flag name="backup">Install the backup module. i.e. 'az backup'</flag>
     <flag name="batch">Install the batch module. i.e. 'az batch'</flag>
     <flag name="batchai">Install the batch AI module. i.e. 'az batchai'</flag>
@@ -42,6 +42,6 @@
     <flag name="sf">Install the service fabric module. i.e. 'az sf'</flag>
     <flag name="sql">Install the sql module. i.e. 'az sql'</flag>
     <flag name="storage">Install the storage module. i.e. 'az storage'</flag>
-    <flag name="vm">Install the VM module. i.e. 'az vm', 'az vmss', 'az disk', 'az identity' and 'az image'</flag>
+    <flag name="vm">Install the VM module. i.e. 'az vm', 'az vmss', 'az disk', 'az identity', 'az snapshot'  and 'az image'</flag>
   </use>
 </pkgmetadata>
