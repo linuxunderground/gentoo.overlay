@@ -1,7 +1,7 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit eutils
 
@@ -10,7 +10,7 @@ LICENSE="HPND"
 KEYWORDS="~amd64 ~x86 ~arm"
 DESCRIPTION="Console SID file player. Very small and light."
 
-SRC_URI="http://www-stud.rbi.informatik.uni-frankfurt.de/~sinsch/new/tinysid-Dateien/downloads/tinysid-linux.tar.gzip -> tinysid-linux.tar.gz"
+SRC_URI="https://www.linuxunderground.be/distfiles/${P}.tar.gz"
 HOMEPAGE="http://www-stud.rbi.informatik.uni-frankfurt.de/~sinsch/new/tinysid.htm"
 IUSE="alsa"
 
@@ -18,9 +18,8 @@ RDEPEND="alsa? ( media-libs/alsa-oss )"
 
 DEPEND="${RDEPEND}"
 
-S=${WORKDIR}
-
 src_prepare() {
+	default
 	sed -i -e '/^C\?L\?D\?FLAGS/s:^:#:' makefile
 }
 
