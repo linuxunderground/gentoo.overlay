@@ -11,15 +11,16 @@ DESCRIPTION="AutoRest swagger generator Python client runtime"
 HOMEPAGE="https://pypi.org/project/msrest"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="virtual/python-enum34[${PYTHON_USEDEP}]
+	virtual/python-typing[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.6.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-oauthlib-0.5.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.14.1[${PYTHON_USEDEP}]"
+	>=dev-python/requests-2.16[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
