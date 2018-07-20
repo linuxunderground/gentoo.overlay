@@ -11,14 +11,12 @@ DESCRIPTION="Microsoft Azure Storage Client Library for Python"
 HOMEPAGE="https://pypi.org/project/azure-multiapi-storage"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
+RDEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 	dev-python/azure-common[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
