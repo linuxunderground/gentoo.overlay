@@ -11,12 +11,11 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Role Command Module"
 HOMEPAGE="https://pypi.org/project/azure-cli-role"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="dev-python/pytz[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-monitor-0.5.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-monitor-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-authorization-0.40.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-keyvault-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/azure-graphrbac-0.40.0[${PYTHON_USEDEP}]
