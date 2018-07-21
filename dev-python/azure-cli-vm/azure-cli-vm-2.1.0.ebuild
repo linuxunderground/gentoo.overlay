@@ -11,13 +11,13 @@ DESCRIPTION="Microsoft Azure Command-Line Tools VM Command Module"
 HOMEPAGE="https://pypi.org/project/azure-cli-vm"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-multiapi-storage-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-resource-1.2.1[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-network-2.0.0_rc2[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-multiapi-storage-0.2.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-resource-2.0.0_rc2[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-network-2.0.0_rc3[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-msi-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-marketplaceordering-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-keyvault-0.40.0[${PYTHON_USEDEP}]
