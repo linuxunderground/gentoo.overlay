@@ -11,15 +11,13 @@ DESCRIPTION="Microsoft Azure Command-Line Tools AppService Command Module"
 HOMEPAGE="https://pypi.org/project/azure-cli-appservice"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="dev-python/xmltodict[${PYTHON_USEDEP}]
 	dev-python/vsts-cd-manager[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.18[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
-	dev-python/pyopenssl[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-web-0.35.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-containerregistry-2.0.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
