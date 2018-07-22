@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools"
 HOMEPAGE="https://pypi.org/project/azure-cli"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
@@ -37,9 +37,9 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	monitor? ( dev-python/azure-cli-monitor[${PYTHON_USEDEP}] )
 	lab? ( dev-python/azure-cli-lab[${PYTHON_USEDEP}] )
 	keyvault? ( dev-python/azure-cli-keyvault[${PYTHON_USEDEP}] )
+	iot? ( dev-python/azure-cli-iot[${PYTHON_USEDEP}] )
 	interactive? ( dev-python/azure-cli-interactive[${PYTHON_USEDEP}] )
 	find? ( dev-python/azure-cli-find[${PYTHON_USEDEP}] )
-	iot? ( dev-python/azure-cli-iot[${PYTHON_USEDEP}] )
 	feedback? ( dev-python/azure-cli-feedback[${PYTHON_USEDEP}] )
 	extension? ( dev-python/azure-cli-extension[${PYTHON_USEDEP}] )
 	eventhubs? ( dev-python/azure-cli-eventhubs[${PYTHON_USEDEP}] )
