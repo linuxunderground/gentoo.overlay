@@ -11,7 +11,7 @@ DESCRIPTION="Microsoft Azure Command-Line Tools Cosmos DB Command Module"
 HOMEPAGE="https://pypi.org/project/azure-cli-cosmosdb"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
