@@ -11,12 +11,11 @@ DESCRIPTION="Azure Data Lake Store Filesystem Client Library for Python"
 HOMEPAGE="https://pypi.org/project/azure-datalake-store"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
-	>=dev-python/msrest-0.4.8[${PYTHON_USEDEP}]
 	>=dev-python/adal-0.4.5[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/pathlib2[${PYTHON_USEDEP}]' python2_7)"
