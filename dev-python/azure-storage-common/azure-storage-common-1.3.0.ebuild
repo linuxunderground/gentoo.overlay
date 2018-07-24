@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python2_7 python3_{5,6} )
 inherit distutils-r1
 
 DESCRIPTION="Azure client library that makes it easy to consume Azure Storage services"
-HOMEPAGE="https://pypi.org/project/azure-storage-blob"
+HOMEPAGE="https://pypi.org/project/azure-storage-common"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 KEYWORDS="~amd64 ~arm ~x86"
