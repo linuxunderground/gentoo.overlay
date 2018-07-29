@@ -1,19 +1,19 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit eutils flag-o-matic
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="Texas Instruments Home Computer Emulator"
 
-SRC_URI="http://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.gz
+SRC_URI="https://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.gz
 	roms? ( https://computerarchive.org/files/comp/files/Texas%20instruments%20ti-99/TIMRaD2.zip )"
 
-HOMEPAGE="http://www.mrousseau.org/programs/ti99sim/"
+HOMEPAGE="https://www.mrousseau.org/programs/ti99sim/"
 
 IUSE="+roms"
 
@@ -32,9 +32,9 @@ src_configure() {
 }
 
 src_install() {
-	export SYS_BIN=${D}/usr/bin
-	export BIN_DIR=${D}/usr/bin
-	export DATA_DIR=${D}/usr/share/ti99sim
+	export SYS_BIN=${ED}/usr/bin
+	export BIN_DIR=${ED}/usr/bin
+	export DATA_DIR=${ED}/usr/share/ti99sim
 
 	if use roms; then
 		einfo "System ROMs and cartridges come from TIMRaD2.zip,"
@@ -68,5 +68,5 @@ src_install() {
 		ewarn "that contains the console ROM & GROMs from the TI-99/4A."
 		ewarn "See http://www.mrousseau.org/programs/ti99sim/README.html."
 	fi
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${ED}" install || die "emake install failed"
 }

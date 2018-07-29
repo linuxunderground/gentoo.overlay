@@ -1,22 +1,22 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit eutils flag-o-matic
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="Texas Instruments Home Computer Emulator"
 
-SRC_URI="http://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.xz
+SRC_URI="https://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.xz
 	roms? (
-	http://ftp.whtech.com/System%20ROMs/MAME/old/ti99_complete.zip
-	http://ftp.whtech.com/emulators/mess/mess_modules.zip
-	http://ftp.whtech.com/Cartridges/MAME/old/rpk.old/mg_gramkracker.rpk -> mg_gramkracker.zip )"
+	https://ftp.whtech.com/System%20ROMs/MAME/pre_0.174/ti99_complete.zip
+	https://ftp.whtech.com/emulators/mess/mess_modules.zip
+	https://ftp.whtech.com/Cartridges/MAME/old/rpk.old/mg_gramkracker.rpk -> mg_gramkracker.zip )"
 
-HOMEPAGE="http://www.mrousseau.org/programs/ti99sim/"
+HOMEPAGE="https://www.mrousseau.org/programs/ti99sim/"
 
 IUSE="+roms"
 
@@ -45,8 +45,15 @@ src_unpack() {
 }
 
 src_prepare() {
-	eapply "${FILESDIR}"/rules_CFLAGS-14.0.patch
+	eapply "${FILESDIR}/rules_CFLAGS-14.0.patch"
 	eapply_user
+
+	# Use standard C++ library for regular expressions instead of boost library
+	sed -i \
+		-e 's:boost/regex.hpp:regex:' \
+		-e 's/boost/std::__cxx11/' \
+		-e 's/regex_constants/std::regex_constants/' \
+		src/util/mkcart.cpp || die
 }
 
 src_configure() {
@@ -55,9 +62,9 @@ src_configure() {
 }
 
 src_install() {
-	export SYS_BIN=${D}/usr/bin
-	export BIN_DIR=${D}/usr/bin
-	export DATA_DIR=${D}/usr/share/ti99sim
+	export SYS_BIN=${ED}/usr/bin
+	export BIN_DIR=${ED}/usr/bin
+	export DATA_DIR=${ED}/usr/share/ti99sim
 
 	if use roms; then
 		cd "${WORKDIR}/console" || die
@@ -83,5 +90,5 @@ src_install() {
 		ewarn "that contains the console ROM & GROMs from the TI-99/4A."
 		ewarn "See http://www.mrousseau.org/programs/ti99sim/README.html."
 	fi
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${ED}" install || die "emake install failed"
 }
