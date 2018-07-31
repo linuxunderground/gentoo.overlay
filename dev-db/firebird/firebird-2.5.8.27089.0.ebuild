@@ -1,12 +1,12 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit autotools eutils flag-o-matic multilib user versionator
+inherit autotools eutils flag-o-matic multilib user
 
-MY_P=${PN/f/F}-$(replace_version_separator 4 -)
-MY_PV="R$(get_version_component_range 1)_$(get_version_component_range 2)_$(get_version_component_range 3)"
+MY_P="${PN/f/F}-$(ver_rs 4 -)"
+MY_PV="R$(ver_cut 1)_$(ver_cut 2)_$(ver_cut 3)"
 
 DESCRIPTION="Relational database offering many ANSI SQL:2003 and some SQL:2008 features"
 HOMEPAGE="http://www.firebirdsql.org/"
@@ -18,18 +18,16 @@ KEYWORDS="~amd64 ~x86"
 
 IUSE="debug doc client examples superserver xinetd"
 
-CDEPEND="
-	dev-libs/libedit
-	dev-libs/icu:=
-"
+CDEPEND="dev-libs/libedit
+	dev-libs/icu:="
+
 DEPEND="${CDEPEND}
 	>=dev-util/btyacc-3.0-r2
-	doc? ( app-arch/unzip )
-"
+	doc? ( app-arch/unzip )"
+
 RDEPEND="${CDEPEND}
 	xinetd? ( virtual/inetd )
-	!sys-cluster/ganglia
-"
+	!sys-cluster/ganglia"
 
 RESTRICT="userpriv"
 

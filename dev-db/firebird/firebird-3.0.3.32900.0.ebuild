@@ -1,12 +1,12 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit eutils flag-o-matic multilib user versionator
+inherit eutils flag-o-matic multilib user
 
-MY_P=${PN/f/F}-$(replace_version_separator 4 -)
-MY_PV="R$(get_version_component_range 1)_$(get_version_component_range 2)_$(get_version_component_range 3)"
+MY_P="${PN/f/F}-$(ver_rs 4 -)"
+MY_PV="R$(ver_cut 1)_$(ver_cut 2)_$(ver_cut 3)"
 
 DESCRIPTION="Relational database offering many ANSI SQL:2003 and some SQL:2008 features"
 HOMEPAGE="http://www.firebirdsql.org/"
@@ -15,12 +15,11 @@ SRC_URI="https://github.com/FirebirdSQL/${PN}/releases/download/${MY_PV}/${MY_P}
 LICENSE="IDPL Interbase-1.0"
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 IUSE="doc examples +server xinetd"
 
-CDEPEND="
-	dev-libs/libtommath
+CDEPEND="dev-libs/libtommath
 	dev-libs/libedit
 	dev-libs/icu:="
 
