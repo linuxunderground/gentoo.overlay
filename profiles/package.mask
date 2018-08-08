@@ -1,0 +1,23 @@
+# app-emulation/dosemu2 :
+#
+# For now, DosEmu2 is masked because Portage triggers this QA warning :
+#
+# * QA Notice: The following files contain writable and executable sections
+# *  Files with such sections will not work properly (or at all!) on some
+# *  architectures/operating systems.  A bug should be filed at
+# *  https://bugs.gentoo.org/ to make sure the issue is fixed.
+# *  For more information, see:
+# *
+# *    https://wiki.gentoo.org/wiki/Hardened/GNU_stack_quickstart
+# *
+# *  Please include the following list of files in your report:
+# *  Note: Bugs should be filed for the respective maintainers
+# *  of the package in question and not hardened@g.o.
+# * RWX --- --- usr/bin/mkfatimage16
+# * RWX --- --- usr/bin/dosemu.bin
+#
+#
+# Finally, I have to investigate dosemu2-9999.ebuild to know why FreeDos is
+# not automatically installed.
+#
+app-emulation/dosemu2
