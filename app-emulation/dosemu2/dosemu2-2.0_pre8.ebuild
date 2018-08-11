@@ -47,6 +47,10 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
+PATCHES=(
+	"${FILESDIR}/fix-QA_notice.patch"
+)
+
 src_prepare() {
 	default
 
