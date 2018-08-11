@@ -1,3 +1,0 @@
-# I have to investigate dosemu2-9999.ebuild to know why FreeDos is
-# not automatically installed.
-=app-emulation/dosemu2-9999
