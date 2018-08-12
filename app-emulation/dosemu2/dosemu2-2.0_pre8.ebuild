@@ -37,7 +37,8 @@ RDEPEND="X? ( x11-libs/libX11
 	ladspa? ( media-libs/ladspa-cmt )
 	media-libs/libao
 	media-libs/libsdl2
-	>=sys-libs/slang-1.4"
+	>=sys-libs/slang-1.4
+	!app-emulation/dosemu"
 
 DEPEND="${RDEPEND}
 	X? ( x11-base/xorg-proto )

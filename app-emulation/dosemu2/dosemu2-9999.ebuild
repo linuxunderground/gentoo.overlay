@@ -35,7 +35,8 @@ RDEPEND="X? ( x11-libs/libX11
 	ladspa? ( media-libs/ladspa-cmt )
 	media-libs/libao
 	media-libs/libsdl2
-	>=sys-libs/slang-1.4"
+	>=sys-libs/slang-1.4
+	!app-emulation/dosemu"
 
 DEPEND="${RDEPEND}
 	X? ( x11-base/xorg-proto )
@@ -68,8 +69,8 @@ src_configure() {
 	use X && myplugins+=( ,X )
 
 	econf $(use_enable debug) \
-		--with-fdtarball="${DISTDIR}"/${P_FD}.tgz \
-		--docdir="${EPREFIX}"/usr/share/doc/${PF} \
+		--with-fdtarball="${DISTDIR}/${P_FD}.tgz" \
+		--docdir="${EPREFIX}/usr/share/doc/${PF}" \
 		--enable-plugins="${myplugins}"
 }
 
