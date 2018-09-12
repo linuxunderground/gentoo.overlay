@@ -54,6 +54,9 @@ src_prepare() {
 		-e 's/boost/std::__cxx11/' \
 		-e 's/regex_constants/std::regex_constants/' \
 		src/util/mkcart.cpp || die
+	sed -i \
+		-e 's/-lboost_regex//' \
+		src/util/Makefile || die
 }
 
 src_configure() {
