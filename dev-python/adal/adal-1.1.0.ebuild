@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/cryptography-1.1.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/cryptography-2.1.4[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-1.0.0[${PYTHON_USEDEP}]"
