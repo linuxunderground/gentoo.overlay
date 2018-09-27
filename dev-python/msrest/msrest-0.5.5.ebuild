@@ -20,7 +20,7 @@ RDEPEND="virtual/python-enum34[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.6.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-oauthlib-0.5.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.16[${PYTHON_USEDEP}]"
+	>=dev-python/requests-2.18.4[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
