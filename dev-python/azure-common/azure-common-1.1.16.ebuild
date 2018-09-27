@@ -20,11 +20,3 @@ RDEPEND="<dev-python/msrestazure-2.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
-
-python_install() {
-	distutils-r1_python_install
-
-	# avoiding file collision with net-misc/azure-cli
-	python_export PYTHON_SITEDIR
-	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
-}
