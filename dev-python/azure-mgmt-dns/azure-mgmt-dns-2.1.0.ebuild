@@ -13,7 +13,7 @@ DESCRIPTION="Microsoft Azure DNS Management Client Library for Python"
 HOMEPAGE="https://pypi.org/project/azure-mgmt-dns"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.zip"
 
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
