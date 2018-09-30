@@ -15,8 +15,8 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-multiapi-storage-0.2.1[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-storage-1.5.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-multiapi-storage-0.2.2[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-storage-2.0.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
