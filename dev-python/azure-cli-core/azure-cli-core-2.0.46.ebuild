@@ -17,24 +17,15 @@ SLOT="0"
 
 IUSE=""
 
-# dev-python/tabulate is a knack dependency
-# dev-python/six is a knack dependency
-# dev-python/pyyaml is a knack dependency
-# dev-python/pygments is a knack dependency
-# dev-python/msrest is a msrestazure dependency
-# dev-python/jmespath is a knack dependency
-# dev-python/colorama is a knack dependency
-# dev-python/argcomplete is a knack dependency
-
-RDEPEND="dev-python/requests[${PYTHON_USEDEP}]
-	>=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	>=dev-python/msrestazure-0.4.25[${PYTHON_USEDEP}]
-	>=dev-python/knack-0.4.1[${PYTHON_USEDEP}]
+	>=dev-python/knack-0.4.3[${PYTHON_USEDEP}]
 	dev-python/humanfriendly[${PYTHON_USEDEP}]
-	dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
-	>=dev-python/applicationinsights-0.11.1[${PYTHON_USEDEP}]"
+	>=dev-python/azure-mgmt-resource-2.0.0[${PYTHON_USEDEP}]
+	dev-python/azure-cli-telemetry[${PYTHON_USEDEP}]
+	dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
