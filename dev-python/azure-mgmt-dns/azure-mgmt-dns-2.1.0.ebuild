@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/msrestazure-0.4.20[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/msrestazure-0.4.32[${PYTHON_USEDEP}]
 	>=dev-python/azure-common-1.1.6[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
