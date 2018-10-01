@@ -15,8 +15,9 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-mgmt-keyvault-0.40.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-keyvault-0.3.7[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-keyvault-1.1.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-graphrbac-0.40.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
