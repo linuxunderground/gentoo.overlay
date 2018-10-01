@@ -18,8 +18,9 @@ SLOT="0"
 RDEPEND="dev-python/xmltodict[${PYTHON_USEDEP}]
 	dev-python/vsts-cd-manager[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.18[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-web-0.35.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-containerregistry-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-web-0.40.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-storage-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-containerregistry-2.2.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
