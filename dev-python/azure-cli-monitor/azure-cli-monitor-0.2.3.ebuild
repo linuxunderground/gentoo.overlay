@@ -15,13 +15,17 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="dev-python/azure-cli-core[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-resource-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-monitor-0.5.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-monitor-0.5.2[${PYTHON_USEDEP}]
+	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
+
+src_prepare() {
+	default
+	sed -i -e '/import antlr4/ d' azure/cli/command_modules/monitor/actions.py || die
+}
 
 python_install() {
 	distutils-r1_python_install
