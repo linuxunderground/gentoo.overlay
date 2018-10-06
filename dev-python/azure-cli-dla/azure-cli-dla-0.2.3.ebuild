@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-mgmt-datalake-store-0.2.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-datalake-store-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-datalake-analytics-0.2.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
