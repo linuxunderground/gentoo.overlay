@@ -15,24 +15,25 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-IUSE="+acr +acs +advisor +appservice +backup +batch +batchai +billing +cdn \
-	+cloud +cognitiveservices +consumption +container +cosmosdb +dla +dls \
-	+eventgrid +eventhubs extension feedback find interactive +iot \
+IUSE="+acr +acs +advisor +ams +appservice +backup +batch +batchai +billing \
+	+cdn +cloud +cognitiveservices +consumption +container +cosmosdb +dla \
+	+dls +dms +eventgrid +eventhubs extension feedback find interactive +iot \
 	+keyvault +lab +monitor +network +rdbms +redis +reservations \
-	+resource +role +servicebus +sf +sql +storage +vm"
+	+resource +role +search +servicebus +sf +sql +storage +vm"
 
 RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	sql? ( dev-python/azure-cli-sql[${PYTHON_USEDEP}] )
 	storage? ( dev-python/azure-cli-storage[${PYTHON_USEDEP}] )
 	sf? ( dev-python/azure-cli-servicefabric[${PYTHON_USEDEP}] )
 	servicebus? ( dev-python/azure-cli-servicebus[${PYTHON_USEDEP}] )
+	search? ( dev-python/azure-cli-search[${PYTHON_USEDEP}] )
 	role? ( dev-python/azure-cli-role[${PYTHON_USEDEP}] )
 	resource? ( dev-python/azure-cli-resource[${PYTHON_USEDEP}] )
 	reservations? ( dev-python/azure-cli-reservations[${PYTHON_USEDEP}] )
 	redis? ( dev-python/azure-cli-redis[${PYTHON_USEDEP}] )
 	rdbms? ( dev-python/azure-cli-rdbms[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-profile[${PYTHON_USEDEP}]
-	dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
+	!dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
 	network? ( dev-python/azure-cli-network[${PYTHON_USEDEP}] )
 	monitor? ( dev-python/azure-cli-monitor[${PYTHON_USEDEP}] )
 	lab? ( dev-python/azure-cli-lab[${PYTHON_USEDEP}] )
@@ -44,6 +45,7 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	extension? ( dev-python/azure-cli-extension[${PYTHON_USEDEP}] )
 	eventhubs? ( dev-python/azure-cli-eventhubs[${PYTHON_USEDEP}] )
 	eventgrid? ( dev-python/azure-cli-eventgrid[${PYTHON_USEDEP}] )
+	dms? ( dev-python/azure-cli-dms[${PYTHON_USEDEP}] )
 	dls? ( dev-python/azure-cli-dls[${PYTHON_USEDEP}] )
 	dla? ( dev-python/azure-cli-dla[${PYTHON_USEDEP}] )
 	cosmosdb? ( dev-python/azure-cli-cosmosdb[${PYTHON_USEDEP}] )
@@ -59,6 +61,7 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	batch? ( dev-python/azure-cli-batch[${PYTHON_USEDEP}] )
 	backup? ( dev-python/azure-cli-backup[${PYTHON_USEDEP}] )
 	appservice? ( dev-python/azure-cli-appservice[${PYTHON_USEDEP}] )
+	ams? ( dev-python/azure-cli-ams[${PYTHON_USEDEP}] )
 	advisor? ( dev-python/azure-cli-advisor[${PYTHON_USEDEP}] )
 	acs? ( dev-python/azure-cli-acs[${PYTHON_USEDEP}] )
 	acr? ( dev-python/azure-cli-acr[${PYTHON_USEDEP}] )"
@@ -70,15 +73,6 @@ src_prepare() {
 	distutils-r1_src_prepare
 	rm az.bat || die
 	sed -i -e '/az.bat/ d' setup.py || die
-}
-
-python_install() {
-	distutils-r1_python_install
-
-	python_export PYTHON_SITEDIR
-
-	# The proper __init__.py is provided by dev-python/azure-cli-nspkg
-	rm "${ED}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
 }
 
 pkg_postinst() {

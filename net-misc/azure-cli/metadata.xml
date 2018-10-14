@@ -9,6 +9,7 @@
     <flag name="acr">Install the Azure Container Registries module. i.e. 'az acr'</flag>
     <flag name="acs">Install the container module. i.e. 'az acs'</flag>
     <flag name="advisor">Install the advisor module. i.e. 'az advisor'</flag>
+    <flag name="ams">Install the ams module. i.e. 'az ams'</flag>
     <flag name="appservice">Install the appservice module. i.e. 'az appservice', 'az webapp' and 'az functionapp'</flag>
     <flag name="backup">Install the backup module. i.e. 'az backup'</flag>
     <flag name="batch">Install the batch module. i.e. 'az batch'</flag>
@@ -22,6 +23,7 @@
     <flag name="cosmosdb">Install the cosmosdb module. i.e. 'az cosmosdb'</flag>
     <flag name="dla">Install the dla module. i.e. 'az dla'</flag>
     <flag name="dls">Install the dls module. i.e. 'az dls'</flag>
+    <flag name="dms">Install the 'Database Migration Service' module. i.e. 'az dms'</flag>
     <flag name="eventgrid">Install the eventgrid module. i.e. 'az eventgrid'</flag>
     <flag name="eventhubs">Install the eventhubs module. i.e. 'az eventhubs'</flag>
     <flag name="extension">Install the extension module. i.e. 'az extension'</flag>
@@ -38,6 +40,7 @@
     <flag name="reservations">Install the reservations module. i.e. 'az reservations'</flag>
     <flag name="resource">Install the resource module. i.e. 'az resource'</flag>
     <flag name="role">Install the role module. i.e. 'az role' and 'az ad'</flag>
+    <flag name="search">Install the search module. i.e. 'az search'</flag>
     <flag name="servicebus">Install the service bus module. i.e. 'az servicebus'</flag>
     <flag name="sf">Install the service fabric module. i.e. 'az sf'</flag>
     <flag name="sql">Install the sql module. i.e. 'az sql'</flag>
