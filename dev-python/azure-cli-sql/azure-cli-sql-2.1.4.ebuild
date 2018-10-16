@@ -18,7 +18,7 @@ SLOT="0"
 RDEPEND=">=dev-python/azure-mgmt-storage-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-sql-0.9.1[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
-	>=dev-python/azure-cli-command-modules-nspkg-2.0.0[${PYTHON_USEDEP}]"
+	!dev-python/azure-cli-command-modules-nspkg"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
@@ -28,10 +28,13 @@ python_install() {
 
 	python_export PYTHON_SITEDIR
 
-	# The proper __init__.py is provided by net-misc/azure-cli
+	# __init__.py are provided by net-misc/azure-cli
 	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
-	# The proper __init__.py is provided by dev-python/azure-cli-nspkg
 	rm "${ED}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
-	# The proper __init__.py is provided by dev-python/azure-cli-command-modules-nspkg	
 	rm "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/__init__.py" || die
+
+	# Avoid portage file collisions
+	rm -r "${ED}${PYTHON_SITEDIR}/azure/__pycache__" || die
+	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/__pycache__" || die
+	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/__pycache__" || die
 }
