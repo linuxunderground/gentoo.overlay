@@ -18,15 +18,15 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/msrestazure-0.4.32[${PYTHON_USEDEP}]
-	>=dev-python/azure-common-1.1.6[${PYTHON_USEDEP}]"
+	>=dev-python/azure-common-1.1.12[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	default
-	touch azure/__init__.py
-	touch azure/mgmt/__init__.py
-}
+#src_prepare() {
+#	default
+#	touch azure/__init__.py
+#	touch azure/mgmt/__init__.py
+#}
