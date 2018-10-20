@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-common-1.1.9[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-common-1.1.12[${PYTHON_USEDEP}]
 	>=dev-python/azure-storage-common-1.3[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]"
 
@@ -30,6 +30,9 @@ python_install() {
 
 	# The proper __init__.py is provided by net-misc/azure-cli
 	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
-	# The proper __init__.py is provided by dev-python/azure-storage-nspkg
 	rm "${ED}${PYTHON_SITEDIR}/azure/storage/__init__.py" || die
+
+	# Avoid portage file collisions
+	rm -r "${ED}${PYTHON_SITEDIR}/azure/__pycache__" || die
+	rm -r "${ED}${PYTHON_SITEDIR}/azure/storage/__pycache__" || die
 }
