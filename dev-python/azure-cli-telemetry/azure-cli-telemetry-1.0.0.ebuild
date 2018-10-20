@@ -26,12 +26,11 @@ python_install() {
 
 	python_export PYTHON_SITEDIR
 
-	# The proper __init__.py is provided by net-misc/azure-cli
+	# __init__.py are provided by net-misc/azure-cli
 	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
-	# The proper __init__.py is provided by dev-python/azure-cli-nspkg
 	rm "${ED}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
 
-	# Why here and not with other azure-cli-* ebuild ?
+	# Avoid portage file collisions
 	rm -r "${ED}${PYTHON_SITEDIR}/azure/__pycache__" || die
 	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/__pycache__" || die
 }
