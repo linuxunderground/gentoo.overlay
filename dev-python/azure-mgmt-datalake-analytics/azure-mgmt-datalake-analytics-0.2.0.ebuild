@@ -11,12 +11,12 @@ DESCRIPTION="Microsoft Azure Data Lake Analytics Management Client Library for P
 HOMEPAGE="https://pypi.org/project/azure-mgmt-datalake-analytics"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.zip"
 
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/msrestazure-0.4.20[${PYTHON_USEDEP}]
-	>=dev-python/azure-common-1.1.6[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/msrestazure-0.4.32[${PYTHON_USEDEP}]
+	>=dev-python/azure-common-1.1.12[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
@@ -24,11 +24,15 @@ DEPEND="${RDEPEND}
 python_install() {
 	distutils-r1_python_install
 
-	# avoiding file collision with net-misc/azure-cli and
-	# dev-python/azure-mgmt-resource
-
 	python_export PYTHON_SITEDIR
+
+	# __init__.py are provided by net-misc/azure-cli
 	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
 	rm "${ED}${PYTHON_SITEDIR}/azure/mgmt/__init__.py" || die
 	rm "${ED}${PYTHON_SITEDIR}/azure/mgmt/datalake/__init__.py" || die
+
+	# Avoid portage file collisions
+	rm -r "${ED}${PYTHON_SITEDIR}/azure/__pycache__" || di
+	rm -r "${ED}${PYTHON_SITEDIR}/azure/mgmt/__pycache__" || die
+	rm -r "${ED}${PYTHON_SITEDIR}/azure/mgmt/datalake/__pycache__" || die
 }
