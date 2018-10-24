@@ -33,7 +33,7 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	redis? ( dev-python/azure-cli-redis[${PYTHON_USEDEP}] )
 	rdbms? ( dev-python/azure-cli-rdbms[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-profile[${PYTHON_USEDEP}]
-	!dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
+	!!dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
 	network? ( dev-python/azure-cli-network[${PYTHON_USEDEP}] )
 	monitor? ( dev-python/azure-cli-monitor[${PYTHON_USEDEP}] )
 	lab? ( dev-python/azure-cli-lab[${PYTHON_USEDEP}] )
