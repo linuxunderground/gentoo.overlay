@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/adal-0.6.0[${PYTHON_USEDEP}]
-	>=dev-python/msrest-0.4.28[${PYTHON_USEDEP}]"
+	>=dev-python/msrest-0.5.5[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
