@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python2_7 python3_{5,6} )
 inherit distutils-r1
 
 DESCRIPTION="Microsoft Azure CLI bot service command module"
-HOMEPAGE="https://pypi.org/project/azure-cli-maps"
+HOMEPAGE="https://pypi.org/project/azure-cli-botservice"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 KEYWORDS="~amd64 ~arm ~x86"
