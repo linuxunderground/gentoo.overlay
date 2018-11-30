@@ -19,8 +19,8 @@ IUSE="+acr +acs +advisor +ams +appservice +backup +batch +batchai +billing \
 	+bot +cdn +cloud +cognitiveservices +consumption +container +cosmosdb \
 	+dla +dls +dms +eventgrid +eventhubs extension feedback find +hdinsight \
 	interactive +iot +iotcentral +keyvault +lab +maps +monitor +network \
-	+policyinsights +rdbms +redis +reservations	+resource +role +search \
-	+servicebus +sf +signalr +sql +storage +vm"
+	+policyinsights +rdbms +redis +relay +reservations +resource +role \
+	+search +servicebus +sf +signalr +sql +storage +vm"
 
 RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	sql? ( dev-python/azure-cli-sql[${PYTHON_USEDEP}] )
@@ -32,6 +32,7 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	role? ( dev-python/azure-cli-role[${PYTHON_USEDEP}] )
 	resource? ( dev-python/azure-cli-resource[${PYTHON_USEDEP}] )
 	reservations? ( dev-python/azure-cli-reservations[${PYTHON_USEDEP}] )
+	relay? ( dev-python/azure-cli-relay[${PYTHON_USEDEP}] )
 	redis? ( dev-python/azure-cli-redis[${PYTHON_USEDEP}] )
 	rdbms? ( dev-python/azure-cli-rdbms[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-profile[${PYTHON_USEDEP}]
@@ -55,7 +56,7 @@ RDEPEND="vm? ( dev-python/azure-cli-vm[${PYTHON_USEDEP}] )
 	dls? ( dev-python/azure-cli-dls[${PYTHON_USEDEP}] )
 	dla? ( dev-python/azure-cli-dla[${PYTHON_USEDEP}] )
 	cosmosdb? ( dev-python/azure-cli-cosmosdb[${PYTHON_USEDEP}] )
-	>=dev-python/azure-cli-core-2.0.49[${PYTHON_USEDEP}]
+	>=dev-python/azure-cli-core-2.0.51[${PYTHON_USEDEP}]
 	container? ( dev-python/azure-cli-container[${PYTHON_USEDEP}] )
 	consumption? ( dev-python/azure-cli-consumption[${PYTHON_USEDEP}] )
 	dev-python/azure-cli-configure[${PYTHON_USEDEP}]

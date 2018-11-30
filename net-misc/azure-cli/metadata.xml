@@ -42,6 +42,7 @@
     <flag name="policyinsights">Install the policyinsights module. i.e. 'az policy event' and 'az policy state'</flag>
     <flag name="rdbms">Install the rdbms module. i.e. 'az mysql' and 'az postgres'</flag>
     <flag name="redis">Install the redis module. i.e. 'az redis'</flag>
+    <flag name="relay">Install the relay module. i.e. 'az relay'</flag>
     <flag name="reservations">Install the reservations module. i.e. 'az reservations'</flag>
     <flag name="resource">Install the resource module. i.e. 'az resource'</flag>
     <flag name="role">Install the role module. i.e. 'az role' and 'az ad'</flag>

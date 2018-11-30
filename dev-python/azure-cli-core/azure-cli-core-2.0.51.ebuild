@@ -21,7 +21,7 @@ RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	>=dev-python/msrestazure-0.4.25[${PYTHON_USEDEP}]
-	>=dev-python/knack-0.4.3[${PYTHON_USEDEP}]
+	>=dev-python/knack-0.4.5[${PYTHON_USEDEP}]
 	dev-python/humanfriendly[${PYTHON_USEDEP}]
 	dev-python/azure-cli-telemetry[${PYTHON_USEDEP}]"
 
