@@ -16,11 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/azure-multiapi-storage-0.2.2[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-network-2.2.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-network-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-msi-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-marketplaceordering-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-keyvault-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-compute-4.3.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-compute-4.3.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-authorization-0.50.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
