@@ -17,7 +17,7 @@ SLOT="0"
 
 RDEPEND="dev-python/mock[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-trafficmanager-0.50.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-network-2.2.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-network-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-dns-2.1.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
