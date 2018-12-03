@@ -19,7 +19,7 @@ RDEPEND=">=dev-python/azure-mgmt-keyvault-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-batch-5.0.1[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg
-	>=dev-python/azure-batch-5.0.0[${PYTHON_USEDEP}]"
+	>=dev-python/azure-batch-5.1.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
