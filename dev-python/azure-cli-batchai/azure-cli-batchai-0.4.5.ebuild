@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/azure-storage-blob-1.3.1[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-storage-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-storage-3.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-batchai-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/mock-2.0.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
