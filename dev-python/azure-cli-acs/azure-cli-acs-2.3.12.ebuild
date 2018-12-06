@@ -20,7 +20,7 @@ RDEPEND="dev-python/sshtunnel[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-containerservice-4.2.2[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-compute-4.3.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-authorization-0.50.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-graphrbac-0.40.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-graphrbac-0.53.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
