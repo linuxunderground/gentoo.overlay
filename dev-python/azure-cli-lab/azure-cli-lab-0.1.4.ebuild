@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/azure-mgmt-devtestlabs-2.2.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-graphrbac-0.40.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-graphrbac-0.53.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
