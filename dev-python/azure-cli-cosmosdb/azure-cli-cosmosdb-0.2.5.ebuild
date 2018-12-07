@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/pydocumentdb-2.0.1[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-cosmosdb-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-cosmosdb-0.5.2[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
