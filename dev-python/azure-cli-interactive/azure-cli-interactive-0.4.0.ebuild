@@ -17,6 +17,7 @@ SLOT="0"
 
 RDEPEND="dev-python/prompt_toolkit[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
+	>=dev-python/applicationinsights-0.11.7[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
 DEPEND="${RDEPEND}
