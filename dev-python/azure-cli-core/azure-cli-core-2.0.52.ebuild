@@ -17,8 +17,7 @@ SLOT="0"
 
 IUSE=""
 
-RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
-	>=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 	dev-python/pynacl[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/pyasn1[${PYTHON_USEDEP}]

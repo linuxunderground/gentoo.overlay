@@ -15,7 +15,8 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="dev-python/xmltodict[${PYTHON_USEDEP}]
+RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
+	dev-python/xmltodict[${PYTHON_USEDEP}]
 	dev-python/vsts-cd-manager[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.18[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-web-0.40.0[${PYTHON_USEDEP}]

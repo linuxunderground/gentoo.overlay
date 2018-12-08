@@ -15,7 +15,8 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND="dev-python/sshtunnel[${PYTHON_USEDEP}]
+RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
+	dev-python/sshtunnel[${PYTHON_USEDEP}]
 	dev-python/scp[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-containerservice-4.2.2[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-compute-4.3.1[${PYTHON_USEDEP}]
