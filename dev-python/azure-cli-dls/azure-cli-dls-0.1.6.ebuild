@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/azure-mgmt-datalake-store-0.5.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-datalake-store-0.0.34[${PYTHON_USEDEP}]
+	>=dev-python/azure-datalake-store-0.0.39[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
