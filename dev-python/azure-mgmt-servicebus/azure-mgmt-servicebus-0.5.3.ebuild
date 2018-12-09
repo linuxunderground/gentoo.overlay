@@ -20,9 +20,3 @@ RDEPEND=">=dev-python/msrestazure-0.4.32[${PYTHON_USEDEP}]
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
-
-src_prepare() {
-	default
-	touch azure/__init__.py
-	touch azure/mgmt/__init__.py
-}
