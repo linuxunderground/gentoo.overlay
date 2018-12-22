@@ -17,7 +17,7 @@ SLOT="0"
 
 RDEPEND=">=dev-python/azure-mgmt-storage-3.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-servicefabric-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-network-2.3.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-network-2.4.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-keyvault-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-compute-4.3.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-graphrbac-0.53.0[${PYTHON_USEDEP}]
