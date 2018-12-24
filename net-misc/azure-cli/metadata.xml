@@ -7,7 +7,7 @@
   </maintainer>
   <use>
     <flag name="acr">Install the Azure Container Registries module. i.e. 'az acr'</flag>
-    <flag name="acs">Install the container module. i.e. 'az acs'</flag>
+    <flag name="acs">Install the container module. i.e. 'az acs' and 'az aks'</flag>
     <flag name="advisor">Install the advisor module. i.e. 'az advisor'</flag>
     <flag name="ams">Install the ams module. i.e. 'az ams'</flag>
     <flag name="appservice">Install the appservice module. i.e. 'az appservice', 'az webapp' and 'az functionapp'</flag>
