@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -31,6 +31,15 @@ RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
+
+src_prepare() {
+	default
+
+	# Get the versions from pypi : 
+	# Useful for Gentoo maintainer but not for Gentoo users.
+	# We do not want any warning if pip is not installed.
+	eapply "${FILESDIR}"/pypi_check.patch
+}
 
 python_install() {
 	distutils-r1_python_install

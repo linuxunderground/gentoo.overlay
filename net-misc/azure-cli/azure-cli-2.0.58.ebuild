@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -56,7 +56,7 @@ RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.11[${PYTHON_USEDEP}] )
 	dls? ( >=dev-python/azure-cli-dls-0.1.7[${PYTHON_USEDEP}] )
 	dla? ( >=dev-python/azure-cli-dla-0.2.3[${PYTHON_USEDEP}] )
 	cosmosdb? ( >=dev-python/azure-cli-cosmosdb-0.2.6[${PYTHON_USEDEP}] )
-	>=dev-python/azure-cli-core-2.0.54[${PYTHON_USEDEP}]
+	>=dev-python/azure-cli-core-2.0.58[${PYTHON_USEDEP}]
 	container? ( >=dev-python/azure-cli-container-0.3.10[${PYTHON_USEDEP}] )
 	consumption? ( >=dev-python/azure-cli-consumption-0.4.1[${PYTHON_USEDEP}] )
 	>=dev-python/azure-cli-configure-2.0.19[${PYTHON_USEDEP}]
