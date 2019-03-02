@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/azure-multiapi-storage-0.2.2[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-storage-3.1.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-storage-3.1.1[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
