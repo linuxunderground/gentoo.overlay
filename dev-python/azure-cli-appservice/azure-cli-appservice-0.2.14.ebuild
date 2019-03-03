@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,13 +15,17 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
+# fabric>=2.4 : https://bugs.gentoo.org/show_bug.cgi?id=679268
 RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 	dev-python/vsts-cd-manager[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.18[${PYTHON_USEDEP}]
+	dev-python/fabric:2[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-web-0.40.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-storage-3.1.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-containerregistry-2.4.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-storage-3.1.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-containerregistry-2.7.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-applicationinsights-0.1.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-functions-devops-build-0.0.11[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
