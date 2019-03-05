@@ -22,27 +22,27 @@ IUSE="+acr +acs +advisor +ams +appservice +backup +batch +batchai +billing \
 	+policyinsights +rdbms +redis +relay +reservations +resource +role \
 	+search +servicebus +sf +signalr +sql +storage +vm"
 
-RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.11[${PYTHON_USEDEP}] )
-	sql? ( >=dev-python/azure-cli-sql-2.1.6[${PYTHON_USEDEP}] )
-	storage? ( >=dev-python/azure-cli-storage-2.2.7[${PYTHON_USEDEP}] )
+RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.16[${PYTHON_USEDEP}] )
+	sql? ( >=dev-python/azure-cli-sql-2.1.9[${PYTHON_USEDEP}] )
+	storage? ( >=dev-python/azure-cli-storage-2.3.1[${PYTHON_USEDEP}] )
 	signalr? ( >=dev-python/azure-cli-signalr-1.0.0[${PYTHON_USEDEP}] )
-	sf? ( >=dev-python/azure-cli-servicefabric-0.1.10[${PYTHON_USEDEP}] )
+	sf? ( >=dev-python/azure-cli-servicefabric-0.1.13[${PYTHON_USEDEP}] )
 	servicebus? ( >=dev-python/azure-cli-servicebus-0.3.2[${PYTHON_USEDEP}] )
 	search? ( >=dev-python/azure-cli-search-0.1.1[${PYTHON_USEDEP}] )
-	role? ( >=dev-python/azure-cli-role-2.2.0[${PYTHON_USEDEP}] )
-	resource? ( >=dev-python/azure-cli-resource-2.1.7[${PYTHON_USEDEP}] )
+	role? ( >=dev-python/azure-cli-role-2.4.1[${PYTHON_USEDEP}] )
+	resource? ( >=dev-python/azure-cli-resource-2.1.11[${PYTHON_USEDEP}] )
 	reservations? ( >=dev-python/azure-cli-reservations-0.4.1[${PYTHON_USEDEP}] )
 	relay? ( >=dev-python/azure-cli-relay-0.1.2[${PYTHON_USEDEP}] )
 	redis? ( >=dev-python/azure-cli-redis-0.3.2[${PYTHON_USEDEP}] )
-	rdbms? ( >=dev-python/azure-cli-rdbms-0.3.5[${PYTHON_USEDEP}] )
-	>=dev-python/azure-cli-profile-2.1.2[${PYTHON_USEDEP}]
+	rdbms? ( >=dev-python/azure-cli-rdbms-0.3.7[${PYTHON_USEDEP}] )
+	>=dev-python/azure-cli-profile-2.1.3[${PYTHON_USEDEP}]
 	policyinsights? ( >=dev-python/azure-cli-policyinsights-0.1.0[${PYTHON_USEDEP}] )
 	!!dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
-	network? ( >=dev-python/azure-cli-network-2.2.11[${PYTHON_USEDEP}] )
+	network? ( >=dev-python/azure-cli-network-2.3.3[${PYTHON_USEDEP}] )
 	monitor? ( >=dev-python/azure-cli-monitor-0.2.7[${PYTHON_USEDEP}] )
 	maps? ( >=dev-python/azure-cli-maps-0.3.3[${PYTHON_USEDEP}] )
 	lab? ( >=dev-python/azure-cli-lab-0.1.4[${PYTHON_USEDEP}] )
-	keyvault? ( >=dev-python/azure-cli-keyvault-2.2.9[${PYTHON_USEDEP}] )
+	keyvault? ( >=dev-python/azure-cli-keyvault-2.2.12[${PYTHON_USEDEP}] )
 	iotcentral? ( >=dev-python/azure-cli-iotcentral-0.1.5[${PYTHON_USEDEP}] )
 	iot? ( >=dev-python/azure-cli-iot-0.3.4[${PYTHON_USEDEP}] )
 	interactive? ( >=dev-python/azure-cli-interactive-0.4.1[${PYTHON_USEDEP}] )
@@ -55,24 +55,24 @@ RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.11[${PYTHON_USEDEP}] )
 	dms? ( >=dev-python/azure-cli-dms-0.1.1[${PYTHON_USEDEP}] )
 	dls? ( >=dev-python/azure-cli-dls-0.1.7[${PYTHON_USEDEP}] )
 	dla? ( >=dev-python/azure-cli-dla-0.2.3[${PYTHON_USEDEP}] )
-	cosmosdb? ( >=dev-python/azure-cli-cosmosdb-0.2.6[${PYTHON_USEDEP}] )
-	>=dev-python/azure-cli-core-2.0.58[${PYTHON_USEDEP}]
-	container? ( >=dev-python/azure-cli-container-0.3.10[${PYTHON_USEDEP}] )
+	cosmosdb? ( >=dev-python/azure-cli-cosmosdb-0.2.8[${PYTHON_USEDEP}] )
+	>=dev-python/azure-cli-core-2.0.59[${PYTHON_USEDEP}]
+	container? ( >=dev-python/azure-cli-container-0.3.14[${PYTHON_USEDEP}] )
 	consumption? ( >=dev-python/azure-cli-consumption-0.4.1[${PYTHON_USEDEP}] )
-	>=dev-python/azure-cli-configure-2.0.19[${PYTHON_USEDEP}]
+	>=dev-python/azure-cli-configure-2.0.20[${PYTHON_USEDEP}]
 	cognitiveservices? ( >=dev-python/azure-cli-cognitiveservices-0.2.4[${PYTHON_USEDEP}] )
 	cloud? ( >=dev-python/azure-cli-cloud-2.1.0[${PYTHON_USEDEP}] )
 	cdn? ( >=dev-python/azure-cli-cdn-0.2.0[${PYTHON_USEDEP}] )
-	bot? ( >=dev-python/azure-cli-botservice-0.1.3[${PYTHON_USEDEP}] )
+	bot? ( >=dev-python/azure-cli-botservice-0.1.7[${PYTHON_USEDEP}] )
 	billing? ( >=dev-python/azure-cli-billing-0.2.0[${PYTHON_USEDEP}] )
 	batchai? ( >=dev-python/azure-cli-batchai-0.4.5[${PYTHON_USEDEP}] )
 	batch? ( >=dev-python/azure-cli-batch-3.4.1[${PYTHON_USEDEP}] )
 	backup? ( >=dev-python/azure-cli-backup-1.2.1[${PYTHON_USEDEP}] )
-	appservice? ( >=dev-python/azure-cli-appservice-0.2.10[${PYTHON_USEDEP}] )
+	appservice? ( >=dev-python/azure-cli-appservice-0.2.14[${PYTHON_USEDEP}] )
 	ams? ( >=dev-python/azure-cli-ams-0.3.1[${PYTHON_USEDEP}] )
 	advisor? ( >=dev-python/azure-cli-advisor-2.0.0[${PYTHON_USEDEP}] )
 	acs? ( >=dev-python/azure-cli-acs-2.3.13[${PYTHON_USEDEP}] )
-	acr? ( >=dev-python/azure-cli-acr-2.1.11[${PYTHON_USEDEP}] )"
+	acr? ( >=dev-python/azure-cli-acr-2.2.1[${PYTHON_USEDEP}] )"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
