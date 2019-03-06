@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,7 +15,9 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-mgmt-hdinsight-0.1.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-mgmt-hdinsight-0.2.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-storage-3.1.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-network-2.6.0_rc1[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
