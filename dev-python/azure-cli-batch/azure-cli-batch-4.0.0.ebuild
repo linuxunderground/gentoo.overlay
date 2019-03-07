@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,10 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/azure-mgmt-keyvault-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-batch-5.0.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-batch-6.0.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg
-	>=dev-python/azure-batch-5.1.0[${PYTHON_USEDEP}]"
+	>=dev-python/azure-batch-6.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
