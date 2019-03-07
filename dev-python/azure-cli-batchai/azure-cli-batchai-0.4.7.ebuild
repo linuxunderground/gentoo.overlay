@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,10 +15,10 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-storage-blob-1.3.1[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-storage-3.1.0[${PYTHON_USEDEP}]
+RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
+	>=dev-python/azure-storage-blob-1.3.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-storage-3.1.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-batchai-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/mock-2.0.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg
 	dev-python/sshtunnel[${PYTHON_USEDEP}]"
