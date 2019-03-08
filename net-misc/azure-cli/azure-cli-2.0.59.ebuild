@@ -15,12 +15,17 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-IUSE="+acr +acs +advisor +ams +appservice +backup +batch +batchai +billing \
+IUSE="+acr +acs +advisor +ams appservice +backup +batch +batchai +billing \
 	+bot +cdn +cloud +cognitiveservices +consumption +container +cosmosdb \
 	+dla +dls +dms +eventgrid +eventhubs extension feedback find +hdinsight \
 	interactive +iot +iotcentral +keyvault +lab +maps +monitor +network \
 	+policyinsights +rdbms +redis +relay +reservations +resource +role \
 	+search +servicebus +sf +signalr +sql +storage +vm"
+
+# Quick and dirty hack :
+# Currently, Gentoo implementation of dev-python/fabric:2 does not support
+# Python 3.5
+REQUIRED_USE="appservice? ( !python_targets_python3_5 )"
 
 RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.16[${PYTHON_USEDEP}] )
 	sql? ( >=dev-python/azure-cli-sql-2.1.9[${PYTHON_USEDEP}] )
