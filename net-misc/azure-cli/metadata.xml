@@ -50,6 +50,7 @@
     <flag name="servicebus">Install the service bus module. i.e. 'az servicebus'</flag>
     <flag name="sf">Install the service fabric module. i.e. 'az sf'</flag>
     <flag name="sql">Install the sql module. i.e. 'az sql'</flag>
+    <flag name="sqlvm">Install the sql vm module. i.e. 'az sql vm'</flag>
     <flag name="signalr">Install the signalr module. i.e. 'az signalr'</flag>
     <flag name="storage">Install the storage module. i.e. 'az storage'</flag>
     <flag name="vm">Install the VM module. i.e. 'az vm', 'az vmss', 'az disk', 'az identity', 'az snapshot'  and 'az image'</flag>

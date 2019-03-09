@@ -20,7 +20,7 @@ IUSE="+acr +acs +advisor +ams appservice +backup +batch +batchai +billing \
 	+dla +dls +dms +eventgrid +eventhubs extension feedback find +hdinsight \
 	interactive +iot +iotcentral +keyvault +lab +maps +monitor +network \
 	+policyinsights +rdbms +redis +relay +reservations +resource +role \
-	+search +servicebus +sf +signalr +sql +storage +vm"
+	+search +servicebus +sf +signalr +sql +sqlvm +storage +vm"
 
 # Quick and dirty hack :
 # Currently, Gentoo implementation of dev-python/fabric:2 does not support
@@ -28,6 +28,7 @@ IUSE="+acr +acs +advisor +ams appservice +backup +batch +batchai +billing \
 REQUIRED_USE="appservice? ( !python_targets_python3_5 )"
 
 RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.16[${PYTHON_USEDEP}] )
+	sqlvm? ( >=dev-python/azure-cli-sqlvm-0.1.0[${PYTHON_USEDEP}] )
 	sql? ( >=dev-python/azure-cli-sql-2.1.9[${PYTHON_USEDEP}] )
 	storage? ( >=dev-python/azure-cli-storage-2.3.1[${PYTHON_USEDEP}] )
 	signalr? ( >=dev-python/azure-cli-signalr-1.0.0[${PYTHON_USEDEP}] )
