@@ -18,9 +18,9 @@ SLOT="0"
 IUSE="+acr +acs +advisor +ams appservice +backup +batch +batchai +billing \
 	+bot +cdn +cloud +cognitiveservices +consumption +container +cosmosdb \
 	+dla +dls +dms +eventgrid +eventhubs extension feedback find +hdinsight \
-	interactive +iot +iotcentral +keyvault +lab +maps +monitor +network \
-	+policyinsights +rdbms +redis +relay +reservations +resource +role \
-	+search +servicebus +sf +signalr +sql +sqlvm +storage +vm"
+	interactive +iot +iotcentral +keyvault +kusto +lab +maps +monitor \
+	+network +policyinsights +rdbms +redis +relay +reservations +resource \
+	+role +search +servicebus +sf +signalr +sql +sqlvm +storage +vm"
 
 # Quick and dirty hack :
 # Currently, Gentoo implementation of dev-python/fabric:2 does not support
@@ -48,6 +48,7 @@ RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.16[${PYTHON_USEDEP}] )
 	monitor? ( >=dev-python/azure-cli-monitor-0.2.7[${PYTHON_USEDEP}] )
 	maps? ( >=dev-python/azure-cli-maps-0.3.3[${PYTHON_USEDEP}] )
 	lab? ( >=dev-python/azure-cli-lab-0.1.5[${PYTHON_USEDEP}] )
+	kusto? ( >=dev-python/azure-cli-kusto-0.2.0[${PYTHON_USEDEP}] )
 	keyvault? ( >=dev-python/azure-cli-keyvault-2.2.12[${PYTHON_USEDEP}] )
 	iotcentral? ( >=dev-python/azure-cli-iotcentral-0.1.6[${PYTHON_USEDEP}] )
 	iot? ( >=dev-python/azure-cli-iot-0.3.4[${PYTHON_USEDEP}] )
