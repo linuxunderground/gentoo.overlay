@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,8 +18,8 @@ SLOT="0"
 RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
 	dev-python/sshtunnel[${PYTHON_USEDEP}]
 	dev-python/scp[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-containerservice-4.2.2[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-compute-4.3.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-containerservice-4.4.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-compute-4.4.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-authorization-0.50.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-graphrbac-0.53.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
