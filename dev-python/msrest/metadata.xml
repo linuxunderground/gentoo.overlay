@@ -5,4 +5,7 @@
     <email>vincent.hardy.be@gmail.com</email>
     <name>Vincent Hardy</name>
   </maintainer>
+  <use>
+    <flag name="async">Install the experimental async support</flag>
+  </use>
 </pkgmetadata>
