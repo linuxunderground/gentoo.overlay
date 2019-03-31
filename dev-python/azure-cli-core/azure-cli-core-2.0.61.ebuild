@@ -23,10 +23,10 @@ RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 	dev-python/pyasn1[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	>=dev-python/msrestazure-0.5.1[${PYTHON_USEDEP}]
-	>=dev-python/knack-0.5.3[${PYTHON_USEDEP}]
+	>=dev-python/knack-0.5.4[${PYTHON_USEDEP}]
 	dev-python/humanfriendly[${PYTHON_USEDEP}]
 	dev-python/bcrypt[${PYTHON_USEDEP}]
-	>=dev-python/azure-cli-telemetry-1.0.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-cli-telemetry-1.0.2[${PYTHON_USEDEP}]
 	dev-python/asn1crypto[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
