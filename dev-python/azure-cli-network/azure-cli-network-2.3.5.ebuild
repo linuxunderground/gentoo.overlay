@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/azure-mgmt-trafficmanager-0.51.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-network-2.6.0_rc1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-network-2.6.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-dns-2.1.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
