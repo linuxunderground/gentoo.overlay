@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/portalocker-1.2.1[${PYTHON_USEDEP}]
-	>=dev-python/applicationinsights-0.11.1[${PYTHON_USEDEP}]"
+	>=dev-python/applicationinsights-0.11.7[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
