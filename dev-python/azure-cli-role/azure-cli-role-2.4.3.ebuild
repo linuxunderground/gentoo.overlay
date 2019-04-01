@@ -18,7 +18,7 @@ SLOT="0"
 RDEPEND=">=dev-python/azure-mgmt-monitor-0.5.2[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-authorization-0.50.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-graphrbac-0.53.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-graphrbac-0.61.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]"
 
