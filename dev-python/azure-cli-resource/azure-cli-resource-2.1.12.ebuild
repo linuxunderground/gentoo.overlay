@@ -16,8 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND=">=dev-python/azure-mgmt-resource-2.1.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-managementgroups-0.1.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-authorization-0.50.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-managementgroups-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-authorization-0.51.1[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
