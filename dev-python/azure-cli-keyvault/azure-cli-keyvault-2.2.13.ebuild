@@ -18,7 +18,7 @@ SLOT="0"
 RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-keyvault-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-graphrbac-0.53.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-graphrbac-0.61.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
