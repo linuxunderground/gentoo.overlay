@@ -21,7 +21,7 @@ RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-containerservice-4.4.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-compute-4.4.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-authorization-0.50.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-graphrbac-0.53.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-graphrbac-0.61.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
 
