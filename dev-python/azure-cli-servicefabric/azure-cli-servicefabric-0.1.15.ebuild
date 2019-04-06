@@ -17,10 +17,10 @@ SLOT="0"
 
 RDEPEND=">=dev-python/azure-mgmt-storage-3.1.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-servicefabric-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-network-2.6.0_rc1[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-network-2.6.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-keyvault-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-compute-4.4.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-graphrbac-0.53.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-graphrbac-0.61.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 	dev-python/azure-cli-core[${PYTHON_USEDEP}]
 	!dev-python/azure-cli-command-modules-nspkg"
