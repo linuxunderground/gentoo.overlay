@@ -1,1 +1,2 @@
-=dev-python/msrest-0.6.1
+# Not maintained anymore (archive)
+=net-misc/tlsdate-0.0.13
