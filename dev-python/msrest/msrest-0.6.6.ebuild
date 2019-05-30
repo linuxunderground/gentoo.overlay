@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{5,6} )
+PYTHON_COMPAT=( python3_{5,6,7} )
 
 inherit distutils-r1
 
@@ -16,6 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 
 IUSE="async"
+
+REQUIRED_USE="async? ( !python_targets_python3_7 )"
 
 RDEPEND=">=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.6.0[${PYTHON_USEDEP}]
