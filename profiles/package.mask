@@ -1,2 +1,14 @@
 # Not maintained anymore (archive)
 =net-misc/tlsdate-0.0.13
+
+# New Azure CLI / BREAKING CHANGE
+>=net-misc/azure-cli-2.0.67
+>=dev-python/azure-cli-configure-2.0.24
+>=dev-python/azure-cli-core-2.0.67
+>=dev-python/azure-cli-search-0.1.2
+>=dev-python/azure-cli-telemetry-1.0.3
+
+>=dev-python/azure-common-1.1.23
+
+>=dev-python/azure-mgmt-authorization-0.60.0
+>=dev-python/azure-mgmt-monitor-0.7.0
