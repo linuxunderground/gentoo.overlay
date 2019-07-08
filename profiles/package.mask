@@ -3,6 +3,7 @@
 
 # New Azure CLI / BREAKING CHANGE
 >=net-misc/azure-cli-2.0.67
+>=dev-python/azure-cli-backup-1.2.5
 >=dev-python/azure-cli-configure-2.0.24
 >=dev-python/azure-cli-core-2.0.67
 >=dev-python/azure-cli-network-2.5.2
