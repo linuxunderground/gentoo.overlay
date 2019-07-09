@@ -5,6 +5,8 @@
 >=net-misc/azure-cli-2.0.67
 >=dev-python/azure-cli-advisor-2.0.1
 >=dev-python/azure-cli-backup-1.2.5
+>=dev-python/azure-cli-billing-0.2.2
+>=dev-python/azure-cli-cognitiveservices-0.2.6
 >=dev-python/azure-cli-configure-2.0.24
 >=dev-python/azure-cli-core-2.0.67
 >=dev-python/azure-cli-network-2.5.2
@@ -16,6 +18,7 @@
 >=dev-python/azure-common-1.1.23
 
 >=dev-python/azure-mgmt-authorization-0.60.0
+>=dev-python/azure-mgmt-cognitiveservices-5.0.0
 >=dev-python/azure-mgmt-dns-3.0.0
 >=dev-python/azure-mgmt-keyvault-2.0.0
 >=dev-python/azure-mgmt-monitor-0.7.0
