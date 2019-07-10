@@ -12,7 +12,9 @@
 >=dev-python/azure-cli-dla-0.2.6
 >=dev-python/azure-cli-dms-0.1.4
 >=dev-python/azure-cli-iotcentral-0.1.7
+>=dev-python/azure-cli-maps-0.3.5
 >=dev-python/azure-cli-network-2.5.2
+>=dev-python/azure-cli-relay-0.1.5
 >=dev-python/azure-cli-search-0.1.2
 >=dev-python/azure-cli-storage-2.4.3
 >=dev-python/azure-cli-telemetry-1.0.3
@@ -28,6 +30,7 @@
 >=dev-python/azure-mgmt-keyvault-2.0.0
 >=dev-python/azure-mgmt-monitor-0.7.0
 >=dev-python/azure-mgmt-network-3.0.0
+>=dev-python/azure-mgmt-relay-0.2.0
 >=dev-python/azure-mgmt-storage-4.0.0
 
 >=dev-python/azure-multiapi-storage-0.2.4
