@@ -17,6 +17,7 @@
 >=dev-python/azure-cli-relay-0.1.5
 >=dev-python/azure-cli-reservation-0.4.3
 >=dev-python/azure-cli-search-0.1.2
+>=dev-python/azure-cli-sql-2.2.5
 >=dev-python/azure-cli-sqlvm-0.2.0
 >=dev-python/azure-cli-storage-2.4.3
 >=dev-python/azure-cli-telemetry-1.0.3
