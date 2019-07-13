@@ -25,6 +25,7 @@
 >=dev-python/azure-cli-sql-2.2.5
 >=dev-python/azure-cli-sqlvm-0.2.0
 >=dev-python/azure-cli-storage-2.4.3
+>=dev-python/azure-cli-resource-2.1.16
 >=dev-python/azure-cli-telemetry-1.0.3
 >=dev-python/azure-cli-vm-2.2.23
 
@@ -41,6 +42,7 @@
 >=dev-python/azure-mgmt-monitor-0.7.0
 >=dev-python/azure-mgmt-network-3.0.0
 >=dev-python/azure-mgmt-relay-0.2.0
+>=dev-python/azure-mgmt-resource-3.0.0
 >=dev-python/azure-mgmt-storage-4.0.0
 >=dev-python/azure-mgmt-web-0.42.0
 
