@@ -19,6 +19,7 @@
 >=dev-python/azure-cli-iotcentral-0.1.7
 >=dev-python/azure-cli-keyvault-2.2.16
 >=dev-python/azure-cli-maps-0.3.5
+>=dev-python/azure-cli-monitor-0.2.15
 >=dev-python/azure-cli-network-2.5.2
 >=dev-python/azure-cli-rdbms-0.3.12
 >=dev-python/azure-cli-relay-0.1.5
