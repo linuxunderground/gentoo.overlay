@@ -8,6 +8,7 @@
 >=dev-python/azure-cli-advisor-2.0.1
 >=dev-python/azure-cli-appservice-0.2.21
 >=dev-python/azure-cli-backup-1.2.5
+>=dev-python/azure-cli-batchai-0.4.10
 >=dev-python/azure-cli-billing-0.2.2
 >=dev-python/azure-cli-cognitiveservices-0.2.6
 >=dev-python/azure-cli-configure-2.0.24
@@ -15,6 +16,7 @@
 >=dev-python/azure-cli-dla-0.2.6
 >=dev-python/azure-cli-dms-0.1.4
 >=dev-python/azure-cli-iotcentral-0.1.7
+>=dev-python/azure-cli-keyvault-2.2.16
 >=dev-python/azure-cli-maps-0.3.5
 >=dev-python/azure-cli-network-2.5.2
 >=dev-python/azure-cli-relay-0.1.5
