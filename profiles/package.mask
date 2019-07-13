@@ -13,12 +13,14 @@
 >=dev-python/azure-cli-cognitiveservices-0.2.6
 >=dev-python/azure-cli-configure-2.0.24
 >=dev-python/azure-cli-core-2.0.67
+>=dev-python/azure-cli-cosmosdb-0.2.11
 >=dev-python/azure-cli-dla-0.2.6
 >=dev-python/azure-cli-dms-0.1.4
 >=dev-python/azure-cli-iotcentral-0.1.7
 >=dev-python/azure-cli-keyvault-2.2.16
 >=dev-python/azure-cli-maps-0.3.5
 >=dev-python/azure-cli-network-2.5.2
+>=dev-python/azure-cli-rdbms-0.3.12
 >=dev-python/azure-cli-relay-0.1.5
 >=dev-python/azure-cli-reservation-0.4.3
 >=dev-python/azure-cli-search-0.1.2
