@@ -10,6 +10,7 @@
 >=dev-python/azure-cli-backup-1.2.5
 >=dev-python/azure-cli-batchai-0.4.10
 >=dev-python/azure-cli-billing-0.2.2
+>=dev-python/azure-cli-botservice-0.2.2
 >=dev-python/azure-cli-cognitiveservices-0.2.6
 >=dev-python/azure-cli-configure-2.0.24
 >=dev-python/azure-cli-container-0.3.18
@@ -27,6 +28,7 @@
 >=dev-python/azure-cli-relay-0.1.5
 >=dev-python/azure-cli-reservation-0.4.3
 >=dev-python/azure-cli-search-0.1.2
+>=dev-python/azure-cli-servicebus-0.3.6
 >=dev-python/azure-cli-servicefabric-0.1.20
 >=dev-python/azure-cli-sql-2.2.5
 >=dev-python/azure-cli-sqlvm-0.2.0
