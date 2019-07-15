@@ -24,9 +24,12 @@
 >=dev-python/azure-cli-dla-0.2.6
 >=dev-python/azure-cli-dls-0.1.10
 >=dev-python/azure-cli-dms-0.1.4
+>=dev-python/azure-cli-eventgrid-0.2.4
+>=dev-python/azure-cli-eventhubs-0.3.7
 >=dev-python/azure-cli-iot-0.3.11
 >=dev-python/azure-cli-iotcentral-0.1.7
 >=dev-python/azure-cli-keyvault-2.2.16
+>=dev-python/azure-cli-lab-0.1.8
 >=dev-python/azure-cli-maps-0.3.5
 >=dev-python/azure-cli-monitor-0.2.15
 >=dev-python/azure-cli-network-2.5.2
@@ -52,7 +55,9 @@
 >=dev-python/azure-mgmt-containerservice-6.0.0
 >=dev-python/azure-mgmt-datalake-analytics-0.3.0
 >=dev-python/azure-mgmt-datamigration-2.2.0
+>=dev-python/azure-mgmt-devtestlabs-3.0.0
 >=dev-python/azure-mgmt-dns-3.0.0
+>=dev-python/azure-mgmt-eventhub-3.0.0
 >=dev-python/azure-mgmt-keyvault-2.0.0
 >=dev-python/azure-mgmt-monitor-0.7.0
 >=dev-python/azure-mgmt-network-3.0.0
