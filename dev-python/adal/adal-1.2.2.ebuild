@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0"
 
 RDEPEND=">=dev-python/cryptography-2.1.4[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.20.0[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-1.0.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
