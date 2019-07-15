@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
-	>=dev-python/adal-1.2.1[${PYTHON_USEDEP}]"
+	>=dev-python/adal-1.2.2[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
