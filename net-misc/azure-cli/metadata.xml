@@ -13,7 +13,7 @@
     <flag name="appservice">Install the appservice module. i.e. 'az appservice', 'az webapp' and 'az functionapp'</flag>
     <flag name="backup">Install the backup module. i.e. 'az backup'</flag>
     <flag name="batch">Install the batch module. i.e. 'az batch'</flag>
-    <flag name="batchai">Install the batch AI module. i.e. 'az batchai'</flag>
+    <flag name="batchai">has been deprecated and will be removed by Microsoft</flag>
     <flag name="billing">Install the billing module. i.e. 'az billing'</flag>
     <flag name="bot">Install the bot service module. i.e. 'az bot'</flag>
     <flag name="cdn">Install the Content Delivery Network module. i.e. 'az cdn'</flag>
@@ -41,19 +41,20 @@
     <flag name="monitor">Install the monitor module. i.e. 'az monitor'</flag>
     <flag name="network">Install the network module. i.e. 'az network'</flag>
     <flag name="policyinsights">Install the policyinsights module. i.e. 'az policy event' and 'az policy state'</flag>
-    <flag name="rdbms">Install the rdbms module. i.e. 'az mysql' and 'az postgres'</flag>
+    <flag name="rdbms">Install the rdbms module. i.e. 'az mariadb', 'az mysql' and 'az postgres'</flag>
     <flag name="redis">Install the redis module. i.e. 'az redis'</flag>
     <flag name="relay">Install the relay module. i.e. 'az relay'</flag>
     <flag name="reservations">Install the reservations module. i.e. 'az reservations'</flag>
     <flag name="resource">Install the resource module. i.e. 'az resource'</flag>
-    <flag name="role">Install the role module. i.e. 'az role' and 'az ad'</flag>
+    <flag name="role">Install the role module. i.e. 'az role', 'az identity' and 'az ad'</flag>
     <flag name="search">Install the search module. i.e. 'az search'</flag>
+    <flag name="security">Install the security module. i.e. 'az security task' and 'az security alert'</flag>
     <flag name="servicebus">Install the service bus module. i.e. 'az servicebus'</flag>
     <flag name="sf">Install the service fabric module. i.e. 'az sf'</flag>
     <flag name="sql">Install the sql module. i.e. 'az sql'</flag>
     <flag name="sqlvm">Install the sql vm module. i.e. 'az sql vm'</flag>
     <flag name="signalr">Install the signalr module. i.e. 'az signalr'</flag>
     <flag name="storage">Install the storage module. i.e. 'az storage'</flag>
-    <flag name="vm">Install the VM module. i.e. 'az vm', 'az vmss', 'az disk', 'az identity', 'az snapshot'  and 'az image'</flag>
+    <flag name="vm">Install the VM module. i.e. 'az vm', 'az vmss', 'az ppg', 'az disk', 'az sig', 'az snapshot' and 'az image'</flag>
   </use>
 </pkgmetadata>
