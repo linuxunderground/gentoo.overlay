@@ -59,7 +59,7 @@ RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.23[${PYTHON_USEDEP}] )
 	dls? ( >=dev-python/azure-cli-dls-0.1.10[${PYTHON_USEDEP}] )
 	dla? ( >=dev-python/azure-cli-dla-0.2.6[${PYTHON_USEDEP}] )
 	cosmosdb? ( >=dev-python/azure-cli-cosmosdb-0.2.11[${PYTHON_USEDEP}] )
-	>=dev-python/azure-cli-core-2.0.69[${PYTHON_USEDEP}]
+	=dev-python/azure-cli-core-2.0.68[${PYTHON_USEDEP}]
 	container? ( >=dev-python/azure-cli-container-0.3.18[${PYTHON_USEDEP}] )
 	consumption? ( >=dev-python/azure-cli-consumption-0.4.4[${PYTHON_USEDEP}] )
 	>=dev-python/azure-cli-configure-2.0.24[${PYTHON_USEDEP}]
