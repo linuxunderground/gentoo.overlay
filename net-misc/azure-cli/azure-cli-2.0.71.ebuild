@@ -37,7 +37,7 @@ RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.23[${PYTHON_USEDEP}] )
 	relay? ( >=dev-python/azure-cli-relay-0.1.5[${PYTHON_USEDEP}] )
 	redis? ( >=dev-python/azure-cli-redis-0.4.4[${PYTHON_USEDEP}] )
 	rdbms? ( >=dev-python/azure-cli-rdbms-0.3.12[${PYTHON_USEDEP}] )
-	>=dev-python/azure-cli-profile-2.1.5[${PYTHON_USEDEP}]
+	>=dev-python/azure-cli-profile-2.1.5-r1[${PYTHON_USEDEP}]
 	policyinsights? ( >=dev-python/azure-cli-policyinsights-0.1.4[${PYTHON_USEDEP}] )
 	!!dev-python/azure-cli-nspkg[${PYTHON_USEDEP}]
 	network? ( >=dev-python/azure-cli-network-2.5.2[${PYTHON_USEDEP}] )
@@ -59,7 +59,7 @@ RDEPEND="vm? ( >=dev-python/azure-cli-vm-2.2.23[${PYTHON_USEDEP}] )
 	dls? ( >=dev-python/azure-cli-dls-0.1.10[${PYTHON_USEDEP}] )
 	dla? ( >=dev-python/azure-cli-dla-0.2.6[${PYTHON_USEDEP}] )
 	cosmosdb? ( >=dev-python/azure-cli-cosmosdb-0.2.11[${PYTHON_USEDEP}] )
-	~dev-python/azure-cli-core-2.0.68[${PYTHON_USEDEP}]
+	~dev-python/azure-cli-core-2.0.71[${PYTHON_USEDEP}]
 	container? ( >=dev-python/azure-cli-container-0.3.18[${PYTHON_USEDEP}] )
 	consumption? ( >=dev-python/azure-cli-consumption-0.4.4[${PYTHON_USEDEP}] )
 	>=dev-python/azure-cli-configure-2.0.24[${PYTHON_USEDEP}]
