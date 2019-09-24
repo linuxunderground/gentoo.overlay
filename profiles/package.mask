@@ -10,4 +10,5 @@
 >=dev-python/azure-mgmt-containerservice-6.0.0
 >=dev-python/azure-mgmt-network-4.0.0
 >=dev-python/azure-mgmt-recoveryservices-0.4.0
+>=dev-python/azure-mgmt-resource-4.0.0
 >=dev-python/azure-mgmt-sqlvirtualmachine-0.4.0
