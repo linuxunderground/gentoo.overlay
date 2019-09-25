@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,8 +15,8 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/adal-0.6.0[${PYTHON_USEDEP}]
-	>=dev-python/msrest-0.6.6[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/adal-1.2.2[${PYTHON_USEDEP}]
+	>=dev-python/msrest-0.6.10[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
