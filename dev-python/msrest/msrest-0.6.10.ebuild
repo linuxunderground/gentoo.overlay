@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-IUSE="async"
+IUSE="+async"
 
 RDEPEND=">=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.6.0[${PYTHON_USEDEP}]
