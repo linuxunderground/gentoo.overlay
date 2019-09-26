@@ -5,6 +5,7 @@
 >=net-misc/azure-cli-2.0.73
 >=dev-python/azure-cli-core-2.0.73
 
+>=dev-python/azure-mgmt-batch-7.0.0
 >=dev-python/azure-mgmt-compute-6.0.0
 >=dev-python/azure-mgmt-containerregistry-3.0.0_rc5
 >=dev-python/azure-mgmt-containerservice-6.0.0
