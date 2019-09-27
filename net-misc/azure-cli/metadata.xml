@@ -13,7 +13,6 @@
     <flag name="appservice">Install the appservice module. i.e. 'az appservice', 'az webapp' and 'az functionapp'</flag>
     <flag name="backup">Install the backup module. i.e. 'az backup'</flag>
     <flag name="batch">Install the batch module. i.e. 'az batch'</flag>
-    <flag name="batchai">has been deprecated and will be removed by Microsoft</flag>
     <flag name="billing">Install the billing module. i.e. 'az billing'</flag>
     <flag name="bot">Install the bot service module. i.e. 'az bot'</flag>
     <flag name="cdn">Install the Content Delivery Network module. i.e. 'az cdn'</flag>
