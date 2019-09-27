@@ -139,10 +139,10 @@ CLI_DEPEND="
 		dev-python/websocket-client[${PYTHON_USEDEP}]
 	)
 	cognitiveservices? (
-		>=dev-python/azure-mgmt-cognitiveservices-5.0.0[${PYTHON_USEDEP}]	
+		>=dev-python/azure-mgmt-cognitiveservices-5.0.0[${PYTHON_USEDEP}]
 	)
 	consumption? (
-		>=dev-python/azure-mgmt-consumption-2.0.0[${PYTHON_USEDEP}]	
+		>=dev-python/azure-mgmt-consumption-2.0.0[${PYTHON_USEDEP}]
 	)
 	cosmosdb? (
 		>=dev-python/azure-mgmt-cosmosdb-0.7.0[${PYTHON_USEDEP}]
