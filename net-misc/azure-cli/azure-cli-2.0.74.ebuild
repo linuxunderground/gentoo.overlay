@@ -17,7 +17,7 @@ SLOT="0"
 
 IUSE="+acr +acs +advisor +ams +appservice +backup +batch +billing \
 	+bot +cdn +cloud +cognitiveservices +consumption +container +cosmosdb \
-	+dla +dls +dms +eventgrid +eventhubs extension +feedback find +hdinsight \
+	+dla +dls +dms +eventgrid +eventhubs extension +feedback +find +hdinsight \
 	interactive +iot +iotcentral +keyvault +kusto +lab +maps +monitor \
 	+network +policyinsights +rdbms +redis +relay +reservations +resource \
 	+role +search +security +servicebus +sf +signalr +sql +sqlvm +storage +vm"
