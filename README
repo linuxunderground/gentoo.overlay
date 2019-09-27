@@ -1,6 +1,23 @@
 linuxunderground gentoo.overlay
 ===============================
 
+**************************************************************************
+
+* NEWS *
+
+Note about net-misc/azure-cli upgrade :
+
+When you upgrade net-misc/azure-cli, if you get a lot of blocking ebuild,
+simply unmerge all azure-cli-* ebuild
+
+# qlist -I -C dev-python/azure-cli | xargs emerge -C
+# emerge -auv azure-cli
+
+(qlist belongs to app-portage/portage-utils)
+
+**************************************************************************
+
+
 This Git-based overlay contains the ebuilds I create myself.
 Feel free to use the ebuilds yourself as well.
 
