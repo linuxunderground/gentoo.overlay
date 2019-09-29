@@ -11,6 +11,7 @@
     <flag name="advisor">Install the advisor module. i.e. 'az advisor'</flag>
     <flag name="ams">Install the ams module. i.e. 'az ams'</flag>
     <flag name="apim">Install the API management services module. i.e. 'az apim'</flag>
+    <flag name="appconfig">Install the App Configuration Management module. i.e. 'az appconfig'</flag>
     <flag name="appservice">Install the appservice module. i.e. 'az appservice', 'az webapp' and 'az functionapp'</flag>
     <flag name="backup">Install the backup module. i.e. 'az backup'</flag>
     <flag name="batch">Install the batch module. i.e. 'az batch'</flag>
