@@ -19,7 +19,7 @@ IUSE="+acr +acs +advisor +ams +apim +appconfig +appservice +backup +batch \
 	+billing +bot +cdn +cloud +cognitiveservices +consumption +container \
 	+cosmosdb +dla +dls +dms +eventgrid +eventhubs extension +feedback \
 	+find +hdinsight interactive +iot +iotcentral +keyvault +kusto +lab \
-	+maps +monitor +network +policyinsights +rdbms +redis +relay \
+	+maps +monitor +netappfiles +network +policyinsights +rdbms +redis +relay \
 	+reservations +resource +role +search +security +servicebus +sf \
 	+signalr +sql +sqlvm +storage +vm"
 
@@ -210,6 +210,9 @@ CLI_DEPEND="
 	monitor? (
 		>=dev-python/azure-mgmt-monitor-0.7.0[${PYTHON_USEDEP}]
 	)
+	netappfiles? (
+		>=dev-python/azure-mgmt-netapp-0.5.0[${PYTHON_USEDEP}]
+	)
 	network? (
 		>=dev-python/azure-mgmt-dns-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-4.0.0[${PYTHON_USEDEP}]
@@ -343,6 +346,7 @@ python_install() {
 	use maps || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/maps" || die
 	use monitor || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/monitor" || die
 	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/natgateway" || die
+	use netappfiles || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/netappfiles" || die
 	use network || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/network" || die
 	use policyinsights || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/policyinsights" || die
 	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/privatedns" || die

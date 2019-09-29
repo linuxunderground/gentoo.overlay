@@ -40,6 +40,7 @@
     <flag name="lab">Install the lab module. i.e. 'az lab'</flag>
     <flag name="maps">Install the maps module. i.e. 'az maps'</flag>
     <flag name="monitor">Install the monitor module. i.e. 'az monitor'</flag>
+    <flag name="netappfiles">Install the Azure NetApp Files module. i.e. 'az netappfiles'</flag>
     <flag name="network">Install the network module. i.e. 'az network'</flag>
     <flag name="policyinsights">Install the policyinsights module. i.e. 'az policy event' and 'az policy state'</flag>
     <flag name="rdbms">Install the rdbms module. i.e. 'az mariadb', 'az mysql' and 'az postgres'</flag>
