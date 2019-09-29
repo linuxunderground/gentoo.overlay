@@ -345,7 +345,7 @@ python_install() {
 	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/managedservices" || die
 	use maps || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/maps" || die
 	use monitor || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/monitor" || die
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/natgateway" || die
+	use network || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/natgateway" || die
 	use netappfiles || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/netappfiles" || die
 	use network || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/network" || die
 	use policyinsights || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/policyinsights" || die
