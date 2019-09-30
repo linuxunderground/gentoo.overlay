@@ -19,9 +19,9 @@ IUSE="+acr +acs +advisor +ams +apim +appconfig +appservice +backup +batch \
 	+billing +bot +cdn +cloud +cognitiveservices +consumption +container \
 	+cosmosdb +dla +dls +dms +eventgrid +eventhubs extension +feedback \
 	+find +hdinsight interactive +iot +iotcentral +keyvault +kusto +lab \
-	+maps +monitor +netappfiles +network +policyinsights +rdbms +redis +relay \
-	+reservations +resource +role +search +security +servicebus +sf \
-	+signalr +sql +sqlvm +storage +vm"
+	+maps +monitor +netappfiles +network +policyinsights +rdbms \
+	+redis +relay +reservations +resource +role +search +security \
+	+servicebus +sf +signalr +sql +sqlvm +storage +vm"
 
 OBSOLETE="!dev-python/azure-cli-batchai
 	!!dev-python/azure-cli-acr
@@ -216,6 +216,7 @@ CLI_DEPEND="
 	network? (
 		>=dev-python/azure-mgmt-dns-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-4.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-privatedns-0.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-trafficmanager-0.51.0[${PYTHON_USEDEP}]
 	)
 	policyinsights? (
@@ -349,7 +350,7 @@ python_install() {
 	use netappfiles || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/netappfiles" || die
 	use network || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/network" || die
 	use policyinsights || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/policyinsights" || die
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/privatedns" || die
+	use network || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/privatedns" || die
 	use rdbms || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/rdbms" || die
 	use redis || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/redis" || die
 	use relay || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/relay" || die
