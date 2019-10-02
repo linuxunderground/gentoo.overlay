@@ -17,11 +17,11 @@ SLOT="0"
 
 IUSE="+acr +acs +advisor +ams +apim +appconfig +appservice +backup +batch \
 	+billing +bot +cdn +cloud +cognitiveservices +consumption +container \
-	+cosmosdb +dla +dls +dms +eventgrid +eventhubs extension +feedback \
-	+find +hdinsight interactive +iot +iotcentral +keyvault +kusto +lab \
-	+maps +monitor +netappfiles +network +policyinsights +rdbms \
-	+redis +relay +reservations +resource +role +search +security \
-	+servicebus +sf +signalr +sql +sqlvm +storage +vm"
+	+cosmosdb +deploymentmanager +dla +dls +dms +eventgrid +eventhubs \
+	extension +feedback +find +hdinsight interactive +iot +iotcentral \
+	+keyvault +kusto +lab +managedservices +maps +monitor +netappfiles \
+	+network +policyinsights +rdbms +redis +relay +reservations +resource \
+	+role +search +security +servicebus +sf +signalr +sql +sqlvm +storage +vm"
 
 OBSOLETE="!dev-python/azure-cli-batchai
 	!!dev-python/azure-cli-acr
@@ -155,6 +155,9 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-cosmosdb-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/pydocumentdb-2.3.3[${PYTHON_USEDEP}]
 	)
+	deploymentmanager? (
+		>=dev-python/azure-mgmt-deploymentmanager-0.1.0[${PYTHON_USEDEP}]
+	)
 	dla? (
 		>=dev-python/azure-mgmt-datalake-analytics-0.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-datalake-store-0.5.0[${PYTHON_USEDEP}]
@@ -203,6 +206,9 @@ CLI_DEPEND="
 	lab? (
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-devtestlabs-3.0.0[${PYTHON_USEDEP}]
+	)
+	managedservices? (
+		>=dev-python/azure-mgmt-managedservices-1.0.0[${PYTHON_USEDEP}]
 	)
 	maps? (
 		>=dev-python/azure-mgmt-maps-0.1.0[${PYTHON_USEDEP}]
@@ -327,7 +333,7 @@ python_install() {
 	use consumption || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/consumption" || die
 	use container || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/container" || die
 	use cosmosdb || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/cosmosdb" || die
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/deploymentmanager" || die
+	use deploymentmanager || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/deploymentmanager" || die
 	use dla || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/dla" || die
 	use dls || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/dls" || die
 	use dms || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/dms" || die
@@ -343,7 +349,7 @@ python_install() {
 	use keyvault || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/keyvault" || die
 	use kusto || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/kusto" || die
 	use lab || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/lab" || die
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/managedservices" || die
+	use managedservices || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/managedservices" || die
 	use maps || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/maps" || die
 	use monitor || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/monitor" || die
 	use network || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/natgateway" || die

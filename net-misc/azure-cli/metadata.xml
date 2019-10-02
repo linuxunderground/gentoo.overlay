@@ -23,6 +23,7 @@
     <flag name="consumption">Install the consumption module. i.e. 'az consumption'</flag>
     <flag name="container">Install the tools container module. i.e. 'az container'</flag>
     <flag name="cosmosdb">Install the cosmosdb module. i.e. 'az cosmosdb'</flag>
+    <flag name="deploymentmanager">Install the deploymentmanager module. i.e. 'az deploymentmanager'</flag>
     <flag name="dla">Install the dla module. i.e. 'az dla'</flag>
     <flag name="dls">Install the dls module. i.e. 'az dls'</flag>
     <flag name="dms">Install the 'Database Migration Service' module. i.e. 'az dms'</flag>
@@ -38,6 +39,7 @@
     <flag name="keyvault">Install the keyvault module. i.e. 'az keyvault'</flag>
     <flag name="kusto">Install the KUSTO module. i.e. 'az kusto'</flag>
     <flag name="lab">Install the lab module. i.e. 'az lab'</flag>
+    <flag name="managedservices">Install the managedservices module. i.e. 'az managedservices'</flag>
     <flag name="maps">Install the maps module. i.e. 'az maps'</flag>
     <flag name="monitor">Install the monitor module. i.e. 'az monitor'</flag>
     <flag name="netappfiles">Install the Azure NetApp Files module. i.e. 'az netappfiles'</flag>
