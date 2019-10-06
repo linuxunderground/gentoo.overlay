@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -11,6 +11,7 @@ COMMIT="15cfb41ff20a052769d753c3262c57ecb050ad71"
 DESCRIPTION="DOS Emulator. It's an attempt to re-incarnate the famous dosemu project"
 HOMEPAGE="https://stsp.github.io/dosemu2"
 EGIT_REPO_URI="https://github.com/stsp/dosemu2.git"
+EGIT_BRANCH="devel"
 SRC_URI="mirror://sourceforge/dosemu/${P_FD}.tgz"
 
 LICENSE="GPL-2"
