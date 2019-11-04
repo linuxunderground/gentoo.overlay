@@ -1,28 +1,24 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit eutils user
+inherit desktop
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="Lightweight arcade diamonds digging game for X11"
 
 SRC_URI="http://www.ibiblio.org/pub/Linux/games/arcade/${P}.tgz"
 HOMEPAGE="http://www.ibiblio.org/pub/Linux/games/arcade/"
 
-RDEPEND=""
+RDEPEND="acct-group/gamestat"
 
 DEPEND="${RDEPEND}
 	x11-misc/imake"
 
 IUSE=""
-
-pkg_setup() {
-	enewgroup gamestat 36
-}
 
 src_prepare() {
 	eapply_user
@@ -54,8 +50,8 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	emake DESTDIR="${D}" install.man || die "emake install.man failed"
+	emake DESTDIR="${ED}" install || die "emake install failed"
+	emake DESTDIR="${ED}" install.man || die "emake install.man failed"
 
 	fowners root:gamestat /var/games/xdigger.hiscore /usr/bin/xdigger
 	fperms 660 /var/games/xdigger.hiscore
