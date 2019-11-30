@@ -88,8 +88,8 @@ CLI_DEPEND="
 		virtual/python-cffi[${PYTHON_USEDEP}]
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-compute-8.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-containerservice-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-compute-10.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-containerservice-8.0.0[${PYTHON_USEDEP}]
 		dev-python/scp[${PYTHON_USEDEP}]
 		dev-python/sshtunnel[${PYTHON_USEDEP}]
 	)
@@ -105,7 +105,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-apimanagement-0.1.0[${PYTHON_USEDEP}]
 	)
 	appconfig? (
-		>=dev-python/azure-mgmt-appconfiguration-0.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-appconfiguration-0.3.0[${PYTHON_USEDEP}]
 	)
 	appservice? (
 		virtual/python-cffi[${PYTHON_USEDEP}]
@@ -217,7 +217,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-monitor-0.7.0[${PYTHON_USEDEP}]
 	)
 	netappfiles? (
-		>=dev-python/azure-mgmt-netapp-0.6.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-netapp-0.7.0[${PYTHON_USEDEP}]
 	)
 	network? (
 		>=dev-python/azure-mgmt-dns-3.0.0[${PYTHON_USEDEP}]
@@ -238,7 +238,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-relay-0.2.0[${PYTHON_USEDEP}]
 	)
 	reservations? (
-		>=dev-python/azure-mgmt-reservations-0.3.2[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-reservations-0.6.0[${PYTHON_USEDEP}]
 	)
 	resource? (
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
@@ -266,7 +266,7 @@ CLI_DEPEND="
 		virtual/python-cffi[${PYTHON_USEDEP}]
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-compute-8.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-compute-10.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-keyvault-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-servicefabric-0.3.0[${PYTHON_USEDEP}]
@@ -276,7 +276,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-signalr-0.3.0[${PYTHON_USEDEP}]
 	)
 	sql? (
-		>=dev-python/azure-mgmt-sql-0.14.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-sql-0.15.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-5.0.0[${PYTHON_USEDEP}]
 	)
 	sqlvm? (
@@ -289,7 +289,7 @@ CLI_DEPEND="
 	vm? (
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-compute-8.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-compute-10.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-keyvault-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-marketplaceordering-0.2.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-msi-1.0.0[${PYTHON_USEDEP}]
@@ -298,7 +298,7 @@ CLI_DEPEND="
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.0.76[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.0.77[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}

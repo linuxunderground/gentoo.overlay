@@ -1,16 +1,19 @@
---- azure-cli-core-2.0.58.a/azure/cli/core/__init__.py	2019-02-26 20:34:48.364116510 +0100
-+++ azure-cli-core-2.0.58.b/azure/cli/core/__init__.py	2019-02-27 17:58:07.499304964 +0100
-@@ -86,11 +86,9 @@
+--- azure-cli-core-2.0.77.a/azure/cli/core/__init__.py	2019-11-22 06:26:37.000000000 +0100
++++ azure-cli-core-2.0.77.b/azure/cli/core/__init__.py	2019-11-30 16:29:21.502016809 +0100
+@@ -88,13 +88,9 @@
          ver_string, updates_available = get_az_version_string()
          print(ver_string)
          if updates_available == -1:
 -            logger.warning('Unable to check if your CLI is up-to-date. Check your internet connection.')
 -        elif updates_available:
-+            updates_available = 0
-+        if updates_available:
-             logger.warning('You have %i updates available. Consider updating your CLI installation.', updates_available)
+-            logger.warning('You have %i updates available. Consider updating your CLI installation. '
+-                           'Instructions can be found at https://docs.microsoft.com/en-us/cli/azure/install-azure-cli',
+-                           updates_available)
 -        else:
 -            print('Your CLI is up-to-date.')
++            updates_available = 0
++        if updates_available:
++            logger.warning('You have %i updates available. Consider updating your CLI installation.', updates_available)
  
      def exception_handler(self, ex):  # pylint: disable=no-self-use
          from azure.cli.core.util import handle_exception
