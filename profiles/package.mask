@@ -1,2 +1,6 @@
+# https://github.com/dbcli/mssql-cli/issues/244
+# instead use live ebuild.
+=dev-db/mssql-cli-0.15.0
+
 # Not maintained anymore (archive)
 =net-misc/tlsdate-0.0.13
