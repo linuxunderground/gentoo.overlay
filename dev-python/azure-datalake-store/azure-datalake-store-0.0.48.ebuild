@@ -20,3 +20,8 @@ RDEPEND="virtual/python-cffi[${PYTHON_USEDEP}]
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
+
+src_prepare() {
+	default
+	sed -i -e 's:store/\*.py:store \*.py:' MANIFEST.in || die
+}
