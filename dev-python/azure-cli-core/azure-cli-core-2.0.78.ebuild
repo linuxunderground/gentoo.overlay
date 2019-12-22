@@ -24,7 +24,7 @@ RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 	>=dev-python/knack-0.6.3[${PYTHON_USEDEP}]
 	dev-python/humanfriendly[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-telemetry-1.0.4[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-resource-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-resource-6.0.0[${PYTHON_USEDEP}]
 	dev-python/pyperclip[${PYTHON_USEDEP}]
 	>=dev-python/psutil-5.6.1[${PYTHON_USEDEP}]
 	dev-python/asn1crypto[${PYTHON_USEDEP}]"

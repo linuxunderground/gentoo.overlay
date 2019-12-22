@@ -163,7 +163,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-datalake-store-0.5.0[${PYTHON_USEDEP}]
 	)
 	dls? (
-		>=dev-python/azure-datalake-store-0.0.47[${PYTHON_USEDEP}]
+		>=dev-python/azure-datalake-store-0.0.48[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-datalake-store-0.5.0[${PYTHON_USEDEP}]
 	)
 	dms? (
@@ -232,7 +232,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-rdbms-1.9.0[${PYTHON_USEDEP}]
 	)
 	redis? (
-		>=dev-python/azure-mgmt-redis-6.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-redis-7.0.0_rc1[${PYTHON_USEDEP}]
 	)
 	relay? (
 		>=dev-python/azure-mgmt-relay-0.2.0[${PYTHON_USEDEP}]
@@ -243,7 +243,7 @@ CLI_DEPEND="
 	resource? (
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-managementgroups-0.2.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-resource-4.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-resource-6.0.0[${PYTHON_USEDEP}]
 	)
 	role? (
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
@@ -298,7 +298,7 @@ CLI_DEPEND="
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.0.77[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.0.78[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}
