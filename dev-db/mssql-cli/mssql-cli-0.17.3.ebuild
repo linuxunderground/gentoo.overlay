@@ -36,7 +36,7 @@ src_unpack() {
 	cd "${S}/mssqlcli/mssqltoolsservice/" || die
 	mkdir bin
 	cd bin
-	unpack ../../../sqltoolsservice/manylinux1/Microsoft.SqlTools.ServiceLayer-linux-x64-netcoreapp2.1.tar.gz
+	unpack ../../../sqltoolsservice/manylinux1/Microsoft.SqlTools.ServiceLayer-rhel-x64-netcoreapp2.2.tar.gz
 }
 
 src_prepare() {
