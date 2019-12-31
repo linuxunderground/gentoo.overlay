@@ -8,8 +8,8 @@ MY_PN="${PN/-bin}"
 DESCRIPTION="32 bit command.com"
 HOMEPAGE="https://github.com/stsp/comcom32"
 SRC_URI="
-amd64? ( https://code.launchpad.net/~dosemu2/+archive/ubuntu/ppa/+files/comcom32_0.1~alpha1-93-e38f8b9+201910242341~ubuntu20.04.1_amd64.deb )
-x86? ( https://code.launchpad.net/~dosemu2/+archive/ubuntu/ppa/+files/comcom32_0.1~alpha1-93-e38f8b9+201910242341~ubuntu20.04.1_i386.deb )"
+amd64? ( https://code.launchpad.net/~dosemu2/+archive/ubuntu/ppa/+files/comcom32_0.1~alpha1-94-a63d9a6+201912030201~ubuntu20.04.1_amd64.deb )
+x86? ( https://code.launchpad.net/~dosemu2/+archive/ubuntu/ppa/+files/comcom32_0.1~alpha1-94-a63d9a6+201912030201~ubuntu19.04.1_i386.deb )"
 
 LICENSE="GPL-3"
 SLOT="0"
