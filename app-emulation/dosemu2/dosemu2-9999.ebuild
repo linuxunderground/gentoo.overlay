@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -12,14 +12,15 @@ DESCRIPTION="DOS Emulator. It's an attempt to re-incarnate the famous dosemu pro
 HOMEPAGE="https://stsp.github.io/dosemu2"
 EGIT_REPO_URI="https://github.com/stsp/dosemu2.git"
 EGIT_BRANCH="devel"
-SRC_URI="mirror://sourceforge/dosemu/${P_FD}.tgz"
+SRC_URI="fdbin? ( mirror://sourceforge/dosemu/${P_FD}.tgz )"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE="X svga gpm debug alsa fluidsynth ladspa"
+IUSE="X +sdl svga gpm debug experimental ao alsa fluidsynth ladspa fdbin"
 
-RDEPEND="X? ( x11-libs/libX11
+RDEPEND="X? (
+		x11-libs/libX11
 		x11-libs/libXxf86vm
 		x11-libs/libXau
 		x11-libs/libXext
@@ -27,15 +28,22 @@ RDEPEND="X? ( x11-libs/libX11
 		x11-apps/xset
 		x11-apps/xlsfonts
 		x11-apps/bdftopcf
-		x11-apps/mkfontdir )
+		x11-apps/mkfontdir
+		)
+	!fdbin? (
+		app-emulation/comcom32-bin
+		app-emulation/fdpp
+		)
 	svga? ( media-libs/svgalib )
 	gpm? ( sys-libs/gpm )
 	alsa? ( media-libs/alsa-lib )
-	fluidsynth? ( media-sound/fluidsynth
-		media-sound/fluid-soundfont )
+	fluidsynth? (
+		media-sound/fluidsynth
+		media-sound/fluid-soundfont
+		)
 	ladspa? ( media-libs/ladspa-cmt )
-	media-libs/libao
-	media-libs/libsdl2
+	ao? ( media-libs/libao )
+	sdl? ( media-libs/libsdl2[sound,video] )
 	>=sys-libs/slang-1.4
 	!app-emulation/dosemu"
 
@@ -61,18 +69,25 @@ src_prepare() {
 }
 
 src_configure() {
-	local myplugins=( libao,extra_charsets,term,sdl,charsets,console,modemu  )
-	use alsa && myplugins+=( ,alsa )
-	use fluidsynth && myplugins+=( ,fluidsynth,midimisc,munt )
-	use ladspa && myplugins+=( ,ladspa )
-	use gpm && myplugins+=( ,gpm )
-	use svga && myplugins+=( ,svgalib )
-	use X && myplugins+=( ,X )
+	local myplugins="extra_charsets,term,dosdrv,doscmd,periph,charsets,console,modemu"
+	use sdl && myplugins+=",sdl"
+	use ao && myplugins+=",libao"
+	use alsa && myplugins+=",alsa"
+	use fluidsynth && myplugins+=",fluidsynth,midimisc,munt"
+	use ladspa && myplugins+=",ladspa"
+	use gpm && myplugins+=",gpm"
+	use svga && myplugins+=",svgalib"
+	use X && myplugins+=",X"
+	use debug && myplugins+=",debugger"
+	use fdbin || myplugins+=",fdpp"
 
-	econf $(use_enable debug) \
-		--with-fdtarball="${DISTDIR}/${P_FD}.tgz" \
-		--docdir="${EPREFIX}/usr/share/doc/${PF}" \
-		--enable-plugins="${myplugins}"
+	local myconf=$(use_enable debug)
+	myconf+=" --docdir=${EPREFIX}/usr/share/doc/${PF}"
+	myconf+=" --enable-plugins=${myplugins}"
+	use fdbin && myconf+=" --with-fdtarball=${DISTDIR}/${P_FD}.tgz"
+	use experimental && myconf+=" --enable-experimental --enable-ubsan --disable-system-wa"
+
+	econf ${myconf}
 }
 
 src_install() {
@@ -82,4 +97,9 @@ src_install() {
 	#     exactly where asked, loops otherwise.
 	# m - allow RWX mapping: as it's an emulator / code loader
 	pax-mark -mr "${ED}/usr/bin/dosemu.bin"
+
+	dodoc BUGS CONTRIBUTING.md QuickStart NEWS README README.bindist THANKS TODO VERSION doc/*
+
+	einfo "If you want non-X graphic console, try:"
+	einfo "# USE=\"kms\" emerge -1 media-libs/libsdl2"
 }
