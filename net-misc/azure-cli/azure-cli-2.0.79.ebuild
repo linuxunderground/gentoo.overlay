@@ -1,9 +1,9 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{5,6,7} )
+PYTHON_COMPAT=( python3_{6,7} )
 
 inherit distutils-r1
 
@@ -81,7 +81,7 @@ CLI_DEPEND="
 	acr? (
 		virtual/python-cffi[${PYTHON_USEDEP}]
 		>=dev-python/azure-storage-blob-2.0.1[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-containerregistry-3.0.0_rc7[${PYTHON_USEDEP}]
 	)
 	acs? (
@@ -112,7 +112,7 @@ CLI_DEPEND="
 		>=dev-python/azure-functions-devops-build-0.0.22[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-applicationinsights-0.2.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-containerregistry-3.0.0_rc7[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-web-0.42.0[${PYTHON_USEDEP}]
 		dev-python/fabric:2[${PYTHON_USEDEP}]
 		>=dev-python/urllib3-1.18[${PYTHON_USEDEP}]
@@ -121,7 +121,7 @@ CLI_DEPEND="
 	)
 	backup? (
 		>=dev-python/azure-mgmt-recoveryservices-0.2.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-recoveryservicesbackup-0.4.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-recoveryservicesbackup-0.5.0[${PYTHON_USEDEP}]
 	)
 	batch? (
 		>=dev-python/azure-batch-8.0.0[${PYTHON_USEDEP}]
@@ -152,7 +152,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-consumption-2.0.0[${PYTHON_USEDEP}]
 	)
 	cosmosdb? (
-		>=dev-python/azure-mgmt-cosmosdb-0.7.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-cosmosdb-0.11.0[${PYTHON_USEDEP}]
 		>=dev-python/pydocumentdb-2.3.3[${PYTHON_USEDEP}]
 	)
 	deploymentmanager? (
@@ -179,9 +179,9 @@ CLI_DEPEND="
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)
 	hdinsight? (
-		>=dev-python/azure-mgmt-hdinsight-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-hdinsight-1.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-7.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
 	)
 	interactive? (
 		dev-python/prompt_toolkit[${PYTHON_USEDEP}]
@@ -270,21 +270,21 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-keyvault-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-servicefabric-0.3.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
 	)
 	signalr? (
 		>=dev-python/azure-mgmt-signalr-0.3.0[${PYTHON_USEDEP}]
 	)
 	sql? (
 		>=dev-python/azure-mgmt-sql-0.15.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
 	)
 	sqlvm? (
-		>=dev-python/azure-mgmt-sqlvirtualmachine-0.4.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-sqlvirtualmachine-0.5.0[${PYTHON_USEDEP}]
 	)
 	storage? (
 		>=dev-python/azure-multiapi-storage-0.2.4[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
 	)
 	vm? (
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
@@ -298,7 +298,7 @@ CLI_DEPEND="
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.0.78[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.0.79[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}
@@ -308,68 +308,62 @@ src_prepare() {
 	distutils-r1_src_prepare
 	rm az.bat || die
 	sed -i -e '/az.bat/ d' setup.py || die
-}
 
-python_install() {
-	distutils-r1_python_install
-
-	python_export PYTHON_SITEDIR
-
-	use acr || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/acr" || die
-	use acs || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/acs" || die
-	use advisor || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/advisor" || die
-	use ams || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/ams" || die
-	use apim || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/apim" || die
-	use appconfig || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/appconfig" || die
-	use appservice || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/appservice" || die
-	use backup || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/backup" || die
-	use batch || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/batch" || die
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/batchai" || die
-	use billing || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/billing" || die
-	use bot || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/botservice" || die
-	use cdn || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/cdn" || die
-	use cloud || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/cloud" || die
-	use cognitiveservices || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/cognitiveservices" || die
-	use consumption || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/consumption" || die
-	use container || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/container" || die
-	use cosmosdb || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/cosmosdb" || die
-	use deploymentmanager || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/deploymentmanager" || die
-	use dla || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/dla" || die
-	use dls || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/dls" || die
-	use dms || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/dms" || die
-	use eventgrid || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/eventgrid" || die
-	use eventhubs || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/eventhubs" || die
-	use extension || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/extension" || die
-	use feedback || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/feedback" || die
-	use find || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/find" || die
-	use hdinsight || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/hdinsight" || die
-	use interactive || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/interactive" || die
-	use iot || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/iot" || die
-	use iotcentral || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/iotcentral" || die
-	use keyvault || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/keyvault" || die
-	use kusto || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/kusto" || die
-	use lab || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/lab" || die
-	use managedservices || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/managedservices" || die
-	use maps || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/maps" || die
-	use monitor || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/monitor" || die
-	use network || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/natgateway" || die
-	use netappfiles || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/netappfiles" || die
-	use network || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/network" || die
-	use policyinsights || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/policyinsights" || die
-	use network || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/privatedns" || die
-	use rdbms || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/rdbms" || die
-	use redis || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/redis" || die
-	use relay || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/relay" || die
-	use reservations || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/reservations" || die
-	use resource || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/resource" || die
-	use role || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/role" || die
-	use search || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/search" || die
-	use security || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/security" || die
-	use servicebus || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/servicebus" || die
-	use sf || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/servicefabric" || die
-	use signalr || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/signalr" || die
-	use sql || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/sql" || die
-	use sqlvm || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/sqlvm" || die
-	use storage || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/storage" || die
-	use vm || rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/command_modules/vm" || die
+	use acr || rm -r azure/cli/command_modules/acr || die
+	use acs || rm -r azure/cli/command_modules/acs || die
+	use advisor || rm -r azure/cli/command_modules/advisor || die
+	use ams || rm -r azure/cli/command_modules/ams || die
+	use apim || rm -r azure/cli/command_modules/apim || die
+	use appconfig || rm -r azure/cli/command_modules/appconfig || die
+	use appservice || rm -r azure/cli/command_modules/appservice || die
+	use backup || rm -r azure/cli/command_modules/backup || die
+	use batch || rm -r azure/cli/command_modules/batch || die
+	rm -r azure/cli/command_modules/batchai || die
+	use billing || rm -r azure/cli/command_modules/billing || die
+	use bot || rm -r azure/cli/command_modules/botservice || die
+	use cdn || rm -r azure/cli/command_modules/cdn || die
+	use cloud || rm -r azure/cli/command_modules/cloud || die
+	use cognitiveservices || rm -r azure/cli/command_modules/cognitiveservices || die
+	use consumption || rm -r azure/cli/command_modules/consumption || die
+	use container || rm -r azure/cli/command_modules/container || die
+	use cosmosdb || rm -r azure/cli/command_modules/cosmosdb || die
+	use deploymentmanager || rm -r azure/cli/command_modules/deploymentmanager || die
+	use dla || rm -r azure/cli/command_modules/dla || die
+	use dls || rm -r azure/cli/command_modules/dls || die
+	use dms || rm -r azure/cli/command_modules/dms || die
+	use eventgrid || rm -r azure/cli/command_modules/eventgrid || die
+	use eventhubs || rm -r azure/cli/command_modules/eventhubs || die
+	use extension || rm -r azure/cli/command_modules/extension || die
+	use feedback || rm -r azure/cli/command_modules/feedback || die
+	use find || rm -r azure/cli/command_modules/find || die
+	use hdinsight || rm -r azure/cli/command_modules/hdinsight || die
+	use interactive || rm -r azure/cli/command_modules/interactive || die
+	use iot || rm -r azure/cli/command_modules/iot || die
+	use iotcentral || rm -r azure/cli/command_modules/iotcentral || die
+	use keyvault || rm -r azure/cli/command_modules/keyvault || die
+	use kusto || rm -r azure/cli/command_modules/kusto || die
+	use lab || rm -r azure/cli/command_modules/lab || die
+	use managedservices || rm -r azure/cli/command_modules/managedservices || die
+	use maps || rm -r azure/cli/command_modules/maps || die
+	use monitor || rm -r azure/cli/command_modules/monitor || die
+	use network || rm -r azure/cli/command_modules/natgateway || die
+	use netappfiles || rm -r azure/cli/command_modules/netappfiles || die
+	use network || rm -r azure/cli/command_modules/network || die
+	use policyinsights || rm -r azure/cli/command_modules/policyinsights || die
+	use network || rm -r azure/cli/command_modules/privatedns || die
+	use rdbms || rm -r azure/cli/command_modules/rdbms || die
+	use redis || rm -r azure/cli/command_modules/redis || die
+	use relay || rm -r azure/cli/command_modules/relay || die
+	use reservations || rm -r azure/cli/command_modules/reservations || die
+	use resource || rm -r azure/cli/command_modules/resource || die
+	use role || rm -r azure/cli/command_modules/role || die
+	use search || rm -r azure/cli/command_modules/search || die
+	use security || rm -r azure/cli/command_modules/security || die
+	use servicebus || rm -r azure/cli/command_modules/servicebus || die
+	use sf || rm -r azure/cli/command_modules/servicefabric || die
+	use signalr || rm -r azure/cli/command_modules/signalr || die
+	use sql || rm -r azure/cli/command_modules/sql || die
+	use sqlvm || rm -r azure/cli/command_modules/sqlvm || die
+	use storage || rm -r azure/cli/command_modules/storage || die
+	use vm || rm -r azure/cli/command_modules/vm || die
 }
