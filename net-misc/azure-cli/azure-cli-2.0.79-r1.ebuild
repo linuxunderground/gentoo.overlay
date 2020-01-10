@@ -249,7 +249,6 @@ CLI_DEPEND="
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-monitor-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-msi-1.0.0[${PYTHON_USEDEP}]
 		dev-python/pytz[${PYTHON_USEDEP}]
 	)
@@ -292,6 +291,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-compute-10.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-keyvault-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-marketplaceordering-0.2.1[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-monitor-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-msi-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-multiapi-storage-0.2.4[${PYTHON_USEDEP}]
@@ -308,6 +308,7 @@ src_prepare() {
 	distutils-r1_src_prepare
 	rm az.bat || die
 	sed -i -e '/az.bat/ d' setup.py || die
+	sed -i -e '/import antlr4/ d' azure/cli/command_modules/monitor/actions.py || die
 
 	use acr || rm -r azure/cli/command_modules/acr || die
 	use acs || rm -r azure/cli/command_modules/acs || die
@@ -345,6 +346,7 @@ src_prepare() {
 	use lab || rm -r azure/cli/command_modules/lab || die
 	use managedservices || rm -r azure/cli/command_modules/managedservices || die
 	use maps || rm -r azure/cli/command_modules/maps || die
+	use vm || \
 	use monitor || rm -r azure/cli/command_modules/monitor || die
 	use network || rm -r azure/cli/command_modules/natgateway || die
 	use netappfiles || rm -r azure/cli/command_modules/netappfiles || die
