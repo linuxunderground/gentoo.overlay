@@ -81,7 +81,7 @@ CLI_DEPEND="
 	acr? (
 		virtual/python-cffi[${PYTHON_USEDEP}]
 		>=dev-python/azure-storage-blob-2.0.1[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-containerregistry-3.0.0_rc7[${PYTHON_USEDEP}]
 	)
 	acs? (
@@ -112,7 +112,7 @@ CLI_DEPEND="
 		>=dev-python/azure-functions-devops-build-0.0.22[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-applicationinsights-0.2.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-containerregistry-3.0.0_rc7[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-web-0.42.0[${PYTHON_USEDEP}]
 		dev-python/fabric:2[${PYTHON_USEDEP}]
 		>=dev-python/urllib3-1.18[${PYTHON_USEDEP}]
@@ -181,7 +181,7 @@ CLI_DEPEND="
 	hdinsight? (
 		>=dev-python/azure-mgmt-hdinsight-1.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-7.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.1.0[${PYTHON_USEDEP}]
 	)
 	interactive? (
 		dev-python/prompt_toolkit[${PYTHON_USEDEP}]
@@ -269,21 +269,21 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-keyvault-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-servicefabric-0.3.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.1.0[${PYTHON_USEDEP}]
 	)
 	signalr? (
 		>=dev-python/azure-mgmt-signalr-0.3.0[${PYTHON_USEDEP}]
 	)
 	sql? (
 		>=dev-python/azure-mgmt-sql-0.15.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.1.0[${PYTHON_USEDEP}]
 	)
 	sqlvm? (
 		>=dev-python/azure-mgmt-sqlvirtualmachine-0.5.0[${PYTHON_USEDEP}]
 	)
 	storage? (
 		>=dev-python/azure-multiapi-storage-0.2.4[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-storage-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-storage-7.1.0[${PYTHON_USEDEP}]
 	)
 	vm? (
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
@@ -298,7 +298,7 @@ CLI_DEPEND="
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.0.79[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.0.80[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}
