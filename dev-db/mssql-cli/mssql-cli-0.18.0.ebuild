@@ -1,15 +1,21 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 PYTHON_COMPAT=( python3_{6,7,8} )
 
-inherit distutils-r1 git-r3
+inherit distutils-r1
 
 DESCRIPTION="Command-line client for SQL Server with auto-completion and syntax highlighting"
 HOMEPAGE="https://github.com/dbcli/mssql-cli"
-EGIT_REPO_URI="https://github.com/dbcli/mssql-cli"
+SRC_URI="https://codeload.github.com/dbcli/${PN}/tar.gz/${PV} -> ${P}.tar.gz"
+
+# mssql-cli needs https://github.com/Microsoft/sqltoolsservice
+# .net is required to compile sqltoolsservice. So, let's use Microsoft
+# binaries embedded with mssql-cli releases. Unhappily, there are only
+# x86-64 binaries
+KEYWORDS="~amd64"
 
 LICENSE="BSD"
 SLOT="0"
@@ -26,7 +32,7 @@ DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
 src_unpack() {
-	git-r3_src_unpack
+	default
 	cd "${S}/mssqlcli/mssqltoolsservice/" || die
 	mkdir bin
 	cd bin
