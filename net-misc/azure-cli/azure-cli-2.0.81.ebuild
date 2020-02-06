@@ -82,14 +82,14 @@ CLI_DEPEND="
 		virtual/python-cffi[${PYTHON_USEDEP}]
 		>=dev-python/azure-storage-blob-2.0.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-7.1.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-containerregistry-3.0.0_rc7[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-containerregistry-3.0.0_rc8[${PYTHON_USEDEP}]
 	)
 	acs? (
 		virtual/python-cffi[${PYTHON_USEDEP}]
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-compute-10.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-containerservice-8.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-containerservice-8.2.0[${PYTHON_USEDEP}]
 		dev-python/scp[${PYTHON_USEDEP}]
 		dev-python/sshtunnel[${PYTHON_USEDEP}]
 	)
@@ -111,9 +111,9 @@ CLI_DEPEND="
 		virtual/python-cffi[${PYTHON_USEDEP}]
 		>=dev-python/azure-functions-devops-build-0.0.22[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-applicationinsights-0.2.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-containerregistry-3.0.0_rc7[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-containerregistry-3.0.0_rc8[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-7.1.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-web-0.42.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-web-0.44.0[${PYTHON_USEDEP}]
 		dev-python/fabric:2[${PYTHON_USEDEP}]
 		>=dev-python/urllib3-1.18[${PYTHON_USEDEP}]
 		dev-python/vsts-cd-manager[${PYTHON_USEDEP}]
@@ -133,10 +133,10 @@ CLI_DEPEND="
 	)
 	bot? (
 		>=dev-python/azure-mgmt-botservice-0.2.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-web-0.42.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-web-0.44.0[${PYTHON_USEDEP}]
 	)
 	cdn? (
-		>=dev-python/azure-mgmt-cdn-3.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-cdn-4.0.0[${PYTHON_USEDEP}]
 	)
 	container? (
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
@@ -153,10 +153,9 @@ CLI_DEPEND="
 	)
 	cosmosdb? (
 		>=dev-python/azure-mgmt-cosmosdb-0.11.0[${PYTHON_USEDEP}]
-		>=dev-python/pydocumentdb-2.3.3[${PYTHON_USEDEP}]
 	)
 	deploymentmanager? (
-		>=dev-python/azure-mgmt-deploymentmanager-0.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-deploymentmanager-0.2.0[${PYTHON_USEDEP}]
 	)
 	dla? (
 		>=dev-python/azure-mgmt-datalake-analytics-0.3.0[${PYTHON_USEDEP}]
@@ -192,7 +191,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-iothubprovisioningservices-0.2.0[${PYTHON_USEDEP}]
 	)
 	iotcentral? (
-		>=dev-python/azure-mgmt-iotcentral-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-iotcentral-2.0.0[${PYTHON_USEDEP}]
 	)
 	keyvault? (
 		virtual/python-cffi[${PYTHON_USEDEP}]
@@ -226,7 +225,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-trafficmanager-0.51.0[${PYTHON_USEDEP}]
 	)
 	policyinsights? (
-		>=dev-python/azure-mgmt-policyinsights-0.3.1[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-policyinsights-0.4.0[${PYTHON_USEDEP}]
 	)
 	rdbms? (
 		>=dev-python/azure-mgmt-rdbms-1.9.0[${PYTHON_USEDEP}]
@@ -268,7 +267,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-compute-10.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-keyvault-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-7.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-servicefabric-0.3.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-servicefabric-0.4.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-7.1.0[${PYTHON_USEDEP}]
 	)
 	signalr? (
@@ -298,7 +297,7 @@ CLI_DEPEND="
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.0.80[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.0.81[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}
