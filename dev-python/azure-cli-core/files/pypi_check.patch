@@ -1,6 +1,7 @@
---- azure-cli-core-2.0.78-a/azure/cli/core/__init__.py	2019-12-12 12:06:28.000000000 +0100
-+++ azure-cli-core-2.0.78-b/azure/cli/core/__init__.py	2019-12-21 20:42:41.920617565 +0100
-@@ -89,13 +89,9 @@
+diff -ur azure-cli-core-2.0.81.a/azure/cli/core/__init__.py azure-cli-core-2.0.81.b/azure/cli/core/__init__.py
+--- azure-cli-core-2.0.81.a/azure/cli/core/__init__.py	2020-01-31 13:42:38.000000000 +0100
++++ azure-cli-core-2.0.81.b/azure/cli/core/__init__.py	2020-02-06 18:00:42.138983181 +0100
+@@ -90,17 +90,11 @@
          ver_string, updates_available = get_az_version_string()
          print(ver_string)
          if updates_available == -1:
@@ -15,5 +16,9 @@
 +        if updates_available:
 +            logger.warning('You have %i updates available. Consider updating your CLI installation.', updates_available)
  
+-        colorama.init()  # This could be removed when knack fix is released
          print('\n' + SURVEY_PROMPT)
+-        colorama.deinit()  # This could be removed when knack fix is released
  
+     def exception_handler(self, ex):  # pylint: disable=no-self-use
+         from azure.cli.core.util import handle_exception
