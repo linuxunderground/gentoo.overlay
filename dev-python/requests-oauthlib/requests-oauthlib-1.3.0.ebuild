@@ -1,9 +1,9 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{5,6,7} )
+PYTHON_COMPAT=( python3_{6,7,8} )
 
 inherit distutils-r1
 
@@ -13,8 +13,11 @@ SRC_URI="https://github.com/requests/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
 LICENSE="ISC"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="test"
+# tests fail with network-sandbox
+RESTRICT="!test? ( test )
+	test"
 
 DEPEND="test? (
 			dev-python/mock[${PYTHON_USEDEP}]
@@ -22,7 +25,7 @@ DEPEND="test? (
 		)"
 RDEPEND="
 	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/oauthlib-3.0.0[${PYTHON_USEDEP}]"
+	>=dev-python/oauthlib-0.6.2[${PYTHON_USEDEP}]"
 
 #Refrain from a doc build for now
 #python_compile_all() {
