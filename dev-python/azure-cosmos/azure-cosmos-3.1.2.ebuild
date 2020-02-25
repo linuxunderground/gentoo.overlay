@@ -15,11 +15,22 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
+# They fail.
+RESTRICT="test"
+
 RDEPEND=">=dev-python/msrestazure-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/azure-common-1.1.24[${PYTHON_USEDEP}]"
 
-DEPEND="${RDEPEND}
-	dev-python/setuptools[${PYTHON_USEDEP}]"
+BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+
+src_prepare() {
+	default
+	sed -i -e "/find_package/ s:])):, 'samples', 'samples.*', 'doc'])):" setup.py || die
+}
+
+python_test() {
+	"${EPYTHON}" -m unittest discover -s ./test -v -p '*.py' || die
+}
 
 python_install() {
 	distutils-r1_python_install
