@@ -7,7 +7,7 @@
   </maintainer>
   <upstream>
     <remote-id type="pypi">fdb</remote-id>
-	<remote-id type="github">FirebirdSQL/fdb</remote-id>
+    <remote-id type="github">FirebirdSQL/fdb</remote-id>
   </upstream>
   <longdescription>
 FDB is a Python library package that implements Python Database
