@@ -17,10 +17,10 @@ SLOT="0"
 
 RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
 	>=dev-python/six-1.12[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.2[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
-	dev-python/colorama[${PYTHON_USEDEP}]
+	>=dev-python/colorama-0.4.1[${PYTHON_USEDEP}]
 	dev-python/argcomplete[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
