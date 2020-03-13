@@ -5,6 +5,9 @@
     <email>vincent.hardy@linuxunderground.be</email>
     <name>Vincent Hardy</name>
   </maintainer>
+  <upstream>
+    <remote-id type="pypi">azure-cli</remote-id>
+  </upstream>
   <use>
     <flag name="acr">Install the Azure Container Registries module. i.e. 'az acr'</flag>
     <flag name="acs">Install the container module. i.e. 'az acs' and 'az aks'</flag>
