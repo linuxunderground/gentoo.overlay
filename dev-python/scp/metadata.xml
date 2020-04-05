@@ -6,6 +6,7 @@
     <name>Vincent Hardy</name>
   </maintainer>
   <upstream>
+    <remote-id type="github">jbardin/scp.py</remote-id>
     <remote-id type="pypi">scp</remote-id>
   </upstream>
 </pkgmetadata>
