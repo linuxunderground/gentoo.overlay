@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="A Command-Line Interface framework"
 HOMEPAGE="https://pypi.org/project/knack"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${PN}-0.7.0rc1.tar.gz"
 
 KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
@@ -25,3 +25,5 @@ RDEPEND="dev-python/tabulate[${PYTHON_USEDEP}]
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
+
+S="${WORKDIR}/${PN}-0.7.0rc1"
