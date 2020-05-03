@@ -1,19 +1,41 @@
---- azure-cli-core-2.3.1.a/azure/cli/core/__init__.py	2020-04-01 09:16:17.000000000 +0200
-+++ azure-cli-core-2.3.1.b/azure/cli/core/__init__.py	2020-04-09 10:34:29.872184471 +0200
-@@ -94,13 +94,9 @@
+--- azure-cli-core-2.4.0-a/azure/cli/core/__init__.py	2020-04-17 11:37:00.000000000 +0200
++++ azure-cli-core-2.4.0-b/azure/cli/core/__init__.py	2020-05-02 11:02:12.997206519 +0200
+@@ -107,37 +107,9 @@
          ver_string, updates_available = get_az_version_string()
          print(ver_string)
          if updates_available == -1:
 -            logger.warning('Unable to check if your CLI is up-to-date. Check your internet connection.')
--        elif updates_available:
--            logger.warning('You have %i updates available. Consider updating your CLI installation. '
--                           'Instructions can be found at https://docs.microsoft.com/en-us/cli/azure/install-azure-cli',
--                           updates_available)
--        else:
--            print('Your CLI is up-to-date.')
 +            updates_available = 0
-+        if updates_available:
-+            logger.warning('You have %i updates available. Consider updating your CLI installation.', updates_available)
- 
-         print('\n' + (SURVEY_PROMPT_COLOR if self.enable_color else SURVEY_PROMPT))
- 
+         elif updates_available:
+             warning_msg = 'You have %i updates available. Consider updating your CLI installation'
+-            from azure.cli.core._environment import _ENV_AZ_INSTALLER
+-            installer = os.getenv(_ENV_AZ_INSTALLER)
+-            instruction_msg = ''
+-            if installer in _PACKAGE_UPGRADE_INSTRUCTIONS:
+-                if installer == 'RPM':
+-                    from azure.cli.core.util import get_linux_distro
+-                    distname, _ = get_linux_distro()
+-                    if not distname:
+-                        instruction_msg = '. {}'.format(_GENERAL_UPGRADE_INSTRUCTION)
+-                    else:
+-                        distname = distname.lower().strip()
+-                        if any(x in distname for x in ['centos', 'rhel', 'red hat', 'fedora']):
+-                            installer = 'YUM'
+-                        elif any(x in distname for x in ['opensuse', 'suse', 'sles']):
+-                            installer = 'ZYPPER'
+-                        else:
+-                            instruction_msg = '. {}'.format(_GENERAL_UPGRADE_INSTRUCTION)
+-                elif installer == 'PIP':
+-                    import platform
+-                    system = platform.system()
+-                    alternative_command = " or '{}' if you used our script for installation. Detailed instructions can be found at {}".format(_PACKAGE_UPGRADE_INSTRUCTIONS[installer][0], _PACKAGE_UPGRADE_INSTRUCTIONS[installer][1]) if system != 'Windows' else ''
+-                    instruction_msg = " with 'pip install --upgrade azure-cli'{}".format(alternative_command)
+-                if instruction_msg:
+-                    warning_msg += instruction_msg
+-                else:
+-                    warning_msg += " with '{}'. Detailed instructions can be found at {}".format(_PACKAGE_UPGRADE_INSTRUCTIONS[installer][0], _PACKAGE_UPGRADE_INSTRUCTIONS[installer][1])
+-            else:
+-                warning_msg += '. {}'.format(_GENERAL_UPGRADE_INSTRUCTION)
+             logger.warning(warning_msg, updates_available)
+         else:
+             print('Your CLI is up-to-date.')
