@@ -145,7 +145,7 @@ CLI_DEPEND="
 	container? (
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-containerinstance-1.5.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-loganalytics-0.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-loganalytics-0.5.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-10.1.0[${PYTHON_USEDEP}]
 		dev-python/websocket-client[${PYTHON_USEDEP}]
 	)
@@ -157,7 +157,7 @@ CLI_DEPEND="
 	)
 	cosmosdb? (
 		>=dev-python/azure-cosmos-3.1.2[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-cosmosdb-0.12.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-cosmosdb-0.13.0[${PYTHON_USEDEP}]
 	)
 	deploymentmanager? (
 		>=dev-python/azure-mgmt-deploymentmanager-0.2.0[${PYTHON_USEDEP}]
@@ -286,7 +286,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-sqlvirtualmachine-0.5.0[${PYTHON_USEDEP}]
 	)
 	storage? (
-		>=dev-python/azure-multiapi-storage-0.2.4[${PYTHON_USEDEP}]
+		>=dev-python/azure-multiapi-storage-0.3.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-9.0.0[${PYTHON_USEDEP}]
 	)
 	vm? (
@@ -298,11 +298,11 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-monitor-0.9.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-msi-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-10.1.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-multiapi-storage-0.2.4[${PYTHON_USEDEP}]
+		>=dev-python/azure-multiapi-storage-0.3.1[${PYTHON_USEDEP}]
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.4.0[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.5.1[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}
