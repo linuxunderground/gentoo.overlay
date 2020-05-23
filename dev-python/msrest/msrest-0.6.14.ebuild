@@ -20,7 +20,7 @@ IUSE="+async"
 RDEPEND=">=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.6.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-oauthlib-1.2.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.18.4[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]
 	async? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}]
 		dev-python/aiodns[${PYTHON_USEDEP}] )"
 
