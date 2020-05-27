@@ -9,16 +9,16 @@ inherit distutils-r1
 
 DESCRIPTION="Microsoft Azure Container Registry Client Library for Python"
 HOMEPAGE="https://pypi.org/project/azure-mgmt-containerregistry"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${PN}-3.0.0rc11.zip"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${PN}-3.0.0rc12.zip"
 
 KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/msrestazure-0.6.3[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/msrestazure-0.6.3-r1[${PYTHON_USEDEP}]
 	>=dev-python/azure-common-1.1.25[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
-S="${WORKDIR}/${PN}-3.0.0rc11"
+S="${WORKDIR}/${PN}-3.0.0rc12"
