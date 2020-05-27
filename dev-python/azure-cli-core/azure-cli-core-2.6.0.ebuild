@@ -21,10 +21,10 @@ RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	>=dev-python/pkginfo-1.5.0.1[${PYTHON_USEDEP}]
-	>=dev-python/msrestazure-0.6.3[${PYTHON_USEDEP}]
+	>=dev-python/msrestazure-0.6.3-r1[${PYTHON_USEDEP}]
 	>=dev-python/msal-extensions-0.1.3[${PYTHON_USEDEP}]
 	>=dev-python/msal-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/knack-0.7.0_rc4[${PYTHON_USEDEP}]
+	>=dev-python/knack-0.7.1[${PYTHON_USEDEP}]
 	dev-python/humanfriendly[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-telemetry-1.0.4[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-core-1.0.0[${PYTHON_USEDEP}]
@@ -41,7 +41,6 @@ src_prepare() {
 	# We do not want any warning if pip is not installed.
 	eapply "${FILESDIR}"/pypi_check.patch
 
-	eapply "${FILESDIR}"/check_URL.patch
 	eapply_user
 }
 
