@@ -145,8 +145,8 @@ CLI_DEPEND="
 	container? (
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-containerinstance-1.5.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-loganalytics-0.5.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-10.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-loganalytics-0.6.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-10.2.0[${PYTHON_USEDEP}]
 		dev-python/websocket-client[${PYTHON_USEDEP}]
 	)
 	cognitiveservices? (
@@ -184,7 +184,7 @@ CLI_DEPEND="
 	)
 	hdinsight? (
 		>=dev-python/azure-mgmt-hdinsight-1.4.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-10.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-10.2.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-9.0.0[${PYTHON_USEDEP}]
 	)
 	interactive? (
@@ -225,7 +225,7 @@ CLI_DEPEND="
 	)
 	network? (
 		>=dev-python/azure-mgmt-dns-3.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-10.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-10.2.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-privatedns-0.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-trafficmanager-0.51.0[${PYTHON_USEDEP}]
 	)
@@ -271,7 +271,7 @@ CLI_DEPEND="
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-compute-12.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-keyvault-2.2.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-10.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-10.2.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-servicefabric-0.4.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-9.0.0[${PYTHON_USEDEP}]
 	)
@@ -297,12 +297,12 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-marketplaceordering-0.2.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-monitor-0.9.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-msi-1.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-10.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-10.2.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-multiapi-storage-0.3.2[${PYTHON_USEDEP}]
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.6.0[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.7.0[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}
