@@ -5,6 +5,9 @@
     <email>vincent.hardy@linuxunderground.be</email>
     <name>Vincent Hardy</name>
   </maintainer>
+  <upstream>
+    <remote-id type="github">LudovicRousseau/PyKCS11</remote-id>
+  </upstream>
   <longdescription>
 A complete PKCS#11 wrapper for Python.
 You can use any PKCS#11 (aka CryptoKi) module such as the PSM which
