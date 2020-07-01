@@ -1,0 +1,22 @@
+--- ti99sim-0.16.0/rules.mak.a	2020-06-27 16:49:47.637224834 +0200
++++ ti99sim-0.16.0/rules.mak	2020-06-27 16:53:23.413895095 +0200
+@@ -41,10 +41,6 @@
+ DEBUG    := 1
+ endif
+ 
+-ifdef ARCH
+-CFLAGS   += -march=$(ARCH)
+-endif
+-
+ ifdef LTO
+ CFLAGS   += -flto
+ LFLAGS   += -flto
+@@ -65,6 +61,8 @@
+ endif
+ endif
+ 
++CFLAGS   += -DTI_DATA_DIR=\"$(DATA_DIR)\"
++
+ OS       := OS_UNKNOWN
+ 
+ # OSTYPE may not be exported from the shell - make our own
