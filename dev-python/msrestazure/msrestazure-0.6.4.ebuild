@@ -15,8 +15,8 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/adal-1.2.3[${PYTHON_USEDEP}]
-	>=dev-python/msrest-0.6.14[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/adal-1.2.4[${PYTHON_USEDEP}]
+	>=dev-python/msrest-0.6.17[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
