@@ -285,13 +285,14 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-sqlvirtualmachine-0.5.0[${PYTHON_USEDEP}]
 	)
 	storage? (
-		>=dev-python/azure-multiapi-storage-0.3.2[${PYTHON_USEDEP}]
+		>=dev-python/azure-multiapi-storage-0.3.5[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-11.1.0[${PYTHON_USEDEP}]
 	)
 	vm? (
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-compute-13.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-imagebuilder-0.4.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-keyvault-2.2.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-marketplaceordering-0.2.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-monitor-0.10.0[${PYTHON_USEDEP}]
