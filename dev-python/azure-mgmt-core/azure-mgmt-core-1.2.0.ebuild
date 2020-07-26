@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">=dev-python/azure-core-1.4.0[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/azure-core-1.7.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
