@@ -158,6 +158,7 @@ CLI_DEPEND="
 	cosmosdb? (
 		>=dev-python/azure-cosmos-3.1.2[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-cosmosdb-0.15.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-multiapi-storage-0.3.5[${PYTHON_USEDEP}]
 	)
 	deploymentmanager? (
 		>=dev-python/azure-mgmt-deploymentmanager-0.2.0[${PYTHON_USEDEP}]
@@ -298,7 +299,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-monitor-0.10.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-msi-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-11.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-multiapi-storage-0.3.2[${PYTHON_USEDEP}]
+		>=dev-python/azure-multiapi-storage-0.3.5[${PYTHON_USEDEP}]
 	)"
 
 RDEPEND="${CLI_DEPEND}
