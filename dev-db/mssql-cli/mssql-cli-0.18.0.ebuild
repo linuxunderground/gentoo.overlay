@@ -22,7 +22,7 @@ SLOT="0"
 
 RDEPEND="dev-python/click[${PYTHON_USEDEP}]
 	dev-python/prompt_toolkit[${PYTHON_USEDEP}]
-	dev-python/python-sqlparse[${PYTHON_USEDEP}]
+	dev-python/sqlparse[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/humanize[${PYTHON_USEDEP}]
 	~dev-python/cli_helpers-0.2.3[${PYTHON_USEDEP}]

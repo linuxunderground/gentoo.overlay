@@ -1,9 +1,9 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{5,6,7,8} )
+PYTHON_COMPAT=( python3_{6,7,8} )
 
 inherit distutils-r1
 
@@ -22,10 +22,10 @@ SLOT="0"
 
 RDEPEND="dev-python/click[${PYTHON_USEDEP}]
 	dev-python/prompt_toolkit[${PYTHON_USEDEP}]
-	dev-python/python-sqlparse[${PYTHON_USEDEP}]
+	dev-python/sqlparse[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/humanize[${PYTHON_USEDEP}]
-	~dev-python/cli_helpers-0.2.3[${PYTHON_USEDEP}]
+	dev-python/cli_helpers[${PYTHON_USEDEP}]
 	>=dev-python/applicationinsights-0.11.1[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
