@@ -106,7 +106,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-apimanagement-0.1.0[${PYTHON_USEDEP}]
 	)
 	appconfig? (
-		>=dev-python/azure-mgmt-appconfiguration-0.4.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-appconfiguration-0.5.0[${PYTHON_USEDEP}]
 	)
 	appservice? (
 		virtual/python-cffi[${PYTHON_USEDEP}]
@@ -140,7 +140,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-web-0.47.0[${PYTHON_USEDEP}]
 	)
 	cdn? (
-		>=dev-python/azure-mgmt-cdn-4.1.0_rc1[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-cdn-5.0.0[${PYTHON_USEDEP}]
 	)
 	container? (
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
@@ -184,7 +184,7 @@ CLI_DEPEND="
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)
 	hdinsight? (
-		>=dev-python/azure-mgmt-hdinsight-1.5.1[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-hdinsight-1.6.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-11.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-11.1.0[${PYTHON_USEDEP}]
 	)
@@ -219,10 +219,10 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-maps-0.1.0[${PYTHON_USEDEP}]
 	)
 	monitor? (
-		>=dev-python/azure-mgmt-monitor-0.10.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-monitor-0.11.0[${PYTHON_USEDEP}]
 	)
 	netappfiles? (
-		>=dev-python/azure-mgmt-netapp-0.8.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-netapp-0.11.0[${PYTHON_USEDEP}]
 	)
 	network? (
 		>=dev-python/azure-mgmt-dns-3.0.0[${PYTHON_USEDEP}]
@@ -296,14 +296,14 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-imagebuilder-0.4.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-keyvault-2.2.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-marketplaceordering-0.2.1[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-monitor-0.10.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-monitor-0.11.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-msi-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-11.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-multiapi-storage-0.3.5[${PYTHON_USEDEP}]
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.9.1[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.10.0[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}
