@@ -303,7 +303,7 @@ CLI_DEPEND="
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.10.0[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.10.1[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}
