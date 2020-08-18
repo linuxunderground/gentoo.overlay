@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit autotools eutils systemd vcs-snapshot user
+inherit autotools eutils systemd vcs-snapshot
 
 DESCRIPTION="Update local time over HTTPS"
 HOMEPAGE="https://github.com/ioerror/tlsdate"
@@ -11,10 +11,12 @@ SRC_URI="https://github.com/ioerror/tlsdate/tarball/${P} -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 arm arm64 hppa ia64 m68k ~mips s390 sh sparc x86"
+KEYWORDS="amd64 arm arm64 hppa ia64 m68k ~mips s390 sparc x86"
 IUSE="dbus +seccomp static-libs"
 
-DEPEND="dev-libs/openssl:0=
+DEPEND="acct-group/tlsdate
+	acct-user/tlsdate
+	dev-libs/openssl:0=
 	dev-libs/libevent:=
 	dbus? ( sys-apps/dbus )"
 RDEPEND="${DEPEND}"
@@ -68,9 +70,4 @@ src_install() {
 
 	use static-libs || \
 		find "${ED}"/usr '(' -name '*.la' -o -name '*.a' ')' -delete
-}
-
-pkg_preinst() {
-	enewgroup tlsdate 124
-	enewuser tlsdate 124 -1 /dev/null tlsdate
 }

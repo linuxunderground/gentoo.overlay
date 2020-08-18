@@ -1,9 +1,9 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit autotools systemd git-r3 user
+inherit autotools systemd git-r3
 
 DESCRIPTION="Update local time over HTTPS"
 HOMEPAGE="https://chromium.googlesource.com/chromiumos/third_party/tlsdate"
@@ -13,7 +13,9 @@ LICENSE="BSD"
 SLOT="0"
 IUSE="dbus +hardened +seccomp static-libs"
 
-DEPEND="dev-libs/openssl:0=
+DEPEND="acct-group/tlsdate
+	acct-user/tlsdate
+	dev-libs/openssl:0=
 	dev-libs/libevent:=
 	dbus? ( sys-apps/dbus )"
 RDEPEND="${DEPEND}"
@@ -77,9 +79,4 @@ src_install() {
 
 	use static-libs || \
 		find "${ED}"/usr '(' -name '*.la' -o -name '*.a' ')' -delete
-}
-
-pkg_preinst() {
-	enewgroup tlsdate 124
-	enewuser tlsdate 124 -1 /dev/null tlsdate
 }
