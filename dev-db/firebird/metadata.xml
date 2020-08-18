@@ -15,7 +15,10 @@
 		<flag name="xinetd">Install ClassicServer</flag>
 	</use>
 	<maintainer type="person">
-		<email>vincent.hardy.be@gmail.com</email>
+		<email>vincent.hardy@linuxunderground.be</email>
 		<name>Vincent Hardy</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">FirebirdSQL/firebird</remote-id>
+	</upstream>
 </pkgmetadata>

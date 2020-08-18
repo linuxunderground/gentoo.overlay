@@ -1,9 +1,9 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit autotools eutils flag-o-matic multilib user
+inherit autotools eutils flag-o-matic multilib
 
 MY_P="${PN/f/F}-$(ver_rs 4 -)"
 MY_PV="R$(ver_cut 1)_$(ver_cut 2)_$(ver_cut 3)"
@@ -18,7 +18,9 @@ KEYWORDS="~amd64 ~x86"
 
 IUSE="debug doc client examples superserver xinetd"
 
-CDEPEND="dev-libs/libedit
+CDEPEND="acct-group/firebird
+	acct-user/firebird
+	dev-libs/libedit
 	dev-libs/icu:="
 
 DEPEND="${CDEPEND}
@@ -32,11 +34,6 @@ RDEPEND="${CDEPEND}
 RESTRICT="userpriv"
 
 S="${WORKDIR}/${MY_P}"
-
-pkg_setup() {
-	enewgroup firebird 450
-	enewuser firebird 450 /bin/sh /usr/$(get_libdir)/firebird firebird
-}
 
 check_sed() {
 	MSG="sed of $3, required $2 lines modified $1"
