@@ -20,17 +20,3 @@ RDEPEND=">=dev-python/portalocker-1.4.0[${PYTHON_USEDEP}]
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
-
-python_install() {
-	distutils-r1_python_install
-
-	python_export PYTHON_SITEDIR
-
-	# __init__.py are provided by net-misc/azure-cli
-	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
-	rm "${ED}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
-
-	# Avoid portage file collisions
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/__pycache__" || die
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/__pycache__" || die
-}
