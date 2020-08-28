@@ -22,7 +22,7 @@ IUSE="+acr +acs +advisor +ams +apim +appconfig +appservice +aro +backup \
 	+iotcentral +keyvault +kusto +lab +managedservices +maps +monitor \
 	+netappfiles +network +policyinsights +rdbms +redis +relay +reservations \
 	+resource +role +search +security +servicebus +sf +signalr +sql +sqlvm \
-	+storage +util +vm"
+	+storage +synapse +util +vm"
 
 OBSOLETE="!dev-python/azure-cli-batchai
 	!!dev-python/azure-cli-acr
@@ -130,7 +130,7 @@ CLI_DEPEND="
 	batch? (
 		>=dev-python/azure-batch-9.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-batch-9.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-keyvault-2.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-keyvault-7.0.0_beta2[${PYTHON_USEDEP}]
 	)
 	billing? (
 		>=dev-python/azure-mgmt-billing-0.2.0[${PYTHON_USEDEP}]
@@ -158,7 +158,7 @@ CLI_DEPEND="
 	cosmosdb? (
 		>=dev-python/azure-cosmos-3.1.2[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-cosmosdb-0.15.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-multiapi-storage-0.3.5[${PYTHON_USEDEP}]
+		>=dev-python/azure-multiapi-storage-0.4.1[${PYTHON_USEDEP}]
 	)
 	deploymentmanager? (
 		>=dev-python/azure-mgmt-deploymentmanager-0.2.0[${PYTHON_USEDEP}]
@@ -168,7 +168,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-datalake-store-0.5.0[${PYTHON_USEDEP}]
 	)
 	dls? (
-		>=dev-python/azure-datalake-store-0.0.48[${PYTHON_USEDEP}]
+		>=dev-python/azure-datalake-store-0.0.49[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-datalake-store-0.5.0[${PYTHON_USEDEP}]
 	)
 	dms? (
@@ -184,7 +184,7 @@ CLI_DEPEND="
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)
 	hdinsight? (
-		>=dev-python/azure-mgmt-hdinsight-1.6.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-hdinsight-1.7.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-11.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-11.1.0[${PYTHON_USEDEP}]
 	)
@@ -203,7 +203,7 @@ CLI_DEPEND="
 		virtual/python-cffi[${PYTHON_USEDEP}]
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-keyvault-2.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-keyvault-7.0.0_beta2[${PYTHON_USEDEP}]
 	)
 	kusto? (
 		>=dev-python/azure-mgmt-kusto-0.3.0[${PYTHON_USEDEP}]
@@ -222,7 +222,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-monitor-0.11.0[${PYTHON_USEDEP}]
 	)
 	netappfiles? (
-		>=dev-python/azure-mgmt-netapp-0.11.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-netapp-0.12.0[${PYTHON_USEDEP}]
 	)
 	network? (
 		>=dev-python/azure-mgmt-dns-3.0.0[${PYTHON_USEDEP}]
@@ -270,7 +270,7 @@ CLI_DEPEND="
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-compute-13.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-keyvault-2.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-keyvault-7.0.0_beta2[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-11.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-servicefabric-0.4.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-11.1.0[${PYTHON_USEDEP}]
@@ -286,24 +286,29 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-sqlvirtualmachine-0.5.0[${PYTHON_USEDEP}]
 	)
 	storage? (
-		>=dev-python/azure-multiapi-storage-0.3.5[${PYTHON_USEDEP}]
+		>=dev-python/azure-multiapi-storage-0.4.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-11.1.0[${PYTHON_USEDEP}]
+	)
+	synapse? (
+		>=dev-python/azure-mgmt-synapse-0.3.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-synapse-accesscontrol-0.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-synapse-spark-0.2.0[${PYTHON_USEDEP}]
 	)
 	vm? (
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-authorization-0.60.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-compute-13.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-imagebuilder-0.4.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-keyvault-2.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-keyvault-7.0.0_beta2[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-marketplaceordering-0.2.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-monitor-0.11.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-msi-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-network-11.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-multiapi-storage-0.3.5[${PYTHON_USEDEP}]
+		>=dev-python/azure-multiapi-storage-0.4.1[${PYTHON_USEDEP}]
 	)"
 
 RDEPEND="${CLI_DEPEND}
-	~dev-python/azure-cli-core-2.10.1[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.11.0[${PYTHON_USEDEP}]"
 
 DEPEND="${OBSOLETE}
 	${RDEPEND}
@@ -374,6 +379,7 @@ src_prepare() {
 	use sql || rm -r azure/cli/command_modules/sql || die
 	use sqlvm || rm -r azure/cli/command_modules/sqlvm || die
 	use storage || rm -r azure/cli/command_modules/storage || die
+	use synapse || rm -r azure/cli/command_modules/synapse || die
 	use util || rm -r azure/cli/command_modules/util || die
 	use vm || rm -r azure/cli/command_modules/vm || die
 }
