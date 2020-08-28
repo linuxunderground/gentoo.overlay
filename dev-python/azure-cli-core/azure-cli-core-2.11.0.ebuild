@@ -23,12 +23,12 @@ RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 	>=dev-python/pkginfo-1.5.0.1[${PYTHON_USEDEP}]
 	>=dev-python/msrestazure-0.6.4[${PYTHON_USEDEP}]
 	>=dev-python/msal-extensions-0.2.2[${PYTHON_USEDEP}]
-	>=dev-python/msal-1.4.1[${PYTHON_USEDEP}]
+	>=dev-python/msal-1.4.3[${PYTHON_USEDEP}]
 	>=dev-python/knack-0.7.2[${PYTHON_USEDEP}]
 	dev-python/humanfriendly[${PYTHON_USEDEP}]
-	>=dev-python/azure-cli-telemetry-1.0.4[${PYTHON_USEDEP}]
+	>=dev-python/azure-cli-telemetry-1.0.5[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-core-1.2.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-resource-10.1.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-mgmt-resource-10.2.0[${PYTHON_USEDEP}]
 	dev-python/pyperclip[${PYTHON_USEDEP}]
 	dev-python/asn1crypto[${PYTHON_USEDEP}]"
 
@@ -42,18 +42,4 @@ src_prepare() {
 	eapply "${FILESDIR}"/pypi_check.patch
 
 	eapply_user
-}
-
-python_install() {
-	distutils-r1_python_install
-
-	python_export PYTHON_SITEDIR
-
-	# __init__.py are provided by net-misc/azure-cli
-	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
-	rm "${ED}${PYTHON_SITEDIR}/azure/cli/__init__.py" || die
-
-	# Avoid portage file collisions
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/__pycache__" || die
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/cli/__pycache__" || die
 }
