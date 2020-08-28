@@ -17,19 +17,9 @@ SLOT="0"
 
 RDEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	>=dev-python/azure-storage-common-1.4.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-core-1.7.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-common-1.1.25[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
-
-python_install() {
-	distutils-r1_python_install
-
-	python_export PYTHON_SITEDIR
-
-	# __init__.py are provided by net-misc/azure-cli
-	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
-
-	# Avoid portage file collisions
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/__pycache__" || die
-}
