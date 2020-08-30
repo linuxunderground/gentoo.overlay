@@ -316,6 +316,9 @@ DEPEND="${OBSOLETE}
 
 src_prepare() {
 	distutils-r1_src_prepare
+
+	eapply "${FILESDIR}"/no_user_upgrade.diff
+
 	rm az.bat || die
 	sed -i -e 's:PIP:PORTAGE:' az || die
 	sed -i -e '/az.bat/ d' setup.py || die
