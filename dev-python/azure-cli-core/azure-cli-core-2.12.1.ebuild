@@ -36,8 +36,12 @@ DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
 src_prepare() {
+	# user must upgrade with portage, not with azure-cli
 	# https://example.org is not reliable for me
-	sed -i -e 's:example.org:www.linuxunderground.be:' azure/cli/core/util.py
+	sed -i \
+		-e "s: with 'az upgrade':.:" \
+		-e "s:example.org:www.linuxunderground.be:" \
+		azure/cli/core/util.py || die
 
 	eapply_user
 }
