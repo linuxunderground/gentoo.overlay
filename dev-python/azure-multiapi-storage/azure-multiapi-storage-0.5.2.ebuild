@@ -17,8 +17,8 @@ SLOT="0"
 
 RDEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
-	>=dev-python/azure-storage-common-1.4.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-core-1.7.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-storage-common-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-core-1.8.2[${PYTHON_USEDEP}]
 	>=dev-python/azure-common-1.1.25[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
