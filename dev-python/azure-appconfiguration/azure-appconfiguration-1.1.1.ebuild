@@ -17,8 +17,8 @@ SLOT="0"
 
 IUSE="+async"
 
-RDEPEND=">=dev-python/azure-core-1.7.0[${PYTHON_USEDEP}]
-	>=dev-python/msrest-0.6.17[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/azure-core-1.8.2[${PYTHON_USEDEP}]
+	>=dev-python/msrest-0.6.18[${PYTHON_USEDEP}]
 	async? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}]
 			>=dev-python/aiodns-2.0[${PYTHON_USEDEP}] )"
 
