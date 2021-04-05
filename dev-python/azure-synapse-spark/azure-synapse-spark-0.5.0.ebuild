@@ -1,9 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6,7,8} )
+PYTHON_COMPAT=( python3_{7..9} )
 
 inherit distutils-r1
 
@@ -17,7 +17,7 @@ SLOT="0"
 
 RDEPEND=">=dev-python/msrest-0.6.18[${PYTHON_USEDEP}]
 	>=dev-python/azure-core-1.7.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-common-1.1.25[${PYTHON_USEDEP}]"
+	>=dev-python/azure-common-1.1.27[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
