@@ -112,7 +112,7 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-deploymentmanager-0.2.0[${PYTHON_USEDEP}]
 	)
 	dla? (
-		>=dev-python/azure-mgmt-datalake-analytics-0.3.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-datalake-analytics-0.2.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-datalake-store-0.5.0[${PYTHON_USEDEP}]
 	)
 	dls? (
