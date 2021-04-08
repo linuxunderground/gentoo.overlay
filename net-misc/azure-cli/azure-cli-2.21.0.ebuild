@@ -17,9 +17,9 @@ SLOT="0"
 
 IUSE="+acr +acs +advisor +ams +apim +appconfig +appservice +aro +backup \
 	+batch +billing +bot +cdn +cloud +cognitiveservices +consumption \
-	+container +cosmosdb +deploymentmanager +dla +dls +dms +eventgrid \
-	+eventhubs extension +feedback +find +hdinsight interactive +iot \
-	+keyvault +kusto +lab +managedservices +maps +monitor \
+	+container +cosmosdb +databoxedge +deploymentmanager +dla +dls +dms \
+	+eventgrid +eventhubs extension +feedback +find +hdinsight interactive \
+	+iot +keyvault +kusto +lab +managedservices +maps +monitor \
 	+netappfiles +network +policyinsights +rdbms +redis +relay +reservations \
 	+resource +role +search +security +servicebus +sf +signalr +sql +sqlvm \
 	+storage +synapse +util +vm"
@@ -107,6 +107,9 @@ CLI_DEPEND="
 		>=dev-python/azure-cosmos-3.1.2[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-cosmosdb-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-multiapi-storage-0.6.0[${PYTHON_USEDEP}]
+	)
+	databoxedge? (
+		>=dev-python/azure-mgmt-databoxedge-0.2.0[${PYTHON_USEDEP}]
 	)
 	deploymentmanager? (
 		>=dev-python/azure-mgmt-deploymentmanager-0.2.0[${PYTHON_USEDEP}]
@@ -295,6 +298,7 @@ src_prepare() {
 	use consumption || rm -r azure/cli/command_modules/consumption || die
 	use container || rm -r azure/cli/command_modules/container || die
 	use cosmosdb || rm -r azure/cli/command_modules/cosmosdb || die
+	use databoxedge || rm -r azure/cli/command_modules/databoxedge || die
 	use deploymentmanager || rm -r azure/cli/command_modules/deploymentmanager || die
 	use dla || rm -r azure/cli/command_modules/dla || die
 	use dls || rm -r azure/cli/command_modules/dls || die

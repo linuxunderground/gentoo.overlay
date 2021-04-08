@@ -27,6 +27,7 @@
     <flag name="consumption">Install the consumption module. i.e. 'az consumption'</flag>
     <flag name="container">Install the tools container module. i.e. 'az container'</flag>
     <flag name="cosmosdb">Install the cosmosdb module. i.e. 'az cosmosdb'</flag>
+    <flag name="databoxedge">Install the databoxedge module. i.e. 'az databoxedge'</flag>
     <flag name="deploymentmanager">Install the deploymentmanager module. i.e. 'az deploymentmanager'</flag>
     <flag name="dla">Install the dla module. i.e. 'az dla'</flag>
     <flag name="dls">Install the dls module. i.e. 'az dls'</flag>
