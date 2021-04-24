@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="Microsoft Azure EventGrid Management Client Library for Python"
 HOMEPAGE="https://pypi.org/project/azure-mgmt-eventgrid"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${PN}-3.0.0rc7.zip"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${PN}-3.0.0rc9.zip"
 
 KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
@@ -21,4 +21,4 @@ RDEPEND=">=dev-python/msrestazure-0.6.4[${PYTHON_USEDEP}]
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
-S="${WORKDIR}/${PN}-3.0.0rc7"
+S="${WORKDIR}/${PN}-3.0.0rc9"
