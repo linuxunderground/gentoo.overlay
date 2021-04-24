@@ -265,7 +265,7 @@ RDEPEND="${CLI_DEPEND}
 	>=dev-python/jsondiff-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/jsmin-2.2.2[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-resource-12.1.0[${PYTHON_USEDEP}]
-	~dev-python/azure-cli-core-2.22.0[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.22.1[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
