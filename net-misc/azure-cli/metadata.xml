@@ -40,7 +40,6 @@
     <flag name="hdinsight">Install the hdinsight module. i.e. 'az hdinsight'</flag>
     <flag name="interactive">Install the shell module. i.e. 'az interactive'</flag>
     <flag name="iot">Install the iot module. i.e. 'az iot'</flag>
-    <flag name="iotcentral">Install the iotcentral module. i.e. 'az iotcentral'</flag>
     <flag name="keyvault">Install the keyvault module. i.e. 'az keyvault'</flag>
     <flag name="kusto">Install the KUSTO module. i.e. 'az kusto'</flag>
     <flag name="lab">Install the lab module. i.e. 'az lab'</flag>
