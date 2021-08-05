@@ -24,7 +24,7 @@ RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 	>=dev-python/pkginfo-1.5.0.1[${PYTHON_USEDEP}]
 	>=dev-python/msrestazure-0.6.4[${PYTHON_USEDEP}]
 	>=dev-python/msal-1.10.0[${PYTHON_USEDEP}]
-	>=dev-python/knack-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/knack-0.8.1[${PYTHON_USEDEP}]
 	>=dev-python/humanfriendly-4.7[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-telemetry-1.0.6[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-core-1.2.0[${PYTHON_USEDEP}]
@@ -37,10 +37,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	# user must upgrade with portage, not with azure-cli
-	# https://example.org is not reliable for me
 	sed -i \
 		-e "s: with 'az upgrade':.:" \
-		-e "s:example.org:www.linuxunderground.be:" \
 		azure/cli/core/util.py || die
 
 	eapply_user
