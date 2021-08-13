@@ -1,9 +1,9 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{7..9} )
+PYTHON_COMPAT=( python3_{8..9} )
 
 inherit distutils-r1
 
@@ -21,16 +21,8 @@ RDEPEND=">=dev-python/msrestazure-0.6.4[${PYTHON_USEDEP}]
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
-python_install() {
-	distutils-r1_python_install
+RESTRICT="test"
+# There is no specific release of
+# https://github.com/Azure/azure-sdk-for-python/tree/main/tools/azure-sdk-tools/devtools_testutils
 
-	python_export PYTHON_SITEDIR
-
-	# __init__.py are provided by net-misc/azure-cli
-	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
-	rm "${ED}${PYTHON_SITEDIR}/azure/mgmt/__init__.py" || die
-
-	# Avoid portage file collisions
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/__pycache__" || die
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/mgmt/__pycache__" || die
-}
+#distutils_enable_tests pytest
