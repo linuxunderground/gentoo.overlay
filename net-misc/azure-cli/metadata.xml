@@ -64,6 +64,7 @@
     <flag name="signalr">Install the signalr module. i.e. 'az signalr'</flag>
     <flag name="storage">Install the storage module. i.e. 'az storage'</flag>
     <flag name="synapse">Install the synapse module. i.e. 'az synapse'</flag>
+    <flag name="term">Install the marketplaceordering module. i.e. 'az term'</flag>
     <flag name="util">Install utility to invoke a custom request i.e. 'az rest'</flag>
     <flag name="vm">Install the VM module. i.e. 'az vm', 'az vmss', 'az ppg', 'az disk', 'az sig', 'az snapshot' and 'az image'</flag>
   </use>
