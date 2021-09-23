@@ -1,7 +1,7 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python3_{8..10} )
 
@@ -19,4 +19,10 @@ RDEPEND=">=dev-python/adal-1.2.7[${PYTHON_USEDEP}]
 	>=dev-python/msrest-0.6.21[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
-	dev-python/setuptools[${PYTHON_USEDEP}]"
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	test? ( dev-python/httpretty )"
+
+RESTRICT="test"
+# test failed with Python 3.10 because httpretty is not ready for Python 3.10
+
+distutils_enable_tests pytest
