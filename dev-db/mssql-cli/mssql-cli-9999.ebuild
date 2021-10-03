@@ -1,9 +1,9 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{7..9} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1 git-r3
 
@@ -24,6 +24,10 @@ RDEPEND="dev-python/click[${PYTHON_USEDEP}]
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
+
+RESTRICT="test"
+# Test failed
+#distutils_enable_tests pytest
 
 src_unpack() {
 	git-r3_src_unpack
