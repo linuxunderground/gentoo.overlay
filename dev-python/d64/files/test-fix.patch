@@ -1,0 +1,29 @@
+From 0168aa242bc1e27e5691f9deea8d57e6a98b2322 Mon Sep 17 00:00:00 2001
+From: "Simon J. Rowe" <srowe@mose.org.uk>
+Date: Thu, 21 Oct 2021 20:07:18 +0100
+Subject: [PATCH] unittest: fix D80D82BAMBlock dos_type test
+
+Changeset 769114a renamed the setter and this test case was
+overlooked.
+
+Reported-by: vincent.hardy.be@gmail.com
+---
+ test/test_d80_d82_bam_block.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/test/test_d80_d82_bam_block.py b/test/test_d80_d82_bam_block.py
+index 058df2f..607aab4 100644
+--- a/test/test_d80_d82_bam_block.py
++++ b/test/test_d80_d82_bam_block.py
+@@ -22,7 +22,7 @@ class TestD80D82BAMBlock(unittest.TestCase):
+             p.is_local = True
+             self.bam_block.set(2, 77)
+             self.assertEqual(self.bam_block.dos_type, 77)
+-            self.bam_block.set_dos_type = ord('C')
++            self.bam_block.dos_type = ord('C')
+             self.assertEqual(self.bam_block.dos_type, ord('C'))
+ 
+     def test_track_range(self):
+-- 
+2.30.2
+
