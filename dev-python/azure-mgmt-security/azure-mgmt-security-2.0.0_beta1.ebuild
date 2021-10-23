@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="Microsoft Azure security center management client library for Python"
 HOMEPAGE="https://pypi.org/project/azure-mgmt-security"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.zip"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${PN}-2.0.0b1.zip"
 
 KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="MIT"
@@ -20,3 +20,5 @@ RDEPEND=">=dev-python/msrestazure-0.6.4[${PYTHON_USEDEP}]
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
+
+S="${WORKDIR}/${PN}-2.0.0b1"
