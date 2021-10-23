@@ -29,7 +29,6 @@ RDEPEND=">=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]
 	>=dev-python/humanfriendly-4.7[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-telemetry-1.0.6[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-core-1.2.0[${PYTHON_USEDEP}]
-	>=dev-python/azure-common-1.1.27[${PYTHON_USEDEP}]
 	dev-python/pyperclip[${PYTHON_USEDEP}]
 	dev-python/asn1crypto[${PYTHON_USEDEP}]"
 
