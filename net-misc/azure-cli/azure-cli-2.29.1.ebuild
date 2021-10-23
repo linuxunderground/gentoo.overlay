@@ -271,7 +271,7 @@ RDEPEND="${CLI_DEPEND}
 	dev-python/distro[${PYTHON_USEDEP}]
 	>=dev-python/chardet-3.0.4[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-resource-19.0.0[${PYTHON_USEDEP}]
-	~dev-python/azure-cli-core-2.29.0[${PYTHON_USEDEP}]"
+	~dev-python/azure-cli-core-2.29.1[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
