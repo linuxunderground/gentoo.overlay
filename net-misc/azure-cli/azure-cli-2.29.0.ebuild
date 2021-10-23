@@ -152,7 +152,7 @@ CLI_DEPEND="
 	keyvault? (
 		virtual/python-cffi[${PYTHON_USEDEP}]
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
-		>=dev-python/azure-keyvault-key-4.4.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-keyvault-keys-4.4.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-keyvault-administration-4.0.0_beta3[${PYTHON_USEDEP}]
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-keyvault-9.1.0[${PYTHON_USEDEP}]
