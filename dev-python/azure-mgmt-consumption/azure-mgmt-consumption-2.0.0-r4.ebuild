@@ -1,9 +1,9 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{7..9} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1
 
@@ -24,13 +24,11 @@ DEPEND="${RDEPEND}
 python_install() {
 	distutils-r1_python_install
 
-	python_export PYTHON_SITEDIR
-
 	# __init__.py are provided by net-misc/azure-cli
-	rm "${ED}${PYTHON_SITEDIR}/azure/__init__.py" || die
-	rm "${ED}${PYTHON_SITEDIR}/azure/mgmt/__init__.py" || die
+	rm "${ED}$(python_get_sitedir)/azure/__init__.py" || die
+	rm "${ED}$(python_get_sitedir)/azure/mgmt/__init__.py" || die
 
 	# Avoid portage file collisions
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/__pycache__" || die
-	rm -r "${ED}${PYTHON_SITEDIR}/azure/mgmt/__pycache__" || die
+	rm -r "${ED}$(python_get_sitedir)/azure/__pycache__" || die
+	rm -r "${ED}$(python_get_sitedir)/azure/mgmt/__pycache__" || die
 }
