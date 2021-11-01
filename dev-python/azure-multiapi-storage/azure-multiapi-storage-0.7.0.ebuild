@@ -1,9 +1,9 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{7..9} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1
 
@@ -17,7 +17,6 @@ SLOT="0"
 
 RDEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
-	>=dev-python/azure-storage-common-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-core-1.13.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-common-1.1.27[${PYTHON_USEDEP}]"
 
