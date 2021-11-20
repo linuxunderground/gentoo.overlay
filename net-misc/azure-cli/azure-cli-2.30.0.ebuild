@@ -291,6 +291,7 @@ src_prepare() {
 	use ams || rm -r azure/cli/command_modules/ams || die
 	use apim || rm -r azure/cli/command_modules/apim || die
 	use appconfig || rm -r azure/cli/command_modules/appconfig || die
+	use appservice || rm -r azure/cli/command_modules/serviceconnector || die
 	use appservice || rm -r azure/cli/command_modules/appservice || die
 	use aro || rm -r azure/cli/command_modules/aro || die
 	use backup || rm -r azure/cli/command_modules/backup || die
