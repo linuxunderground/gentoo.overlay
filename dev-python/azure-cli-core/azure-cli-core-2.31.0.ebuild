@@ -17,8 +17,7 @@ SLOT="0"
 
 IUSE=""
 
-RDEPEND=">=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]
-	>=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pyopenssl-17.1[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.1.0[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-3.2.0[${PYTHON_USEDEP}]
@@ -26,8 +25,8 @@ RDEPEND=">=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]
 	>=dev-python/msrestazure-0.6.4[${PYTHON_USEDEP}]
 	>=dev-python/msal-extensions-0.3.0[${PYTHON_USEDEP}]
 	>=dev-python/msal-1.16.0[${PYTHON_USEDEP}]
-	>=dev-python/knack-0.8.2[${PYTHON_USEDEP}]
-	>=dev-python/humanfriendly-4.7[${PYTHON_USEDEP}]
+	>=dev-python/knack-0.9.0[${PYTHON_USEDEP}]
+	>=dev-python/humanfriendly-10.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-cli-telemetry-1.0.6[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-core-1.3.0[${PYTHON_USEDEP}]
 	dev-python/pyperclip[${PYTHON_USEDEP}]

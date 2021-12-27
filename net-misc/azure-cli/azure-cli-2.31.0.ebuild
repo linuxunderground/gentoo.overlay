@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8..9} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1
 
@@ -77,7 +77,7 @@ CLI_DEPEND="
 	batch? (
 		>=dev-python/azure-batch-11.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-batch-16.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-keyvault-9.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-keyvault-9.3.0[${PYTHON_USEDEP}]
 	)
 	billing? (
 		>=dev-python/azure-mgmt-billing-6.0.0[${PYTHON_USEDEP}]
@@ -93,12 +93,12 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-authorization-0.61.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-containerinstance-9.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-loganalytics-11.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-19.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-19.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-loganalytics-0.1.0[${PYTHON_USEDEP}]
 		dev-python/websocket-client[${PYTHON_USEDEP}]
 	)
 	cognitiveservices? (
-		>=dev-python/azure-mgmt-cognitiveservices-12.0.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-cognitiveservices-13.0.0[${PYTHON_USEDEP}]
 	)
 	consumption? (
 		>=dev-python/azure-mgmt-consumption-2.0.0[${PYTHON_USEDEP}]
@@ -136,7 +136,7 @@ CLI_DEPEND="
 	)
 	hdinsight? (
 		>=dev-python/azure-mgmt-hdinsight-9.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-19.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-19.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-19.0.0[${PYTHON_USEDEP}]
 	)
 	interactive? (
@@ -154,7 +154,7 @@ CLI_DEPEND="
 		>=dev-python/azure-keyvault-keys-4.5.0_beta4[${PYTHON_USEDEP}]
 		>=dev-python/azure-keyvault-administration-4.0.0_beta3[${PYTHON_USEDEP}]
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-keyvault-9.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-keyvault-9.3.0[${PYTHON_USEDEP}]
 	)
 	kusto? (
 		>=dev-python/azure-mgmt-kusto-0.3.0[${PYTHON_USEDEP}]
@@ -177,7 +177,7 @@ CLI_DEPEND="
 	)
 	network? (
 		>=dev-python/azure-mgmt-dns-8.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-19.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-19.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-privatedns-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-trafficmanager-0.51.0[${PYTHON_USEDEP}]
 	)
@@ -222,8 +222,8 @@ CLI_DEPEND="
 		>=dev-python/azure-graphrbac-0.61.1[${PYTHON_USEDEP}]
 		>=dev-python/azure-keyvault-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-compute-23.1.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-keyvault-9.2.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-19.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-keyvault-9.3.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-19.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-servicefabric-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-servicefabricmanagedclusters-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-storage-19.0.0[${PYTHON_USEDEP}]
@@ -244,7 +244,7 @@ CLI_DEPEND="
 	)
 	synapse? (
 		>=dev-python/azure-mgmt-synapse-2.1.0_beta2[${PYTHON_USEDEP}]
-		>=dev-python/azure-synapse-artifacts-0.8.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-synapse-artifacts-0.9.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-synapse-accesscontrol-0.5.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-synapse-managedprivateendpoints-0.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-synapse-spark-0.2.0[${PYTHON_USEDEP}]
@@ -254,23 +254,24 @@ CLI_DEPEND="
 		>=dev-python/azure-mgmt-authorization-0.61.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-compute-23.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-imagebuilder-0.4.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-keyvault-9.2.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-keyvault-9.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-marketplaceordering-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-monitor-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-mgmt-msi-1.0.0[${PYTHON_USEDEP}]
-		>=dev-python/azure-mgmt-network-19.1.0[${PYTHON_USEDEP}]
+		>=dev-python/azure-mgmt-network-19.3.0[${PYTHON_USEDEP}]
 		>=dev-python/azure-multiapi-storage-0.7.0[${PYTHON_USEDEP}]
 	)"
 
 RDEPEND="${CLI_DEPEND}
+	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]
 	dev-python/semver[${PYTHON_USEDEP}]
 	>=dev-python/pynacl-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]
-	>=dev-python/jsondiff-1.2.0[${PYTHON_USEDEP}]
+	>=dev-python/jsondiff-1.3.0[${PYTHON_USEDEP}]
 	dev-python/distro[${PYTHON_USEDEP}]
 	>=dev-python/chardet-3.0.4[${PYTHON_USEDEP}]
-	>=dev-python/azure-mgmt-resource-19.0.0[${PYTHON_USEDEP}]
-	~dev-python/azure-cli-core-2.30.0[${PYTHON_USEDEP}]"
+	>=dev-python/azure-mgmt-resource-20.0.0[${PYTHON_USEDEP}]
+	~dev-python/azure-cli-core-2.31.0[${PYTHON_USEDEP}]"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
