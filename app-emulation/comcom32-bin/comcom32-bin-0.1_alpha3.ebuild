@@ -1,15 +1,15 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 MY_PN="${PN/-bin}"
 
 DESCRIPTION="32 bit command.com"
-HOMEPAGE="https://github.com/stsp/comcom32"
+HOMEPAGE="https://github.com/dosemu2/comcom32"
 SRC_URI="
-amd64? ( https://code.launchpad.net/~dosemu2/+archive/ubuntu/ppa/+files/comcom32_0.1~alpha1-94-a63d9a6+201912030201~ubuntu20.04.1_amd64.deb )
-x86? ( https://code.launchpad.net/~dosemu2/+archive/ubuntu/ppa/+files/comcom32_0.1~alpha1-94-a63d9a6+201912030201~ubuntu19.04.1_i386.deb )"
+amd64? ( https://ppa.launchpadcontent.net/dosemu2/ppa/ubuntu/pool/main/c/comcom32/comcom32_0.1~alpha3-163-a33cf51+202201061039~ubuntu22.04.1_amd64.deb )
+x86? ( https://ppa.launchpadcontent.net/dosemu2/ppa/ubuntu/pool/main/c/comcom32/comcom32_0.1~alpha3-163-a33cf51+202201011632~ubuntu18.04.1_i386.deb )"
 
 LICENSE="GPL-3"
 SLOT="0"
