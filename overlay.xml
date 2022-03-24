@@ -4,7 +4,7 @@
   <repo quality="experimental" status="unofficial">
     <name>linuxunderground-overlay</name>
     <description>experimental ebuilds from linuxunderground.be</description>
-    <homepage>http://github.com/linuxunderground/gentoo.overlay</homepage>
+    <homepage>https://github.com/linuxunderground/gentoo.overlay</homepage>
     <owner>
       <email>vincent@linuxunderground.be</email>
       <name>linuxunderground</name>
