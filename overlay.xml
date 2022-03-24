@@ -9,6 +9,6 @@
       <email>vincent@linuxunderground.be</email>
       <name>linuxunderground</name>
     </owner>
-    <source type="git">http://github.com/linuxunderground/gentoo.overlay.git</source>
+    <source type="git">https://github.com/linuxunderground/gentoo.overlay.git</source>
   </repo>
 </repositories>
