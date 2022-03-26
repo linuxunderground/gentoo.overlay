@@ -18,13 +18,19 @@ IUSE=""
 
 RDEPEND=""
 
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+		amd64? ( app-arch/zstd )"
 
 S="${WORKDIR}"
 
 src_unpack() {
 	unpack ${A}
-	unpack ./data.tar.xz
+	if use amd64; then
+		#unpack ./data.tar.zst: file format not recognized.
+		tar --zstd -xf ./data.tar.zst || die
+	elif use x86; then
+		unpack ./data.tar.xz
+	fi
 }
 
 src_prepare() {
