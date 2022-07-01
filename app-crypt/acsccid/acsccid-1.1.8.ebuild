@@ -1,7 +1,7 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit autotools multilib udev
 
@@ -33,6 +33,18 @@ src_install() {
 	default
 
 	if use kernel_linux; then
-		udev_newrules "${FILESDIR}"/92-pcsc-acsccid.rules 92-pcsc-acsccid.rules
+		udev_dorules "${FILESDIR}"/92-pcsc-acsccid.rules
+	fi
+}
+
+pkg_postinst() {
+	if use kernel_linux; then
+	    udev_reload
+	fi
+}
+
+pkg_postrm() {
+	if use kernel_linux; then
+	    udev_reload
 	fi
 }
