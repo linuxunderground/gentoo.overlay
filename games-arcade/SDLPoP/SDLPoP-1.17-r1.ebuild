@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="https://github.com/NagyD/${PN}.git"
@@ -11,14 +11,14 @@ if [[ ${PV} == "9999" ]] ; then
 	SRC_URI=""
 else
 	SRC_URI="https://codeload.github.com/NagyD/${PN}/tar.gz/v${PV} -> ${P}.tar.gz"
-	KEYWORDS="~x86 ~amd64"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 SLOT="0"
 LICENSE="GPL-3"
 DESCRIPTION="Open-source port of Prince of Persia, based on the disassembly of DOS version."
 
-HOMEPAGE="http://www.princed.org/"
+HOMEPAGE="https://www.princed.org/"
 
 IUSE="haptic"
 DOCS=( doc/Readme.txt doc/ChangeLog.txt doc/bugs.txt doc/mod.ini )
@@ -49,7 +49,7 @@ src_prepare() {
 }
 
 src_configure() {
-	cmake-utils_src_configure
+	cmake-src_configure
 }
 
 src_install() {
