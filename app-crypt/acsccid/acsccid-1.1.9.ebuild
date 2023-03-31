@@ -20,12 +20,16 @@ RDEPEND=">=sys-apps/pcsc-lite-1.8.3
 DEPEND="${RDEPEND}
 	kernel_linux? ( virtual/pkgconfig )
 	dev-lang/perl
-	sys-devel/flex"
+	sys-devel/flex
+	sys-devel/gettext"
 
 IUSE=""
 
 src_prepare() {
 	default
+	# See bootstrap file
+	mkdir config || die
+	cp /usr/share/gettext/config.rpath config || die
 	eautoreconf
 }
 
