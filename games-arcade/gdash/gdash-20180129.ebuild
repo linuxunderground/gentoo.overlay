@@ -1,15 +1,15 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
-inherit eutils
+inherit desktop
 
 MY_P="${P}unstable"
 
 SLOT="0"
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="Clone of Boulderdash (a.k.a Emerald Mine on the Amiga)"
 
 SRC_URI="https://bitbucket.org/czirkoszoltan/${PN}/downloads/${MY_P}.tar.gz"

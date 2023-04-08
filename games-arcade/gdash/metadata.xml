@@ -2,9 +2,12 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <maintainer type="person">
-    <email>vincent.hardy.be@gmail.com</email>
+    <email>vincent.hardy@linuxunderground.be</email>
     <name>Vincent Hardy</name>
   </maintainer>
+  <upstream>
+    <remote-id type="bitbucket">czirkoszoltan/gdash</remote-id>
+  </upstream>
   <longdescription>
 A Boulderdash clone which is as close to the original
 as possible. GDash has a cave editor, supports sound,
