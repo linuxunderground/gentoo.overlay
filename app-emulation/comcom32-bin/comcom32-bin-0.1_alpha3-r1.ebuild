@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,9 +7,7 @@ MY_PN="${PN/-bin}"
 
 DESCRIPTION="32 bit command.com"
 HOMEPAGE="https://github.com/dosemu2/comcom32"
-SRC_URI="
-amd64? ( https://ppa.launchpadcontent.net/dosemu2/ppa/ubuntu/pool/main/c/comcom32/comcom32_0.1~alpha3-163-a33cf51+202201061039~ubuntu22.04.1_amd64.deb )
-x86? ( https://ppa.launchpadcontent.net/dosemu2/ppa/ubuntu/pool/main/c/comcom32/comcom32_0.1~alpha3-163-a33cf51+202201011632~ubuntu18.04.1_i386.deb )"
+SRC_URI="https://ppa.launchpadcontent.net/dosemu2/ppa/ubuntu/pool/main/c/comcom32/comcom32_0.1~alpha3-221-814f11e+202303201516~ubuntu23.04.1_all.deb"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,18 +17,14 @@ IUSE=""
 RDEPEND=""
 
 DEPEND="${RDEPEND}
-		amd64? ( app-arch/zstd )"
+		app-arch/zstd"
 
 S="${WORKDIR}"
 
 src_unpack() {
 	unpack ${A}
-	if use amd64; then
-		#unpack ./data.tar.zst: file format not recognized.
-		tar --zstd -xf ./data.tar.zst || die
-	elif use x86; then
-		unpack ./data.tar.xz
-	fi
+	#unpack ./data.tar.zst: file format not recognized.
+	tar --zstd -xf ./data.tar.zst || die
 }
 
 src_prepare() {
