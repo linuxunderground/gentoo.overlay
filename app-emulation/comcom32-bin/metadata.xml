@@ -9,4 +9,7 @@
     <email>vincent.hardy@linuxunderground.be</email>
     <name>Vincent Hardy</name>
   </maintainer>
+  <upstream>
+    <remote-id type="github">dosemu2/comcom32</remote-id>
+  </upstream>
 </pkgmetadata>
