@@ -1,5 +1,0 @@
-# Not maintained anymore (archive)
-=net-misc/tlsdate-0.0.13
-
-# Not currently maintained
-dev-util/thonny
