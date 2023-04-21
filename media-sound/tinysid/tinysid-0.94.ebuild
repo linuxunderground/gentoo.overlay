@@ -1,16 +1,14 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-
-inherit eutils
+EAPI=8
 
 SLOT="0"
 LICENSE="HPND"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="Console SID file player. Very small and light."
 
-SRC_URI="https://www.linuxunderground.be/distfiles/${P}.tar.gz"
+SRC_URI="https://web.archive.org/web/20230415151324/https://www.linuxunderground.be/distfiles/${P}.tar.gz"
 HOMEPAGE="http://www-stud.rbi.informatik.uni-frankfurt.de/~sinsch/new/tinysid.htm"
 IUSE="alsa"
 
