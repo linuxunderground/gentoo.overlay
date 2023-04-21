@@ -1,7 +1,7 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit desktop
 
@@ -31,7 +31,7 @@ src_prepare() {
 }
 
 src_configure() {
-	# must be hardcoded 
+	# must be hardcoded
 	sed -i \
 			-e '/XDIGGER_LIB_DIR/s:lib/X11:share:' \
 			-e '/XDIGGER_HISCORE_DIR/s:X11R6/scores:games:' \
