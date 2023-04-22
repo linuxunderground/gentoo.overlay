@@ -2,9 +2,12 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer type="person">
-  <email>vincent.hardy.be@gmail.com</email>
+  <email>vincent.hardy@linuxunderground.be</email>
   <name>Vincent Hardy</name>
 </maintainer>
+<upstream>
+  <remote-id type="github">linuxunderground/eid-mw-sdk-c</remote-id>
+</upstream>
 <longdescription>
 eid-mw-sdk-c is a fork of
 https://github.com/Fedict/eid-mw/tree/master/doc/sdk/examples/C
