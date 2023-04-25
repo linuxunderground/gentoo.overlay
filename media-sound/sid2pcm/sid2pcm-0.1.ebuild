@@ -1,16 +1,14 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
-
-inherit eutils
+EAPI=8
 
 SLOT="0"
 LICENSE="HPND"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="Linux console util to decode sid files to raw pcm at stdout"
 
-SRC_URI="https://finalmedia.de/code/${PN}.tar.gz"
+SRC_URI="https://finalmedia.de/code/${PN}.tar.gz -> ${P}.tar.gz"
 HOMEPAGE="https://finalmedia.de/code/sid"
 IUSE=""
 
