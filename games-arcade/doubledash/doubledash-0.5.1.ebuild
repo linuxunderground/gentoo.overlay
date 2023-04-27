@@ -1,13 +1,13 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
-inherit eutils
+inherit desktop
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="A split-screen multiplayer remake of BoulderDash game"
 
 SRC_URI="http://download.wonderland.cz/${P}.tar.gz"
@@ -25,7 +25,7 @@ src_prepare() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	default
 
 	domenu "${FILESDIR}"/${PN}.desktop
 	doicon "${FILESDIR}"/${PN}.png
