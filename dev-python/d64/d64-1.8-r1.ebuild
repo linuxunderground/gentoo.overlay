@@ -10,15 +10,14 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Read and write Commodore disk images"
 HOMEPAGE="https://eden.mose.org.uk/gitweb/?p=python-d64.git"
-SRC_URI="$(pypi_sdist_url)"
 
 KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-2"
-IUSE="examples"
+IUSE="examples extra"
 SLOT="0"
 
-RDEPEND="dev-python/cbmcodecs2[${PYTHON_USEDEP}]
-	dev-python/cmd2[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/petscii-codecs[${PYTHON_USEDEP}]
+	extra? ( dev-python/cmd2[${PYTHON_USEDEP}] )"
 
 DEPEND="${RDEPEND}"
 
@@ -54,8 +53,13 @@ src_prepare() {
 		sed -i \
 			-e 's:from test.mock_bam import:from mock_bam import:' \
 			test/test_dos_image.py || die
+	fi
 
-		eapply "${FILESDIR}/test-fix.patch"
+	if use examples; then
+		eapply "${FILESDIR}/fix_example.patch"
+		for FILES in examples/*py ; do
+			sed -i -e '1i \#!/usr/bin/env python3\n' "${FILES}" || die
+		done
 	fi
 
 	eapply_user

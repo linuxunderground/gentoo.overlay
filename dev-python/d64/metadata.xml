@@ -8,4 +8,9 @@
   <upstream>
     <remote-id type="pypi">d64</remote-id>
   </upstream>
+  <use>
+    <flag name="extra">
+      Add edit features
+    </flag>
+  </use>
 </pkgmetadata>
