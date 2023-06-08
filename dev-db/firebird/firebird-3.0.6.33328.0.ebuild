@@ -1,9 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit eutils flag-o-matic multilib
+inherit flag-o-matic
 
 MY_P="${PN/f/F}-$(ver_rs 4 -)"
 MY_PV="R$(ver_cut 1)_$(ver_cut 2)_$(ver_cut 3)"
@@ -28,8 +28,7 @@ CDEPEND="acct-group/firebird
 DEPEND="${CDEPEND}"
 
 RDEPEND="${CDEPEND}
-	xinetd? ( virtual/inetd )
-	!sys-cluster/ganglia"
+	xinetd? ( virtual/inetd )"
 
 RESTRICT="userpriv"
 
