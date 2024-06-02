@@ -1,0 +1,3 @@
+# dev-db/firebird-2.5.9.27139.0 will be removed soon because the latest libpthread library versions are not compatible with Firebird 2.5 branch.
+# see also https://firebirdsql.org/en/news/urgent-and-import-message-for-users-of-firebird-2-5-on-linux/
+=dev-db/firebird-2.5.9.27139.0
