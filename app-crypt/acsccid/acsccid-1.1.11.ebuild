@@ -5,10 +5,10 @@ EAPI=8
 
 inherit autotools udev
 
-SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="~amd64 ~arm ~x86"
+SLOT="0"
 DESCRIPTION="Generic driver for ACS (CCID and non-CCID) Smart Card Reader."
+KEYWORDS="~amd64 ~arm ~x86"
 
 HOMEPAGE="https://github.com/acshk/acsccid"
 SRC_URI="https://codeload.github.com/acshk/${PN}/tar.gz/v${PV} -> ${P}.tar.gz"
@@ -22,8 +22,6 @@ DEPEND="${RDEPEND}
 	sys-devel/flex
 	sys-devel/gettext"
 BDEPEND="kernel_linux? ( virtual/pkgconfig )"
-
-IUSE=""
 
 src_prepare() {
 	default
