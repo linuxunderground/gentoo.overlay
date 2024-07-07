@@ -27,7 +27,7 @@ src_prepare() {
 
 src_install() {
 	export PREFIX="${ED}/usr"
-	export BINDIR="${ED}$/usr/bin"
+	export BINDIR="${ED}/usr/bin"
 	export DATADIR="${ED}/usr/share/breaker"
 
 	emake DESTDIR="${ED}" install || die "emake install failed"
