@@ -1,20 +1,20 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 
 inherit distutils-r1 pypi
 
 DESCRIPTION="Read and write Commodore disk images"
 HOMEPAGE="https://eden.mose.org.uk/gitweb/?p=python-d64.git"
 
-KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-2"
-IUSE="examples extra"
 SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE="examples extra"
 
 RDEPEND="dev-python/petscii-codecs[${PYTHON_USEDEP}]
 	extra? ( dev-python/cmd2[${PYTHON_USEDEP}] )"
@@ -24,6 +24,8 @@ DEPEND="${RDEPEND}"
 distutils_enable_tests pytest
 
 src_prepare() {
+	default
+
 	if use test; then
 		for FILE in test/test_bam.py \
 			test/test_bam.py \
@@ -49,20 +51,19 @@ src_prepare() {
 				-e 's:from test.mock_block import:from mock_block import:' \
 				"${FILE}" || die
 		done
-
-		sed -i \
-			-e 's:from test.mock_bam import:from mock_bam import:' \
-			test/test_dos_image.py || die
+		for FILE in test/test_dos_image.py \
+			test/test_subdirectory.py ; do
+			sed -i \
+				-e 's:from test.mock_bam import:from mock_bam import:' \
+				"${FILE}" || die
+		done
 	fi
 
 	if use examples; then
-		eapply "${FILESDIR}/fix_example.patch"
 		for FILES in examples/*py ; do
 			sed -i -e '1i \#!/usr/bin/env python3\n' "${FILES}" || die
 		done
 	fi
-
-	eapply_user
 }
 
 python_install_all() {
