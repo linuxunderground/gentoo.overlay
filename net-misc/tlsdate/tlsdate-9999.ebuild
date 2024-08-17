@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit autotools systemd git-r3
+inherit autotools systemd git-r3 tmpfiles
 
 DESCRIPTION="Update local time over HTTPS"
 HOMEPAGE="https://chromium.googlesource.com/chromiumos/third_party/tlsdate"
@@ -70,7 +70,7 @@ src_install() {
 	newconfd "${FILESDIR}"/tlsdate.confd tlsdate
 
 	systemd_newunit "${S}"/init/tlsdated.service tlsdated.service
-	systemd_newtmpfilesd "${FILESDIR}"/tlsdated.tmpfiles.conf tlsdated.conf
+	newtmpfiles "${FILESDIR}"/tlsdated.tmpfiles.conf tlsdated.conf
 	insinto /etc/default
 	newins "${FILESDIR}"/tlsdated.default tlsdated
 
@@ -79,4 +79,11 @@ src_install() {
 
 	use static-libs || \
 		find "${ED}"/usr '(' -name '*.la' -o -name '*.a' ')' -delete
+
+	ewarn "I use tlsdate as a simple shell command to reset my hardware clock."
+	ewarn "Using tlsdate as a daemon is no longer tested at all : use at your own risk!"
+}
+
+pkg_postinst() {
+	tmpfiles_process tlsdated.conf
 }
