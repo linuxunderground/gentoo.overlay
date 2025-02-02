@@ -1,0 +1,64 @@
+diff --git a/menu.c b/menu.c
+index 1bd0f45..a704f88 100644
+--- a/menu.c
++++ b/menu.c
+@@ -18,7 +18,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ The authors of this program may be contacted at https://forum.princed.org
+ */
+ 
++#define _XOPEN_SOURCE 700
++
+ #include "common.h"
++#include <string.h>
+ 
+ #ifdef USE_MENU
+ 
+diff --git a/options.c b/options.c
+index dd4dac2..fc30be4 100644
+--- a/options.c
++++ b/options.c
+@@ -18,7 +18,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ The authors of this program may be contacted at https://forum.princed.org
+ */
+ 
++#define _XOPEN_SOURCE 700
++
+ #include "common.h"
++#include <stdio.h>
+ #include <ctype.h>
+ #ifdef __amigaos4__
+ 	#define strtoimax(a,b,c) strtoll(a,b,c)
+diff --git a/replay.c b/replay.c
+index 394198f..1c4badc 100644
+--- a/replay.c
++++ b/replay.c
+@@ -18,8 +18,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ The authors of this program may be contacted at https://forum.princed.org
+ */
+ 
++#define _XOPEN_SOURCE 700
++
+ #include "common.h"
+ #include <time.h>
++#include <string.h>
+ 
+ #ifdef USE_REPLAY
+ 
+diff --git a/seg009.c b/seg009.c
+index 8b92fc3..3a7789e 100644
+--- a/seg009.c
++++ b/seg009.c
+@@ -18,9 +18,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ The authors of this program may be contacted at https://forum.princed.org
+ */
+ 
++#define _XOPEN_SOURCE 700
++
+ #include "common.h"
+ #include <time.h>
+ #include <errno.h>
++#include <stdio.h>
++#include <string.h>
+ 
+ #ifdef _WIN32
+ #include <windows.h>

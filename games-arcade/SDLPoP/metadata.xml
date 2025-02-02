@@ -2,9 +2,9 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <maintainer type="person">
-    <email>vincent.hardy.be@gmail.com</email>
+    <email>vincent.hardy@linuxunderground.be</email>
   </maintainer>
-  <use>
-    <flag name="haptic">Enable the haptic (force feedback) subsystem</flag>
-  </use>
+  <upstream>
+    <remote-id type="github">NagyD/SDLPoP<remote-id>
+  </upstream>
 </pkgmetadata>
