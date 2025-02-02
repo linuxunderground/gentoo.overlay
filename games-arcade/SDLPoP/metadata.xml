@@ -5,6 +5,6 @@
     <email>vincent.hardy@linuxunderground.be</email>
   </maintainer>
   <upstream>
-    <remote-id type="github">NagyD/SDLPoP<remote-id>
+    <remote-id type="github">NagyD/SDLPoP</remote-id>
   </upstream>
 </pkgmetadata>
