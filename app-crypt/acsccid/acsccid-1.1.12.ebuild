@@ -1,21 +1,19 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit autotools udev
 
-LICENSE="LGPL-2.1"
-SLOT="0"
 DESCRIPTION="Generic driver for ACS (CCID and non-CCID) Smart Card Reader."
-KEYWORDS="~amd64 ~arm ~x86"
-
 HOMEPAGE="https://github.com/acshk/acsccid"
 SRC_URI="https://codeload.github.com/acshk/${PN}/tar.gz/v${PV} -> ${P}.tar.gz"
+LICENSE="LGPL-2.1"
+SLOT="0"
+KEYWORDS="~amd64 ~arm ~x86"
 
 RDEPEND="sys-apps/pcsc-lite
 	virtual/libusb:1
-	!app-crypt/ccid
 	!app-crypt/acr38u"
 DEPEND="${RDEPEND}
 	dev-lang/perl
