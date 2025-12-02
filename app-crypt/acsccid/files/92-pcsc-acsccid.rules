@@ -10,8 +10,12 @@ ENV{DEVTYPE}!="usb_device", GOTO="pcscd_ccid_rules_end"
 # change group from default "root" to "pcscd"
 ENV{ID_USB_INTERFACES}=="*:0b0000:*", ENV{PCSCD}="1"
 
-# set USB power management to auto. 
-ENV{ID_USB_INTERFACES}==":0b0000:", RUN+="/bin/sh -c 'echo auto > /sys/$env{DEVPATH}/power/control'"
+# disable USB-persist for CCID devices (including composite ones)
+# https://docs.kernel.org/driver-api/usb/persist.html
+ENV{ID_USB_INTERFACES}=="*:0b0000:*", TEST=="power/persist", ATTR{power/persist}="0"
+
+# set USB power management to auto.
+ENV{ID_USB_INTERFACES}=="*:0b0000:*", TEST=="power/control", ATTR{power/control}="auto"
 
 
 # non CCID generic (InterfaceClass: 0x00)
