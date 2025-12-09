@@ -1,13 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-SLOT="0"
-LICENSE="LGPL-2"
-KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="Texas Instruments Home Computer Emulator"
-
+HOMEPAGE="https://www.mrousseau.org/programs/ti99sim/"
 SRC_URI="https://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.xz
 	roms? (
 	https://ftp.whtech.com/System%20ROMs/MAME/pre_0.174/ti99_complete.zip
@@ -15,8 +12,9 @@ SRC_URI="https://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.xz
 	https://ftp.whtech.com/emulators/mess/mess_modules.zip
 	)"
 
-HOMEPAGE="https://www.mrousseau.org/programs/ti99sim/"
-
+LICENSE="LGPL-2"
+SLOT="0"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="+roms"
 
 BDEPEND="app-arch/unzip"
@@ -50,6 +48,8 @@ src_prepare() {
 		-e 's:-char:-char\nCFLAGS += -DTI_DATA_DIR=\\"$(DATA_DIR)\\":' \
 		-e '/ARCH/,/endif/ d' \
 		rules.mak || die
+
+	eapply "${FILESDIR}/fix-declaration.patch"
 
 	# Gentoo QA :
 	# https://bugs.gentoo.org/show_bug.cgi?id=331933

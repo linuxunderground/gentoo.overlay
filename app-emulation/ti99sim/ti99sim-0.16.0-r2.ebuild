@@ -1,13 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-SLOT="0"
-LICENSE="LGPL-2"
-KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="Texas Instruments Home Computer Emulator"
-
+HOMEPAGE="https://www.mrousseau.org/programs/ti99sim/"
 SRC_URI="https://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.xz
 	roms? (
 	https://ftp.whtech.com/System%20ROMs/MAME/pre_0.174/ti99_complete.zip
@@ -15,9 +12,10 @@ SRC_URI="https://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.xz
 	https://ftp.whtech.com/emulators/mess/mess_modules.zip
 	)"
 
-HOMEPAGE="https://www.mrousseau.org/programs/ti99sim/"
-
-IUSE="+roms"
+LICENSE="LGPL-2"
+SLOT="0"
+KEYWORDS="~amd64 ~arm ~x86"
+IUSE="doc +roms"
 
 BDEPEND="app-arch/unzip"
 
@@ -47,6 +45,21 @@ src_unpack() {
 
 src_prepare() {
 	eapply "${FILESDIR}/rules_CFLAGS-16.0.patch"
+	eapply "${FILESDIR}/fix-declaration.patch"
+
+	# Gentoo QA :
+	# https://bugs.gentoo.org/show_bug.cgi?id=331933
+	# https://wiki.gentoo.org/wiki/Project:Quality_Assurance/As-needed
+	sed -i \
+		-e 's:$(LFLAGS):$(LFLAGS) $(LDFLAGS):' \
+		src/console/Makefile || die
+	sed -i \
+		-e 's:$(LFLAGS):$(LFLAGS) $(LDFLAGS):' \
+		src/util/Makefile || die
+	sed -i \
+		-e 's:$(LFLAGS):$(LFLAGS) $(LDFLAGS):' \
+		src/sdl/Makefile || die
+
 	eapply_user
 }
 
@@ -59,6 +72,11 @@ src_install() {
 	export SYS_BIN=${ED}/usr/bin
 	export BIN_DIR=${ED}/usr/bin
 	export DATA_DIR=${ED}/usr/share/ti99sim
+
+	if use doc; then
+		insinto "/usr/share/doc/${PF}"
+		doins -r doc
+	fi
 
 	if use roms; then
 		cd "${WORKDIR}/console" || die

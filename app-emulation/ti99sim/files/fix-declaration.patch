@@ -1,0 +1,10 @@
+--- ti99sim-0.16.0-a/src/core/device-support.cpp	2020-05-25 22:52:23.000000000 +0200
++++ ti99sim-0.16.0-b/src/core/device-support.cpp	2025-12-06 18:58:15.135553933 +0100
+@@ -27,6 +27,7 @@
+ //----------------------------------------------------------------------------
+ 
+ #include <regex>
++#include <cstring>
+ #include "idevice.hpp"
+ #include "icomputer.hpp"
+ #include "cartridge.hpp"

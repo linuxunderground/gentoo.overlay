@@ -1,22 +1,34 @@
---- ti99sim-0.16.0/rules.mak.a	2020-06-27 16:49:47.637224834 +0200
-+++ ti99sim-0.16.0/rules.mak	2020-06-27 16:53:23.413895095 +0200
-@@ -41,10 +41,6 @@
+--- ti99sim-0.16.0-a/rules.mak	2020-05-25 22:52:22.000000000 +0200
++++ ti99sim-0.16.0-b/rules.mak	2025-12-07 16:53:17.238371626 +0100
+@@ -16,10 +16,11 @@
+ CXX      := ccache $(CXX)
+ endif
+ 
+-CFLAGS   += --std=c++2a
++CFLAGS   += -std=c++20
+ CFLAGS   += -fno-strict-aliasing -fexceptions -fPIC
+ CFLAGS   += -fdata-sections -ffunction-sections
+ CFLAGS   += -funsigned-char
++CFLAGS   += -DTI_DATA_DIR=\"$(DATA_DIR)\"
+ 
+ LFLAGS   += -Wl,--gc-sections
+ LFLAGS   += -rdynamic
+@@ -28,7 +29,7 @@
+ 
+ WARNINGS := -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+ WARNINGS += -Wno-implicit-fallthrough
+-WARNINGS += -Wno-maybe-uninitialized
++WARNINGS += -Wno-uninitialized
+ WARNINGS += -Wcast-qual
+ 
+ INCLUDES := -I../../include
+@@ -41,9 +42,6 @@
  DEBUG    := 1
  endif
  
 -ifdef ARCH
 -CFLAGS   += -march=$(ARCH)
 -endif
--
+ 
  ifdef LTO
  CFLAGS   += -flto
- LFLAGS   += -flto
-@@ -65,6 +61,8 @@
- endif
- endif
- 
-+CFLAGS   += -DTI_DATA_DIR=\"$(DATA_DIR)\"
-+
- OS       := OS_UNKNOWN
- 
- # OSTYPE may not be exported from the shell - make our own

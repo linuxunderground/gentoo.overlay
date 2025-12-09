@@ -1,21 +1,19 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-SLOT="0"
-LICENSE="LGPL-2"
-KEYWORDS="~amd64 ~arm ~x86"
 DESCRIPTION="Texas Instruments Home Computer Emulator"
-
+HOMEPAGE="https://www.mrousseau.org/programs/ti99sim/"
 SRC_URI="https://www.mrousseau.org/programs/ti99sim/archives/${P}.src.tar.xz
 	roms? (
 	https://ftp.whtech.com/System%20ROMs/MAME/pre_0.174/ti99_complete.zip
 	https://ftp.whtech.com/emulators/mess/mess_modules.zip
 	https://ftp.whtech.com/Cartridges/MAME/old/rpk.old/mg_gramkracker.rpk -> mg_gramkracker.zip )"
 
-HOMEPAGE="https://www.mrousseau.org/programs/ti99sim/"
-
+LICENSE="LGPL-2"
+SLOT="0"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="+roms"
 
 BDEPEND="app-arch/unzip"
