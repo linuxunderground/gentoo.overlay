@@ -1,5 +1,14 @@
---- ti99sim-0.15.0/rules.mak.a	2017-03-28 19:46:10.021143347 +0200
-+++ ti99sim-0.15.0/rules.mak	2017-04-06 18:08:11.007403612 +0200
+--- ti99sim-0.15.0-a/rules.mak	2017-03-18 23:19:20.000000000 +0100
++++ ti99sim-0.15.0-b/rules.mak	2026-05-14 17:18:43.795158309 +0200
+@@ -16,7 +16,7 @@
+ CXX      := ccache $(CXX)
+ endif
+ 
+-CFLAGS   += --std=c++11
++CFLAGS   += -std=c++20
+ CFLAGS   += -fno-strict-aliasing -fexceptions -fPIC
+ CFLAGS   += -fdata-sections -ffunction-sections
+ CFLAGS   += -funsigned-char
 @@ -37,10 +37,6 @@
  DEBUG    := 1
  endif
