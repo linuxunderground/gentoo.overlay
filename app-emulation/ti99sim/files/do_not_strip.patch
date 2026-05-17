@@ -1,0 +1,11 @@
+--- ti99sim-0.16.0-a/Makefile.linux	2020-05-25 22:52:22.000000000 +0200
++++ ti99sim-0.16.0-b/Makefile.linux	2026-05-16 20:26:36.538042931 +0200
+@@ -48,7 +48,7 @@
+ 	@$(INSTALL) -d $(DATA_DIR)/disks
+ 	@$(INSTALL) -d $(BIN_DIR)
+ 	@for target in $(ITARGETS); do \
+-	   $(INSTALL) -s $$target $(BIN_DIR); \
++	   $(INSTALL) $$target $(BIN_DIR); \
+ 	 done
+ 	@if [ $(BIN_DIR) != $(SYS_BIN) ]; then \
+ 	   for target in $(notdir $(ITARGETS)); do \

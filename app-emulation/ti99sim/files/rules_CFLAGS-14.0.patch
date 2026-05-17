@@ -1,6 +1,6 @@
---- ti99sim-0.14.0/rules.mak.a	2016-06-26 02:33:32.000000000 +0200
-+++ ti99sim-0.14.0/rules.mak	2016-07-08 19:56:52.256399314 +0200
-@@ -37,10 +37,6 @@
+--- ti99sim-0.14.0-a/rules.mak	2016-06-26 02:33:32.000000000 +0200
++++ ti99sim-0.14.0-b/rules.mak	2026-05-17 15:17:32.032448407 +0200
+@@ -37,17 +37,12 @@
  DEBUG    := 1
  endif
  
@@ -10,9 +10,9 @@
 -
  ifdef DEBUG
  CFLAGS   += -g3 -O0 -DDEBUG
- else
-@@ -48,6 +44,8 @@
- LFLAGS   += -g3 -O3
+-else
+-CFLAGS   += -g3 -O3 -fomit-frame-pointer
+-LFLAGS   += -g3 -O3
  endif
  
 +CFLAGS   += -DTI_DATA_DIR=\"$(DATA_DIR)\"

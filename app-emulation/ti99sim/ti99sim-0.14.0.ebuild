@@ -44,6 +44,7 @@ src_unpack() {
 
 src_prepare() {
 	eapply "${FILESDIR}/rules_CFLAGS-14.0.patch"
+	eapply "${FILESDIR}/do_not_strip.patch"
 	eapply_user
 
 	# Use standard C++ library for regular expressions instead of boost library

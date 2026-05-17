@@ -1,6 +1,6 @@
 --- ti99sim-0.16.0-a/rules.mak	2020-05-25 22:52:22.000000000 +0200
-+++ ti99sim-0.16.0-b/rules.mak	2025-12-07 16:53:17.238371626 +0100
-@@ -16,10 +16,11 @@
++++ ti99sim-0.16.0-b/rules.mak	2026-05-17 11:30:18.070570725 +0200
+@@ -16,19 +16,18 @@
  CXX      := ccache $(CXX)
  endif
  
@@ -13,8 +13,9 @@
  
  LFLAGS   += -Wl,--gc-sections
  LFLAGS   += -rdynamic
-@@ -28,7 +29,7 @@
  
+-XLIBS    += -lstdc++fs
+-
  WARNINGS := -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
  WARNINGS += -Wno-implicit-fallthrough
 -WARNINGS += -Wno-maybe-uninitialized
@@ -22,7 +23,7 @@
  WARNINGS += -Wcast-qual
  
  INCLUDES := -I../../include
-@@ -41,9 +42,6 @@
+@@ -41,9 +40,6 @@
  DEBUG    := 1
  endif
  
@@ -32,3 +33,13 @@
  
  ifdef LTO
  CFLAGS   += -flto
+@@ -52,9 +48,6 @@
+ 
+ ifdef DEBUG
+ CFLAGS   += -g3 -O0 -DDEBUG
+-else
+-CFLAGS   += -g3 -O3 -fomit-frame-pointer
+-LFLAGS   += -g3 -O3
+ endif
+ 
+ ifdef LOGGER

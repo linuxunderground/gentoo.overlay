@@ -24,6 +24,12 @@ RDEPEND="media-libs/libsdl2[sound,video]"
 
 DEPEND="${RDEPEND}"
 
+PATCHES=(
+	"${FILESDIR}/rules_CFLAGS-16.0.patch"
+	"${FILESDIR}/fix-declaration.patch"
+	"${FILESDIR}/do_not_strip.patch"
+	)
+
 src_unpack() {
 	unpack "${P}.src.tar.xz"
 	if use roms; then
@@ -42,26 +48,6 @@ src_unpack() {
 		unpack mess_modules.zip
 		mv minimem*.bin ../console/ || die
 	fi
-}
-
-src_prepare() {
-	eapply "${FILESDIR}/rules_CFLAGS-16.0.patch"
-	eapply "${FILESDIR}/fix-declaration.patch"
-
-	# Gentoo QA :
-	# https://bugs.gentoo.org/show_bug.cgi?id=331933
-	# https://wiki.gentoo.org/wiki/Project:Quality_Assurance/As-needed
-	sed -i \
-		-e 's:$(LFLAGS):$(LFLAGS) $(LDFLAGS):' \
-		src/console/Makefile || die
-	sed -i \
-		-e 's:$(LFLAGS):$(LFLAGS) $(LDFLAGS):' \
-		src/util/Makefile || die
-	sed -i \
-		-e 's:$(LFLAGS):$(LFLAGS) $(LDFLAGS):' \
-		src/sdl/Makefile || die
-
-	eapply_user
 }
 
 src_configure() {

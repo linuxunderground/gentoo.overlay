@@ -1,5 +1,5 @@
 --- ti99sim-0.15.0-a/rules.mak	2017-03-18 23:19:20.000000000 +0100
-+++ ti99sim-0.15.0-b/rules.mak	2026-05-14 17:18:43.795158309 +0200
++++ ti99sim-0.15.0-b/rules.mak	2026-05-17 15:14:38.519765081 +0200
 @@ -16,7 +16,7 @@
  CXX      := ccache $(CXX)
  endif
@@ -20,8 +20,13 @@
  ifdef LTO
  CFLAGS   += -flto
  LFLAGS   += -flto
-@@ -53,6 +49,8 @@
- LFLAGS   += -g3 -O3
+@@ -48,11 +44,10 @@
+ 
+ ifdef DEBUG
+ CFLAGS   += -g3 -O0 -DDEBUG
+-else
+-CFLAGS   += -g3 -O3 -fomit-frame-pointer
+-LFLAGS   += -g3 -O3
  endif
  
 +CFLAGS   += -DTI_DATA_DIR=\"$(DATA_DIR)\"
