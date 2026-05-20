@@ -1,0 +1,15 @@
+--- tinysid-0.94-a/makefile	2006-05-08 22:56:40.000000000 +0200
++++ tinysid-0.94-b/makefile	2026-05-20 11:14:29.433933554 +0200
+@@ -1,9 +1,9 @@
+ # TinySID makefile
+-DEFS = -Wall
+-CFLAGS = $(DEFS) -O
+-LDFLAGS =
+ LIBS = -lpthread
++
++ifndef CC
+ CC = gcc
++endif
+ 
+ OBJECTS_A = tinysid.o sidengine.o soundcard.o
+ 

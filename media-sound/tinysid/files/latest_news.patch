@@ -1,0 +1,15 @@
+--- tinysid-0.94-a/README	2018-06-16 20:46:39.000000000 +0200
++++ tinysid-0.94-b/README	2026-05-20 11:21:56.464180088 +0200
+@@ -14,3 +14,12 @@
+ 2018-06-16:
+ Change DOS file format to UNIX file format to be closer to source from https://github.com/iPodLinux-Community/TinySID
+ URL: https://www.linuxunderground.be/distfiles/tinysid-0.94.tar.gz
++
++2026-05-18:
++I'm providing a stable download link via the Internet Archive.
++Sources originally coded by Tammo Hinrichs and Rainer Sinsch :
++https://web.archive.org/web/20260518184951/https://www.linuxunderground.be/distfiles/tinysid-linux.tar.gz
++sha1sum: 31edf36cd9e0658c8286e4a3a97901a8e30ba0ca
++Sources for current Gentoo ebuild :
++https://web.archive.org/web/20230415151324/https://www.linuxunderground.be/distfiles/tinysid-0.94.tar.gz
++

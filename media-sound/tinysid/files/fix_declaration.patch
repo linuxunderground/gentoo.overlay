@@ -1,0 +1,10 @@
+--- tinysid-0.94-a/soundcard.c	2006-05-25 14:05:11.000000000 +0200
++++ tinysid-0.94-b/soundcard.c	2026-05-20 11:18:02.553896063 +0200
+@@ -3,6 +3,7 @@
+ #include <sys/ioctl.h>
+ #include <pthread.h>
+ #include <stdio.h>
++#include <unistd.h>
+ 
+ #include "defines.h"
+ 
