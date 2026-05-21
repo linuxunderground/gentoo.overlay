@@ -1,2 +1,9 @@
 # dev-db/firebird-2.5.9.27139.0 was removed because the latest libpthread library versions are not compatible with Firebird 2.5 branch.
 # see also https://firebirdsql.org/en/news/urgent-and-import-message-for-users-of-firebird-2-5-on-linux/
+
+# Not maintained anymore.
+# sid2pcm runs in an endless loop. For example, if you encode an mp3 file with
+# $ sid2pcm [sidfile] | lame -r -s 44100 -a - output.mp3
+# You must randomly stop sid2pcm by typing CTRL-C.
+media-sound/sid2pcm
+
