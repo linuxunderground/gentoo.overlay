@@ -1,0 +1,22 @@
+--- tinysid-0.94-a/sidengine.c	2006-05-25 14:08:52.000000000 +0200
++++ tinysid-0.94-b/sidengine.c	2026-05-23 17:18:50.803658162 +0200
+@@ -380,13 +380,18 @@
+       // filtered channel and dont forget to blank out osc3 if desired	  
+ #ifdef USE_FILTER
+       if (v<2 || filter.v3ena)
++      {
+         if (osc[v].filter)
++        {
+           //outf+=((float)osc[v].envval*(float)outv-0x8000000)/0x30000000;
+ 		  outf+=(((int)(outv-0x80))*osc[v].envval)>>22;
+-		
++        }	
+         else
++        {
+           //outo+=((float)osc[v].envval*(float)outv-0x8000000)/0x30000000;
+                   outo+=(((int)(outv-0x80))*osc[v].envval)>>22;
++        }
++      }
+ #endif
+ #ifndef USE_FILTER
+         

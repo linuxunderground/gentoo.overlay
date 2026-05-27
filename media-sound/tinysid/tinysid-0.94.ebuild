@@ -1,7 +1,7 @@
 # Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=9
+EAPI=8
 
 DESCRIPTION="Console SID file player. Very small and light."
 HOMEPAGE="http://www-stud.rbi.informatik.uni-frankfurt.de/~sinsch/new/tinysid.htm"
@@ -19,6 +19,7 @@ DEPEND="${RDEPEND}"
 PATCHES=(
 	"${FILESDIR}/do_not_force_compiler.patch"
 	"${FILESDIR}/fix_declaration.patch"
+	"${FILESDIR}/fix_clang_warn.patch"
 	"${FILESDIR}/latest_news.patch"
 	)
 
