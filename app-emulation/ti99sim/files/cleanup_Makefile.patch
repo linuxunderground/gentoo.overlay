@@ -1,0 +1,44 @@
+--- ti99sim-0.16.0-a/Makefile.linux	2020-05-25 22:52:22.000000000 +0200
++++ ti99sim-0.16.0-b/Makefile.linux	2026-06-04 11:36:16.473734481 +0200
+@@ -1,7 +1,5 @@
+ # TI-99/sim Makefile for Linux
+ 
+-XLIBS += -lstdc++fs
+-
+ ifndef DATA_DIR
+ DATA_DIR  := /opt/ti99sim
+ endif
+@@ -48,7 +46,7 @@
+ 	@$(INSTALL) -d $(DATA_DIR)/disks
+ 	@$(INSTALL) -d $(BIN_DIR)
+ 	@for target in $(ITARGETS); do \
+-	   $(INSTALL) -s $$target $(BIN_DIR); \
++	   $(INSTALL) $$target $(BIN_DIR); \
+ 	 done
+ 	@if [ $(BIN_DIR) != $(SYS_BIN) ]; then \
+ 	   for target in $(notdir $(ITARGETS)); do \
+@@ -67,7 +65,7 @@
+ 	@if [ -x src ]; then \
+ 	   rm -f {.,include,doc}/*~; \
+ 	   for dir in $(SRC_DIRS); do \
+-	     $(MAKE) -sC $$dir clean; \
++	     $(MAKE) -C $$dir clean; \
+ 	   done \
+ 	 fi
+ 	@if [ -x bin ]; then \
+@@ -90,13 +88,13 @@
+ 	    fi \
+ 	  fi; \
+ 	  for dir in $(SRC_DIRS); do \
+-	    $(MAKE) -sC $$dir $(TI_DATA_DIR); \
++	    $(MAKE) -C $$dir $(TI_DATA_DIR); \
+ 	  done \
+ 	fi
+ 
+ test: ti99sim
+ 	@if [ -x test ]; then \
+-	  $(MAKE) -sC test; \
++	  $(MAKE) -C test; \
+ 	  for test in test/bin/test-*; do \
+ 	    $$test; \
+ 	  done \

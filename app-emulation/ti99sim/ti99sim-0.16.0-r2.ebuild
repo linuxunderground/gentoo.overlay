@@ -26,8 +26,8 @@ DEPEND="${RDEPEND}"
 
 PATCHES=(
 	"${FILESDIR}/rules_CFLAGS-16.0.patch"
+	"${FILESDIR}/cleanup_Makefile.patch"
 	"${FILESDIR}/fix-declaration.patch"
-	"${FILESDIR}/do_not_strip.patch"
 	)
 
 src_unpack() {
@@ -82,6 +82,14 @@ src_install() {
 		"${S}"/bin/mkcart -v . || die
 		insinto /usr/share/ti99sim/cartridges/
 		doins *.ctg
+
+		einfo "****************************************************************"
+		einfo "To get the list of all available cartridges, in a console, type :"
+		einfo "$ catalog -c /usr/share/ti99sim/cartridges"
+		einfo "To start ti99sim with your cartridge, type for example :"
+		einfo "$ ti99sim-sdl pacman.ctg"
+		einfo "Full path is not required here."
+		einfo "****************************************************************"
 
 		cd "${S}" || die
 	else
